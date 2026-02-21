@@ -1,1 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As 3 Letras que Me Fizeram Sair do CLT: PDF</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e94560;
+    --dark: #0f0f1a;
+    --dark2: #1a1a2e;
+    --gold: #f5a623;
+    --white: #ffffff;
+    --gray: #8a8a9a;
+    --light: #f8f8fc;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(233,69,96,0.18) 0%, transparent 70%);
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%);
+    bottom: 0; right: -100px;
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(233,69,96,0.15);
+    border: 1px solid rgba(233,69,96,0.4);
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    animation: fadeDown 0.7s ease 0.1s both;
+    max-width: 900px;
+  }
+
+  .hero h1 span {
+    color: var(--red);
+    display: block;
+  }
+
+  .hero h1 .pdf-word {
+    color: var(--gold);
+    font-size: clamp(80px, 15vw, 180px);
+    display: block;
+    line-height: 0.85;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255,255,255,0.65);
+    margin-top: 28px;
+    max-width: 600px;
+    line-height: 1.6;
+    font-weight: 500;
+    animation: fadeDown 0.7s ease 0.2s both;
+  }
+
+  .hero-sub strong { color: var(--white); }
+
+  .cta-wrap {
+    margin-top: 48px;
+    animation: fadeDown 0.7s ease 0.3s both;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 22px 56px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 40px rgba(233,69,96,0.4);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(233,69,96,0.55);
+  }
+
+  .price-tag {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .price-tag strong { color: var(--gold); font-size: 18px; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-hint::after {
+    content: '↓';
+    font-size: 20px;
+  }
+
+  /* ── STORY ── */
+  .story {
+    background: var(--light);
+    color: var(--dark);
+    padding: 100px 20px;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .story h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 36px;
+  }
+
+  .story p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .story p strong { color: var(--dark); }
+
+  .quote-block {
+    border-left: 4px solid var(--red);
+    padding: 24px 32px;
+    background: var(--dark);
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 40px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .dashboard-img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    margin: 32px 0 12px;
+  }
+
+  .img-caption {
+    font-size: 13px;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* ── FOR WHO ── */
+  .for-who {
+    background: var(--dark2);
+    padding: 100px 20px;
+  }
+
+  .for-who h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 60px);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .for-who .sub {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 28px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(233,69,96,0.4);
+    transform: translateY(-4px);
+  }
+
+  .card-icon { font-size: 32px; margin-bottom: 16px; }
+
+  .card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── WHAT YOU LEARN ── */
+  .what-learn {
+    background: var(--light);
+    color: var(--dark);
+    padding: 100px 20px;
+  }
+
+  .what-learn h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 60px);
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .chapters {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .chapter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 24px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .chapter-item:hover { background: rgba(233,69,96,0.05); }
+
+  .chapter-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: 2px;
+    min-width: 90px;
+    padding-top: 2px;
+  }
+
+  .chapter-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .chapter-info p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  .divider { height: 1px; background: rgba(0,0,0,0.08); margin: 0 24px; }
+
+  /* ── OFFER ── */
+  .offer {
+    background: var(--dark);
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .offer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 60px);
+    margin-bottom: 16px;
+  }
+
+  .offer .sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+
+  .price-box {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--dark2);
+    border: 1px solid rgba(233,69,96,0.3);
+    border-radius: 16px;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+  }
+
+  .price-box .old-price {
+    font-size: 16px;
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+    margin-bottom: 8px;
+  }
+
+  .price-box .price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-box .price-note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 32px;
+  }
+
+  .includes {
+    text-align: left;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .include-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .include-item .check {
+    color: var(--red);
+    font-size: 18px;
+    min-width: 24px;
+  }
+
+  .guarantee {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+  }
+
+  .guarantee .shield { font-size: 24px; }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--light);
+    color: var(--dark);
+    padding: 100px 20px;
+  }
+
+  .faq h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 60px);
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 22px 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq-q .arrow {
+    font-size: 20px;
+    color: var(--red);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .faq-a {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+  .faq-item.open .arrow { transform: rotate(45deg); }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--red);
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .final-cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 80px);
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .final-cta p {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .btn-cta-white {
+    display: inline-block;
+    background: white;
+    color: var(--red);
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 22px 56px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-cta-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 40px 20px;
+    text-align: center;
+    color: rgba(255,255,255,0.25);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* ── STICKY BAR ── */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--dark2);
+    border-top: 2px solid var(--red);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    flex-wrap: wrap;
+  }
+
+  .sticky-bar.visible { transform: translateY(0); }
+
+  .sticky-bar .sticky-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .sticky-bar .sticky-text strong { color: var(--gold); }
+
+  .sticky-bar .btn-cta {
+    padding: 14px 32px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  @media (max-width: 600px) {
+    .sticky-bar { justify-content: center; }
+    .sticky-bar .sticky-text { text-align: center; }
+    .price-box { padding: 36px 24px; }
+    .chapter-item { flex-direction: column; gap: 6px; }
+    .chapter-num { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">🔥 Lançamento — Oferta por tempo limitado</div>
+  <h1>
+    As 3 letras que me<br>fizeram sair do CLT:
+    <span class="pdf-word">PDF</span>
+  </h1>
+  <p class="hero-sub">
+    Como criar, lançar e vender seu primeiro infoproduto em PDF —
+    <strong>sem audiência, sem experiência, sem desculpas.</strong>
+  </p>
+  <div class="cta-wrap">
+    <a href="#comprar" class="btn-cta">QUERO MEU PDF AGORA →</a>
+    <span class="price-tag">Por apenas <strong>R$67</strong> — acesso imediato</span>
+  </div>
+  <div class="scroll-hint">role para ver</div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="container">
+    <p class="section-label">A história real por trás deste guia</p>
+    <h2>Fui demitido depois de criar um sistema que ajudou a empresa inteira.</h2>
+
+    <p>Meu nome é <strong>Lucas</strong>. Não venho de família rica. Não tive herança, nem conexões, nem rede de apoio. O que eu sempre tive foi vontade de mudar de vida — e a certeza de que o digital era o caminho mais rápido para isso.</p>
+
+    <p>Estudei muito. Corri atrás. E quando a Inteligência Artificial chegou com força, percebi que o jogo havia mudado de vez. Aprendi programação praticamente do zero e, com ajuda da IA, desenvolvi um sistema completo de controle de estoque para a empresa onde trabalhava.</p>
+
+    <img src="dashboard.png" alt="Dashboard do Sistema de Inventário criado por Lucas" class="dashboard-img" onerror="this.style.display='none'">
+    <p class="img-caption">▲ Sistema de Inventário desenvolvido do zero com auxílio de IA — sem experiência prévia em programação.</p>
+
+    <p>Me senti invencível. Pensei: <em>"agora meu emprego está garantido."</em></p>
+
+    <p>Então <strong>a empresa pegou fogo</strong>. Literalmente. E junto com as chamas, vieram os cortes. Mesmo tendo entregado muito — mesmo sendo parte da solução — meu nome estava no meio da lista de demitidos.</p>
+
+    <div class="quote-block">
+      "Naquele momento entendi: não importa o quanto você se dedique, você nunca está seguro dependendo de uma única fonte de renda que não é sua."
+    </div>
+
+    <p>A demissão me forçou a fazer o que eu deveria ter feito muito antes: ir de vez para o digital. Sem rede de segurança. Só eu, meu conhecimento e as ferramentas certas.</p>
+
+    <p>Criei este guia para que <strong>você não precise esperar ser demitido para tomar essa decisão.</strong> Três letras foram suficientes para começar minha virada. Podem ser as suas também.</p>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="for-who">
+  <p class="section-label" style="text-align:center">Este guia é para você?</p>
+  <h2>Este guia foi feito para quem...</h2>
+  <p class="sub">Se você se identificar com pelo menos um desses perfis, está no lugar certo.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">😤</div>
+      <h3>Está cansado do CLT</h3>
+      <p>Quer parar de depender de um chefe e construir algo próprio — mas não sabe por onde começar.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💸</div>
+      <h3>Precisa de renda extra</h3>
+      <p>O salário não fecha o mês e você quer uma fonte de renda paralela que funcione enquanto você dorme.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>Quer entrar no digital</h3>
+      <p>Vê pessoas ganhando dinheiro online e quer descobrir como fazer o mesmo — sem precisar de muito investimento.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <h3>Tem conhecimento para compartilhar</h3>
+      <p>Sabe algo que outras pessoas pagariam para aprender — mas ainda não sabe como transformar isso em produto.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>Quer começar agora</h3>
+      <p>Sem esperar o momento perfeito, sem precisar de muito dinheiro, sem precisar ser expert em marketing.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>Quer usar a IA a seu favor</h3>
+      <p>Entende que a Inteligência Artificial mudou as regras do jogo e quer aproveitar essa janela de oportunidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LEARN -->
+<section class="what-learn">
+  <p class="section-label" style="text-align:center;color:var(--red)">Conteúdo completo</p>
+  <h2 style="color:var(--dark)">O que você vai aprender</h2>
+
+  <div class="chapters">
+    <div class="chapter-item">
+      <span class="chapter-num">INTRODUÇÃO</span>
+      <div class="chapter-info">
+        <h4>A história por trás deste guia</h4>
+        <p>Como saí do CLT e por que um PDF foi o ponto de virada.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 1</span>
+      <div class="chapter-info">
+        <h4>O mercado de infoprodutos no Brasil</h4>
+        <p>Por que esse mercado é uma mina de ouro e os nichos que mais vendem.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 2</span>
+      <div class="chapter-info">
+        <h4>Escolhendo seu nicho e tema</h4>
+        <p>A fórmula para encontrar um tema que o mercado realmente quer comprar.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 3</span>
+      <div class="chapter-info">
+        <h4>Estruturando o conteúdo do seu PDF</h4>
+        <p>A estrutura vencedora de todo infoproduto que vende — passo a passo.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 4</span>
+      <div class="chapter-info">
+        <h4>Criando um PDF profissional sem designer</h4>
+        <p>Ferramentas gratuitas e princípios de design para quem não é designer.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 5</span>
+      <div class="chapter-info">
+        <h4>Definindo preço e posicionamento</h4>
+        <p>A psicologia do preço e como cobrar o valor certo para maximizar vendas.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 6</span>
+      <div class="chapter-info">
+        <h4>Plataformas de venda: Hotmart, Kiwify e Cakto</h4>
+        <p>Qual escolher, como configurar e começar a receber em minutos.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 7</span>
+      <div class="chapter-info">
+        <h4>Página de vendas que converte</h4>
+        <p>Os 10 elementos que toda página de vendas de sucesso precisa ter.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 8</span>
+      <div class="chapter-info">
+        <h4>Copy e textos de marketing</h4>
+        <p>A fórmula AIDA e templates prontos para Instagram e WhatsApp.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 9</span>
+      <div class="chapter-info">
+        <h4>Estratégia de lançamento — Semana 1</h4>
+        <p>O cronograma dia a dia para lançar seu produto em 7 dias.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">CAPÍTULO 10</span>
+      <div class="chapter-info">
+        <h4>Escalando: de R$500 a R$5.000/mês</h4>
+        <p>As 4 alavancas para multiplicar seus resultados com infoprodutos.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="chapter-item">
+      <span class="chapter-num">BÔNUS</span>
+      <div class="chapter-info">
+        <h4>Templates e checklists prontos</h4>
+        <p>Checklist de lançamento completo + template de mensagem de WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="comprar">
+  <p class="section-label" style="color:var(--red)">Oferta de lançamento</p>
+  <h2>Garanta o seu agora</h2>
+  <p class="sub">Preço especial de lançamento — pode aumentar a qualquer momento.</p>
+
+  <div class="price-box">
+    <p class="old-price">De R$97</p>
+    <p class="price">R$67</p>
+    <p class="price-note">pagamento único • acesso imediato</p>
+
+    <div class="includes">
+      <div class="include-item"><span class="check">✓</span> Guia completo em PDF (26 páginas)</div>
+      <div class="include-item"><span class="check">✓</span> 10 capítulos com passo a passo completo</div>
+      <div class="include-item"><span class="check">✓</span> Templates de posts para Instagram</div>
+      <div class="include-item"><span class="check">✓</span> Checklist de lançamento completo</div>
+      <div class="include-item"><span class="check">✓</span> Template de mensagem de WhatsApp</div>
+      <div class="include-item"><span class="check">✓</span> Acesso vitalício + atualizações gratuitas</div>
+    </div>
+
+    <a href="SEU_LINK_DA_KIWIFY_AQUI" class="btn-cta" style="width:100%;text-align:center;display:block">
+      QUERO MEU PDF AGORA →
+    </a>
+
+    <div class="guarantee">
+      <span class="shield">🛡️</span>
+      <span>Garantia de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label" style="text-align:center;color:var(--red)">Dúvidas frequentes</p>
+  <h2 style="color:var(--dark)">Perguntas & Respostas</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Preciso ter experiência para aplicar o conteúdo? <span class="arrow">+</span></button>
+      <div class="faq-a">Não. O guia foi criado especificamente para quem está partindo do zero. Cada passo é explicado de forma simples e direta, sem jargões técnicos.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Quanto tempo leva para criar meu primeiro PDF? <span class="arrow">+</span></button>
+      <div class="faq-a">Com o cronograma do Capítulo 9, é possível ter seu produto no ar em 7 dias. Depende do tempo que você dedicar, mas muitas pessoas conseguem lançar em um final de semana.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Preciso investir dinheiro para começar? <span class="arrow">+</span></button>
+      <div class="faq-a">Não. Todas as ferramentas indicadas no guia têm versão gratuita — Canva, Kiwify, Instagram. Você pode começar do absoluto zero sem investir nada além do valor deste guia.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">E se eu não tiver seguidores no Instagram? <span class="arrow">+</span></button>
+      <div class="faq-a">O guia mostra como vender mesmo sem audiência — usando WhatsApp, grupos e estratégias orgânicas que funcionam mesmo para quem está começando do zero nas redes.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Como recebo o PDF depois de comprar? <span class="arrow">+</span></button>
+      <div class="faq-a">Imediatamente após o pagamento aprovado, você recebe um e-mail com o link para download. O acesso é vitalício.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">E se eu não gostar? <span class="arrow">+</span></button>
+      <div class="faq-a">Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito, basta solicitar o reembolso e devolvemos 100% do seu dinheiro, sem perguntas.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Sua virada começa<br>com 3 letras.</h2>
+  <p>Não espere o momento perfeito. O melhor momento é agora — enquanto o preço ainda está no lançamento.</p>
+  <a href="#comprar" class="btn-cta-white">GARANTIR MINHA VAGA →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Lucas — Todos os direitos reservados.</p>
+  <p style="margin-top:8px">Este produto é um infoproduto digital. Após a compra, o acesso é enviado imediatamente por e-mail.</p>
+  <p style="margin-top:8px">Garantia de 7 dias conforme o Código de Defesa do Consumidor (Art. 49).</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-text">🔥 Oferta de lançamento — <strong>R$67</strong> pagamento único</span>
+  <a href="#comprar" class="btn-cta">COMPRAR AGORA →</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Sticky bar on scroll
+  const stickyBar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
+    }
+  });
+
+  // Smooth scroll for anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
