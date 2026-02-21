@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seus Materiais — As 3 Letras que Me Fizeram Sair do CLT</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e94560;
+    --dark: #0f0f1a;
+    --dark2: #1a1a2e;
+    --gold: #f5a623;
+    --green: #00c48c;
+    --white: #ffffff;
+    --gray: #8a8a9a;
+    --light: #f8f8fc;
+    --border: #e5e7eb;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Manrope',sans-serif; background:var(--light); color:var(--dark); min-height:100vh; }
+
+  /* HEADER */
+  header {
+    background:var(--dark);
+    padding:20px 32px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  .logo { font-family:'Bebas Neue',sans-serif; font-size:22px; color:white; letter-spacing:1px; }
+  .logo span { color:var(--red); }
+  .header-badge {
+    background:rgba(0,196,140,0.15); border:1px solid rgba(0,196,140,0.3);
+    color:var(--green); font-size:12px; font-weight:700; padding:6px 14px;
+    border-radius:100px; letter-spacing:1px; text-transform:uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    background:linear-gradient(135deg, var(--dark), var(--dark2));
+    padding:60px 20px 50px; text-align:center; position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute;
+    width:500px; height:500px;
+    background:radial-gradient(circle, rgba(0,196,140,0.12) 0%, transparent 70%);
+    top:-100px; left:50%; transform:translateX(-50%);
+    pointer-events:none;
+  }
+
+  .congrats-icon { font-size:64px; margin-bottom:16px; animation:bounce 1s ease; }
+
+  .hero h1 {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(36px, 7vw, 68px);
+    color:white; line-height:1; margin-bottom:16px;
+  }
+  .hero h1 span { color:var(--green); }
+
+  .hero p {
+    font-size:16px; color:rgba(255,255,255,0.55);
+    max-width:500px; margin:0 auto; line-height:1.7;
+  }
+  .hero p strong { color:white; }
+
+  /* MAIN */
+  main { max-width:680px; margin:0 auto; padding:48px 20px 80px; }
+
+  /* STEPS */
+  .steps {
+    display:flex; gap:8px; align-items:center; justify-content:center;
+    margin-bottom:40px; flex-wrap:wrap;
+  }
+  .step-item { display:flex; align-items:center; gap:8px; }
+  .step-dot {
+    width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:800;
+  }
+  .step-dot.done { background:var(--green); color:white; }
+  .step-dot.active { background:var(--red); color:white; }
+  .step-label { font-size:13px; font-weight:600; }
+  .step-label.done { color:var(--green); }
+  .step-label.active { color:var(--dark); }
+  .step-arrow { color:var(--border); font-size:18px; }
+
+  /* DOWNLOAD CARDS */
+  .download-section-title {
+    font-size:11px; font-weight:700; letter-spacing:3px;
+    text-transform:uppercase; color:var(--red); margin-bottom:20px; text-align:center;
+  }
+
+  .download-card {
+    background:white; border:1px solid var(--border);
+    border-radius:16px; overflow:hidden; margin-bottom:16px;
+    transition:box-shadow 0.2s, transform 0.2s;
+  }
+  .download-card:hover { box-shadow:0 8px 32px rgba(0,0,0,0.08); transform:translateY(-2px); }
+
+  .download-card-inner { padding:24px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+
+  .file-icon {
+    width:56px; height:56px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px; flex-shrink:0;
+  }
+  .file-icon.main { background:rgba(233,69,96,0.1); }
+  .file-icon.bonus { background:rgba(245,166,35,0.1); }
+
+  .file-info { flex:1; min-width:200px; }
+  .file-tag {
+    font-size:10px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; margin-bottom:6px;
+  }
+  .file-tag.main { color:var(--red); }
+  .file-tag.bonus { color:var(--gold); }
+  .file-name { font-size:16px; font-weight:700; color:var(--dark); margin-bottom:4px; line-height:1.3; }
+  .file-meta { font-size:13px; color:var(--gray); }
+
+  .btn-download {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 24px; border-radius:8px;
+    font-size:14px; font-weight:800; text-decoration:none;
+    transition:transform 0.2s, box-shadow 0.2s; white-space:nowrap;
+    font-family:'Manrope',sans-serif; border:none; cursor:pointer;
+  }
+  .btn-download.main {
+    background:var(--red); color:white;
+    box-shadow:0 4px 20px rgba(233,69,96,0.3);
+  }
+  .btn-download.main:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(233,69,96,0.4); }
+  .btn-download.bonus {
+    background:var(--gold); color:var(--dark);
+    box-shadow:0 4px 20px rgba(245,166,35,0.25);
+  }
+  .btn-download.bonus:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(245,166,35,0.35); }
+
+  /* PROGRESS */
+  .progress-card {
+    background:white; border:1px solid var(--border);
+    border-radius:16px; padding:28px; margin:32px 0;
+  }
+  .progress-card h3 { font-size:16px; font-weight:700; margin-bottom:20px; color:var(--dark); }
+  .checklist-item {
+    display:flex; align-items:center; gap:14px;
+    padding:12px 0; border-bottom:1px solid var(--border);
+    cursor:pointer; user-select:none;
+  }
+  .checklist-item:last-child { border-bottom:none; }
+  .check-circle {
+    width:24px; height:24px; border-radius:50%;
+    border:2px solid var(--border); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.2s; font-size:12px; color:white;
+  }
+  .checklist-item.checked .check-circle { background:var(--green); border-color:var(--green); }
+  .checklist-item.checked .check-text { text-decoration:line-through; color:var(--gray); }
+  .check-text { font-size:14px; color:var(--dark); line-height:1.4; transition:all 0.2s; }
+  .progress-bar-wrap { margin-top:20px; }
+  .progress-bar-label { font-size:12px; font-weight:700; color:var(--gray); margin-bottom:8px; display:flex; justify-content:space-between; }
+  .progress-bar { height:8px; background:var(--border); border-radius:100px; overflow:hidden; }
+  .progress-fill { height:100%; background:linear-gradient(90deg, var(--green), #00e5a0); border-radius:100px; transition:width 0.5s ease; }
+
+  /* NEXT STEPS */
+  .next-steps {
+    background:var(--dark); border-radius:16px; padding:28px; margin-bottom:32px;
+  }
+  .next-steps h3 { font-family:'Bebas Neue',sans-serif; font-size:28px; color:white; margin-bottom:20px; }
+  .next-step-item {
+    display:flex; gap:16px; align-items:flex-start;
+    padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .next-step-item:last-child { border-bottom:none; }
+  .next-num {
+    width:32px; height:32px; border-radius:8px;
+    background:var(--red); color:white;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; flex-shrink:0;
+  }
+  .next-info strong { font-size:14px; color:white; display:block; margin-bottom:3px; }
+  .next-info span { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.5; }
+
+  /* SUPPORT */
+  .support-card {
+    background:rgba(233,69,96,0.06); border:1px solid rgba(233,69,96,0.15);
+    border-radius:14px; padding:24px; text-align:center; margin-bottom:32px;
+  }
+  .support-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:var(--dark); }
+  .support-card p { font-size:14px; color:var(--gray); line-height:1.6; margin-bottom:16px; }
+  .support-btn {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--dark); color:white; padding:12px 24px;
+    border-radius:8px; font-size:14px; font-weight:700;
+    text-decoration:none; transition:background 0.2s;
+  }
+  .support-btn:hover { background:var(--red); }
+
+  /* FOOTER */
+  footer {
+    background:var(--dark); padding:32px 20px;
+    text-align:center; color:rgba(255,255,255,0.2);
+    font-size:12px; line-height:1.8;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform:translateY(0); }
+    40% { transform:translateY(-16px); }
+    60% { transform:translateY(-8px); }
+  }
+
+  @media(max-width:500px) {
+    .download-card-inner { flex-direction:column; align-items:flex-start; }
+    .btn-download { width:100%; justify-content:center; }
+    .steps { gap:4px; }
+    .step-label { font-size:11px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lucas <span>PDF</span></div>
+  <span class="header-badge">✅ Compra confirmada</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="congrats-icon">🎉</div>
+  <h1>Parabéns,<br><span>você chegou lá!</span></h1>
+  <p>Sua compra foi confirmada. <strong>Seus materiais estão prontos</strong> para download logo abaixo. Bem-vindo ao lado de quem decide agir.</p>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- STEPS -->
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-dot done">✓</div>
+      <span class="step-label done">Pagamento</span>
+    </div>
+    <span class="step-arrow">→</span>
+    <div class="step-item">
+      <div class="step-dot active">2</div>
+      <span class="step-label active">Download</span>
+    </div>
+    <span class="step-arrow">→</span>
+    <div class="step-item">
+      <div class="step-dot" style="background:var(--border);color:var(--gray)">3</div>
+      <span class="step-label" style="color:var(--gray)">Lançar</span>
+    </div>
+  </div>
+
+  <!-- DOWNLOADS -->
+  <p class="download-section-title">Seus materiais para download</p>
+
+  <!-- PRODUTO PRINCIPAL -->
+  <div class="download-card">
+    <div class="download-card-inner">
+      <div class="file-icon main">📘</div>
+      <div class="file-info">
+        <div class="file-tag main">✦ Produto principal</div>
+        <div class="file-name">As 3 Letras que Me Fizeram Sair do CLT: PDF</div>
+        <div class="file-meta">26 páginas · PDF · Acesso vitalício</div>
+      </div>
+      <a href="SEU_LINK_GOOGLE_DRIVE_PDF_PRINCIPAL" target="_blank" class="btn-download main">
+        ⬇ Baixar agora
+      </a>
+    </div>
+  </div>
+
+  <!-- BÔNUS -->
+  <div class="download-card">
+    <div class="download-card-inner">
+      <div class="file-icon bonus">🎁</div>
+      <div class="file-info">
+        <div class="file-tag bonus">🎁 Bônus exclusivo — Valor R$47</div>
+        <div class="file-name">Guia de Métricas & Otimização Facebook Ads</div>
+        <div class="file-meta">16 páginas · PDF · Incluso gratuitamente</div>
+      </div>
+      <a href="SEU_LINK_GOOGLE_DRIVE_BONUS" target="_blank" class="btn-download bonus">
+        ⬇ Baixar bônus
+      </a>
+    </div>
+  </div>
+
+  <!-- CHECKLIST DE PROGRESSO -->
+  <div class="progress-card">
+    <h3>📋 Seu checklist de lançamento</h3>
+
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Baixar o PDF principal e o bônus</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Ler a Introdução e o Capítulo 1 hoje</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Definir o tema do meu primeiro PDF (Cap. 2)</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Escrever o índice do meu produto</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Criar conta no Canva e na Cakto</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Criar e finalizar o meu PDF</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Cadastrar o produto na Cakto</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Publicar minha página de vendas</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Fazer minha primeira venda! 🚀</span>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-label">
+        <span>Progresso</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <div class="next-steps">
+    <h3>Por Onde Começar Agora</h3>
+    <div class="next-step-item">
+      <div class="next-num">1</div>
+      <div class="next-info">
+        <strong>Hoje — Leia a Introdução e o Cap. 1</strong>
+        <span>Entenda o mercado e comece a pensar no seu tema. Não pule essa etapa.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">2</div>
+      <div class="next-info">
+        <strong>Amanhã — Defina seu tema e escreva o índice</strong>
+        <span>Use o Cap. 2 e 3. Esse é o passo que a maioria trava — não deixe para depois.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">3</div>
+      <div class="next-info">
+        <strong>Dias 3 e 4 — Crie o conteúdo e o design no Canva</strong>
+        <span>Cap. 4 explica tudo sobre ferramentas gratuitas. Você não precisa saber design.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">4</div>
+      <div class="next-info">
+        <strong>Dias 5 e 6 — Monte a página de vendas e cadastre na Cakto</strong>
+        <span>Cap. 6 e 7 te guiam passo a passo. Uma tarde é suficiente.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">5</div>
+      <div class="next-info">
+        <strong>Dia 7 — Lance e divulgue</strong>
+        <span>Use as copies do Kit Facebook Ads e mande para seus contatos no WhatsApp.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPORTE -->
+  <div class="support-card">
+    <h3>Dúvidas? Fala comigo diretamente 👋</h3>
+    <p>Se tiver qualquer dificuldade com o material, manda mensagem. Respondo o mais rápido possível.</p>
+    <a href="https://wa.me/55SEU_NUMERO_AQUI?text=Oi%20Lucas!%20Comprei%20o%20PDF%20e%20tenho%20uma%20d%C3%BAvida." class="support-btn" target="_blank">
+      💬 Falar no WhatsApp
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Lucas — Todos os direitos reservados.</p>
+  <p style="margin-top:6px">Este é um produto digital. Acesso liberado imediatamente após a confirmação do pagamento.</p>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.checklist-item');
+  const total = items.length;
+
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const done = document.querySelectorAll('.checklist-item.checked').length;
+    const pct = Math.round((done / total) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-pct').textContent = pct + '%';
+  }
+</script>
+</body>
+</html>
