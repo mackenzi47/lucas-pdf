@@ -1,34 +1,1097 @@
-Crie uma capa quadrada 1x1 (1080x1080) estilo infoproduto digital brasileiro de alta conversão.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central de Suporte — Lucas PDF</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e94560;
+    --dark: #0f0f1a;
+    --dark2: #1a1a2e;
+    --gold: #f5a623;
+    --green: #00c48c;
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f9fafb;
+    --border: #e5e7eb;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Manrope',sans-serif; background:var(--light); color:var(--dark); }
 
-Visual forte, chamativo, estilo thumbnail que vende muito na Hotmart/Kiwify.
+  /* HEADER */
+  header {
+    background:var(--dark); padding:20px 40px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    position:sticky; top:0; z-index:100;
+    box-shadow:0 2px 20px rgba(0,0,0,0.3);
+  }
+  .logo { font-family:'Bebas Neue',sans-serif; font-size:22px; color:white; letter-spacing:1px; }
+  .logo span { color:var(--red); }
+  .header-right { display:flex; align-items:center; gap:12px; }
+  .wpp-btn {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--green); color:white; font-size:13px; font-weight:700;
+    padding:8px 18px; border-radius:100px; text-decoration:none;
+    transition:opacity 0.2s;
+  }
+  .wpp-btn:hover { opacity:0.85; }
 
-Fundo escuro com contraste alto (preto, vermelho, amarelo e dourado).  
-Iluminação dramática com brilho e partículas de luz.
+  /* HERO */
+  .hero {
+    background:linear-gradient(135deg, var(--dark), var(--dark2));
+    padding:60px 20px 50px; text-align:center; position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute;
+    width:600px; height:600px;
+    background:radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 70%);
+    top:-150px; left:50%; transform:translateX(-50%);
+    pointer-events:none;
+  }
+  .hero-label {
+    font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+    color:var(--red); margin-bottom:16px;
+  }
+  .hero h1 {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(40px, 7vw, 72px);
+    color:white; line-height:1; margin-bottom:16px;
+  }
+  .hero h1 span { color:var(--red); }
+  .hero p { font-size:16px; color:rgba(255,255,255,0.5); max-width:520px; margin:0 auto 32px; line-height:1.7; }
 
-Título grande e central:
+  /* SEARCH */
+  .search-wrap { max-width:480px; margin:0 auto; position:relative; }
+  .search-wrap input {
+    width:100%; padding:16px 20px 16px 48px;
+    border-radius:12px; border:none; outline:none;
+    font-size:15px; font-family:'Manrope',sans-serif;
+    background:rgba(255,255,255,0.08);
+    color:white; transition:background 0.2s;
+    border:1px solid rgba(255,255,255,0.1);
+  }
+  .search-wrap input::placeholder { color:rgba(255,255,255,0.3); }
+  .search-wrap input:focus { background:rgba(255,255,255,0.12); border-color:var(--red); }
+  .search-icon { position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:18px; pointer-events:none; }
 
-AS 3 LETRAS QUE ME FIZERAM SAIR DO CLT:
+  /* CATEGORY PILLS */
+  .cats {
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    padding:32px 20px 0; max-width:800px; margin:0 auto;
+  }
+  .cat-pill {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 20px; border-radius:100px; font-size:13px; font-weight:700;
+    cursor:pointer; border:2px solid transparent; transition:all 0.2s;
+    background:white; color:var(--gray); border-color:var(--border);
+  }
+  .cat-pill:hover { border-color:var(--red); color:var(--red); }
+  .cat-pill.active { border-color:var(--red); color:var(--red); background:rgba(233,69,96,0.06); }
 
-PDF (bem grande, em vermelho com efeito 3D, brilho e destaque)
+  /* MAIN */
+  main { max-width:860px; margin:0 auto; padding:40px 20px 80px; }
 
-Subtítulo abaixo:
+  /* CATEGORY SECTION */
+  .cat-section { margin-bottom:48px; }
+  .cat-header {
+    display:flex; align-items:center; gap:14px; margin-bottom:24px;
+    padding-bottom:16px; border-bottom:2px solid var(--border);
+  }
+  .cat-icon {
+    width:44px; height:44px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+  }
+  .cat-icon.github { background:rgba(233,69,96,0.1); }
+  .cat-icon.ads { background:rgba(59,130,246,0.1); }
+  .cat-icon.cakto { background:rgba(245,166,35,0.1); }
+  .cat-icon.canva { background:rgba(0,196,140,0.1); }
+  .cat-icon.geral { background:rgba(139,92,246,0.1); }
+  .cat-title { font-family:'Bebas Neue',sans-serif; font-size:30px; color:var(--dark); }
+  .cat-count { font-size:12px; font-weight:700; color:var(--gray); margin-left:auto; }
 
-Como criar, lançar e vender seu primeiro infoproduto
+  /* FAQ ITEMS */
+  .faq-item {
+    background:white; border:1px solid var(--border);
+    border-radius:12px; margin-bottom:10px; overflow:hidden;
+    transition:box-shadow 0.2s;
+  }
+  .faq-item:hover { box-shadow:0 4px 16px rgba(0,0,0,0.06); }
+  .faq-item.open { border-color:rgba(233,69,96,0.3); }
 
-Bullets chamativos com ícones verdes de check:
+  .faq-q {
+    width:100%; background:none; border:none; text-align:left;
+    padding:18px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    cursor:pointer; font-family:'Manrope',sans-serif;
+  }
+  .faq-q-text { font-size:15px; font-weight:700; color:var(--dark); line-height:1.4; }
+  .faq-arrow {
+    width:28px; height:28px; border-radius:50%; flex-shrink:0;
+    background:var(--light); display:flex; align-items:center; justify-content:center;
+    font-size:16px; color:var(--gray); transition:all 0.3s;
+  }
+  .faq-item.open .faq-arrow { background:var(--red); color:white; transform:rotate(45deg); }
 
-✔ Mesmo começando do zero  
-✔ Com um pequeno investimento  
-✔ Sem precisar de seguidores  
+  .faq-a {
+    max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s;
+    font-size:14px; color:#444; line-height:1.8;
+  }
+  .faq-item.open .faq-a { max-height:1000px; padding:0 22px 20px; }
 
-Elementos visuais:
+  .faq-a p { margin-bottom:12px; }
+  .faq-a p:last-child { margin-bottom:0; }
 
-– Laptop mostrando gráfico de crescimento verde  
-– Celular com notificação de venda  
-– Dinheiro espalhado na mesa  
-– Setas amarelas apontando para o “PDF”  
-– Efeito glow e sombra dramática  
+  .faq-a ol, .faq-a ul { padding-left:20px; margin-bottom:12px; }
+  .faq-a li { margin-bottom:8px; line-height:1.7; }
 
-Tipografia grossa, impactante, estilo marketing digital agressivo.  
-Visual limpo porém poderoso.  
-Foco em gerar curiosidade e desejo imediato.
+  .faq-a .code {
+    background:var(--dark); color:#00e5a0; font-family:monospace;
+    font-size:13px; padding:12px 16px; border-radius:8px; margin:12px 0;
+    display:block; overflow-x:auto; white-space:pre;
+  }
+
+  .faq-a .tip {
+    background:rgba(245,166,35,0.08); border:1px solid rgba(245,166,35,0.25);
+    border-radius:8px; padding:12px 16px; margin:12px 0;
+    font-size:13px; color:#5a4000;
+  }
+  .faq-a .tip strong { color:#8a6000; }
+
+  .faq-a .success {
+    background:rgba(0,196,140,0.08); border:1px solid rgba(0,196,140,0.25);
+    border-radius:8px; padding:12px 16px; margin:12px 0;
+    font-size:13px; color:#005a3c;
+  }
+
+  .faq-a .danger {
+    background:rgba(233,69,96,0.08); border:1px solid rgba(233,69,96,0.25);
+    border-radius:8px; padding:12px 16px; margin:12px 0;
+    font-size:13px; color:#8a0020;
+  }
+
+  .faq-a a { color:var(--red); font-weight:600; }
+
+  /* STILL STUCK */
+  .still-stuck {
+    background:var(--dark); border-radius:16px; padding:40px;
+    text-align:center; margin-top:48px;
+  }
+  .still-stuck h2 { font-family:'Bebas Neue',sans-serif; font-size:36px; color:white; margin-bottom:12px; }
+  .still-stuck p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:28px; line-height:1.6; max-width:440px; margin-left:auto; margin-right:auto; }
+  .wpp-big {
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--green); color:white; font-size:16px; font-weight:800;
+    padding:18px 40px; border-radius:10px; text-decoration:none;
+    transition:transform 0.2s, box-shadow 0.2s;
+    box-shadow:0 8px 30px rgba(0,196,140,0.3);
+  }
+  .wpp-big:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,196,140,0.4); }
+
+  /* NO RESULTS */
+  .no-results { text-align:center; padding:60px 20px; display:none; }
+  .no-results .emoji { font-size:48px; margin-bottom:16px; }
+  .no-results h3 { font-size:20px; font-weight:700; margin-bottom:8px; }
+  .no-results p { font-size:14px; color:var(--gray); }
+
+  @media(max-width:600px) {
+    header { padding:16px 20px; }
+    .hero { padding:48px 16px 40px; }
+    main { padding:32px 16px 60px; }
+    .still-stuck { padding:28px 20px; }
+  }
+
+  /* CALCULATOR */
+  .cfield { margin-bottom:14px; }
+  .clabel { display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:6px; }
+  .cfield-wrap { position:relative; }
+  .cpfx { position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:700;color:var(--gray); }
+  .csfx { position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--gray); }
+  .cinput {
+    width:100%;background:var(--light);border:1px solid var(--border);
+    border-radius:8px;padding:11px 12px 11px 32px;
+    font-size:15px;font-weight:700;font-family:'Manrope',sans-serif;
+    color:var(--dark);outline:none;transition:border-color 0.2s;
+  }
+  .cinput.cnpfx { padding-left:12px; }
+  .cinput:focus { border-color:var(--gold); }
+  .crow { display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06); }
+  .crow-l { font-size:12px;color:rgba(255,255,255,0.4); }
+  .crow-v { font-size:14px;font-weight:800;color:white; }
+  .sc-row {
+    display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;
+    align-items:center;background:var(--light);border-radius:8px;
+    padding:12px 16px;border:1px solid var(--border);font-size:14px;
+  }
+  .sc-row.sc-header { font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray);background:var(--border); }
+  @media(max-width:640px){
+    #cpanel-roas > div { grid-template-columns:1fr; }
+    .sc-row { grid-template-columns:1fr 1fr; }
+    #cpanel-projecao > div:last-child table { font-size:12px; }
+    #cpanel-escala > div:first-child { grid-template-columns:1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lucas <span>PDF</span> — Suporte</div>
+  <div class="header-right">
+    <a href="https://wa.me/55SEU_NUMERO?text=Oi%20Lucas!%20Preciso%20de%20ajuda%20com%20o%20produto." class="wpp-btn" target="_blank">
+      💬 Falar com Lucas
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-label">Central de Suporte</p>
+  <h1>Como podemos<br><span>te ajudar?</span></h1>
+  <p>Encontre respostas para as dúvidas mais comuns sobre o produto, plataformas e anúncios.</p>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Pesquise sua dúvida..." oninput="filterFaqs()">
+  </div>
+</div>
+
+<!-- CATEGORY PILLS -->
+<div class="cats">
+  <div class="cat-pill active" onclick="filterCat('all', this)">🔎 Tudo</div>
+  <div class="cat-pill" onclick="filterCat('github', this)">🐙 GitHub</div>
+  <div class="cat-pill" onclick="filterCat('ads', this)">📣 Facebook Ads</div>
+  <div class="cat-pill" onclick="filterCat('cakto', this)">🛒 Cakto</div>
+  <div class="cat-pill" onclick="filterCat('canva', this)">🎨 Canva & PDF</div>
+  <div class="cat-pill" onclick="filterCat('geral', this)">❓ Geral</div>
+  <div class="cat-pill" onclick="filterCat('calc', this)" style="border-color:#f5a623;color:#8a6000;background:rgba(245,166,35,0.08)">🧮 Calculadora</div>
+</div>
+
+<main>
+
+  <!-- GITHUB -->
+  <div class="cat-section" data-cat="github">
+    <div class="cat-header">
+      <div class="cat-icon github">🐙</div>
+      <div class="cat-title">GitHub Pages</div>
+      <span class="cat-count">6 respostas</span>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como criar minha conta no GitHub?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Criar uma conta é simples e gratuito:</p>
+        <ol>
+          <li>Acesse <a href="https://github.com" target="_blank">github.com</a></li>
+          <li>Clique em <strong>"Sign up"</strong></li>
+          <li>Digite seu e-mail, crie uma senha e escolha um nome de usuário</li>
+          <li>Confirme o e-mail que chegará na sua caixa de entrada</li>
+        </ol>
+        <div class="tip"><strong>💡 Dica:</strong> Escolha um nome de usuário simples, pois ele fará parte do seu link final. Ex: se escolher "lucas", seu link será <strong>lucas.github.io/seu-repositorio</strong></div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como criar o repositório e subir minha página de vendas?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>No GitHub, clique no <strong>"+"</strong> no canto superior direito → <strong>"New repository"</strong></li>
+          <li>Dê um nome sem espaços, ex: <strong>lucas-pdf</strong></li>
+          <li>Marque como <strong>Public</strong></li>
+          <li>Marque <strong>"Add a README file"</strong></li>
+          <li>Clique em <strong>"Create repository"</strong></li>
+          <li>Dentro do repositório, clique em <strong>"Add file" → "Upload files"</strong></li>
+          <li>Arraste seus arquivos (index.html, entrega.html, dashboard.png)</li>
+          <li>Clique em <strong>"Commit changes"</strong></li>
+        </ol>
+        <div class="success">✅ Após o upload, vá em <strong>Settings → Pages → Branch: main → Save</strong>. Em 2 minutos sua página estará no ar.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como atualizar minha página depois de fazer uma alteração?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>Abra o repositório no GitHub</li>
+          <li>Clique no arquivo que quer atualizar (ex: index.html)</li>
+          <li>Clique no ícone de lápis ✏️ para editar diretamente no navegador</li>
+          <li>Faça as alterações</li>
+          <li>Clique em <strong>"Commit changes"</strong></li>
+        </ol>
+        <p>Ou se preferir subir o arquivo inteiro novamente: <strong>"Add file" → "Upload files"</strong> — o GitHub substitui automaticamente o arquivo antigo.</p>
+        <div class="tip"><strong>💡 Dica:</strong> A atualização leva até 2 minutos para aparecer no site. Se não aparecer, tente limpar o cache do navegador (Ctrl+Shift+R).</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Minha página não está aparecendo. O que fazer?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Verifique esses pontos em ordem:</p>
+        <ol>
+          <li><strong>O repositório é Public?</strong> — Repositórios privados não funcionam com GitHub Pages gratuito</li>
+          <li><strong>O GitHub Pages está ativado?</strong> — Settings → Pages → Branch deve estar em "main"</li>
+          <li><strong>O arquivo se chama exatamente "index.html"?</strong> — Qualquer variação (Index.html, index.HTML) não funciona</li>
+          <li><strong>Esperou 2 minutos?</strong> — O GitHub Pages demora alguns minutos para propagar</li>
+        </ol>
+        <div class="danger"><strong>⚠️ Erro comum:</strong> Subir o arquivo com nome diferente de "index.html". O GitHub Pages só reconhece exatamente esse nome para a página principal.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como adicionar um domínio personalizado (ex: meupdf.com.br)?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>Compre o domínio no <a href="https://registro.br" target="_blank">Registro.br</a> (~R$40/ano)</li>
+          <li>No painel do Registro.br, adicione um registro DNS tipo CNAME apontando para <strong>seuusuario.github.io</strong></li>
+          <li>No GitHub, vá em Settings → Pages → Custom domain → digite seu domínio → Save</li>
+          <li>Aguarde até 48h para propagar</li>
+        </ol>
+        <div class="tip"><strong>💡 Para começar, o domínio gratuito do GitHub funciona perfeitamente.</strong> Só vale investir no domínio próprio quando estiver vendendo bem.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Qual é a estrutura de arquivos correta no repositório?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Seu repositório deve ter exatamente esses arquivos:</p>
+        <span class="code">lucas-pdf/
+├── index.html       ← página de vendas
+├── entrega.html     ← página de entrega pós-compra
+├── upsell.html      ← upsell (quando ativar)
+└── dashboard.png    ← sua imagem da história</span>
+        <div class="success">✅ Os PDFs NÃO ficam aqui — eles ficam no Google Drive. O GitHub só hospeda as páginas HTML.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACEBOOK ADS -->
+  <div class="cat-section" data-cat="ads">
+    <div class="cat-header">
+      <div class="cat-icon ads">📣</div>
+      <div class="cat-title">Facebook Ads</div>
+      <span class="cat-count">7 respostas</span>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como criar minha primeira campanha no Facebook Ads?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>Acesse <a href="https://business.facebook.com" target="_blank">business.facebook.com</a> e crie sua conta</li>
+          <li>Vá em <strong>Ads Manager → Criar</strong></li>
+          <li>Objetivo: <strong>Vendas</strong> (ou Conversões)</li>
+          <li>Configure o conjunto de anúncios: público, localização (Brasil), idade (22-45)</li>
+          <li>Budget: <strong>R$10/dia por anúncio</strong> para começar</li>
+          <li>Suba o criativo (imagem ou vídeo) + o texto da copy</li>
+          <li>Cole o link da sua página de vendas</li>
+          <li>Publique e aguarde a aprovação (geralmente em até 24h)</li>
+        </ol>
+        <div class="tip"><strong>💡 Dica:</strong> Suba 3 variações de copy ao mesmo tempo. Após 3-4 dias, duplique o budget da que tiver maior CTR e pause as outras.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como instalar o Pixel do Facebook na minha página?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>No Meta Business Suite, vá em <strong>Configurações → Fontes de Dados → Pixels</strong></li>
+          <li>Clique em <strong>"Adicionar"</strong> e dê um nome ao pixel</li>
+          <li>Copie o <strong>ID do Pixel</strong> (um número de 15 dígitos)</li>
+          <li>No seu index.html, adicione dentro da tag &lt;head&gt;:</li>
+        </ol>
+        <span class="code">&lt;!-- Meta Pixel --&gt;
+&lt;script&gt;
+!function(f,b,e,v,n,t,s){...}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_ID_DO_PIXEL_AQUI');
+fbq('track', 'PageView');
+&lt;/script&gt;</span>
+        <div class="success">✅ Na Cakto, cole apenas o ID do Pixel no campo específico — ela já instala o código automaticamente para rastrear compras.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Meu anúncio foi reprovado. O que faço?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Reprovações são comuns. Veja as causas mais frequentes e como resolver:</p>
+        <ul>
+          <li><strong>Promessas exageradas:</strong> Evite "fique rico", "ganhe R$10.000 em 7 dias". Use números reais e alcançáveis.</li>
+          <li><strong>Texto em imagem:</strong> O Facebook limita texto em imagens. Mantenha menos de 20% da imagem com texto.</li>
+          <li><strong>Antes e depois:</strong> O Facebook proíbe comparações de antes/depois em anúncios.</li>
+          <li><strong>Linguagem financeira restrita:</strong> Evite "renda garantida", "sem risco". Use "oportunidade" e "potencial".</li>
+        </ul>
+        <p>Para solicitar revisão: vá no anúncio reprovado → clique em <strong>"Solicitar revisão"</strong>. Se negar novamente, edite o texto e republique.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Quanto tempo esperar antes de mexer no anúncio?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p><strong>Mínimo 3 dias — idealmente 4 a 5 dias.</strong></p>
+        <p>O algoritmo do Facebook precisa de tempo para aprender quem clica e quem compra. Mexer antes destrói esse aprendizado e você recomeça do zero — desperdiçando dinheiro.</p>
+        <div class="danger"><strong>⚠️ Nunca faça isso:</strong> Pausar e religar o anúncio todo dia, mudar o budget mais de uma vez por dia, ou editar o texto antes de 3 dias. Isso é o que mais desperdiça dinheiro no Facebook Ads.</div>
+        <div class="tip"><strong>✅ Regra prática:</strong> Depois de 4 dias, se o CTR estiver abaixo de 1%, troque o criativo. Se estiver acima de 2%, aumente o budget em 20-30%.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como criar o público de remarketing?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>No Ads Manager, vá em <strong>Públicos → Criar público → Público personalizado</strong></li>
+          <li>Selecione <strong>"Site"</strong> como fonte</li>
+          <li>Escolha: <strong>"Todos os visitantes do site"</strong> nos últimos 30 dias</li>
+          <li>Dê um nome: "Visitantes 30 dias"</li>
+          <li>Salve e use esse público num conjunto de anúncios separado</li>
+        </ol>
+        <div class="tip"><strong>💡 Dica:</strong> O remarketing só funciona depois que o Pixel instalado na página coletar pelo menos 100 visitantes. Comece o remarketing após a primeira semana de anúncios.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">O que é CTR e como melhorar?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p><strong>CTR (Click-Through Rate)</strong> é a porcentagem de pessoas que viram e clicaram no seu anúncio.</p>
+        <p>Referência para o seu produto:</p>
+        <ul>
+          <li>🟢 <strong>Acima de 2%</strong> — excelente, aumente o budget</li>
+          <li>🟡 <strong>1% a 2%</strong> — aceitável, tente melhorar o criativo</li>
+          <li>🔴 <strong>Abaixo de 1%</strong> — troque o criativo ou a primeira linha do texto</li>
+        </ul>
+        <p>Como melhorar o CTR:</p>
+        <ul>
+          <li>Mude a primeira linha do texto — ela é responsável por 80% do resultado</li>
+          <li>Use imagens com alto contraste e texto grande e direto</li>
+          <li>Teste um vídeo no lugar da imagem estática</li>
+          <li>Verifique se o público não está saturado (frequência acima de 3)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Estou gastando mas não vendendo. O que verificar?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Siga esse diagnóstico em ordem:</p>
+        <ol>
+          <li><strong>CTR está acima de 1%?</strong> Se sim, o anúncio funciona — o problema é a página de vendas. Se não, o problema é o criativo.</li>
+          <li><strong>A página abre no celular?</strong> Mais de 80% dos cliques vêm do mobile. Teste agora pelo seu celular.</li>
+          <li><strong>O botão de compra aparece sem rolar?</strong> Se o cliente tiver que rolar muito para achar o CTA, você perde a venda.</li>
+          <li><strong>O link da Cakto está correto?</strong> Teste clicar no botão da sua página e confirme que vai para o checkout.</li>
+          <li><strong>O Pixel está registrando?</strong> Use a extensão "Meta Pixel Helper" no Chrome para verificar.</li>
+        </ol>
+        <div class="tip"><strong>💡 Regra geral:</strong> Cliques chegando mas sem vendas = problema na página. Sem cliques = problema no anúncio.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAKTO -->
+  <div class="cat-section" data-cat="cakto">
+    <div class="cat-header">
+      <div class="cat-icon cakto">🛒</div>
+      <div class="cat-title">Cakto</div>
+      <span class="cat-count">5 respostas</span>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como cadastrar meu produto na Cakto?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>Acesse <a href="https://cakto.com.br" target="_blank">cakto.com.br</a> e crie sua conta</li>
+          <li>Vá em <strong>Produtos → Novo Produto</strong></li>
+          <li>Tipo: <strong>Produto Digital</strong></li>
+          <li>Nome: <em>As 3 Letras que Me Fizeram Sair do CLT: PDF</em></li>
+          <li>Preço: <strong>R$67</strong></li>
+          <li>Em <strong>"URL de obrigado"</strong>, cole: <code>seuusuario.github.io/lucas-pdf/entrega.html</code></li>
+          <li>Salve e copie o link de checkout gerado</li>
+        </ol>
+        <div class="success">✅ Após salvar, substitua o link de compra na sua página de vendas (index.html) pelo link da Cakto e faça upload novamente no GitHub.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como a Cakto entrega o produto para o cliente?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>A Cakto não hospeda os arquivos — ela apenas processa o pagamento e redireciona o cliente.</p>
+        <p>O fluxo de entrega funciona assim:</p>
+        <ol>
+          <li>Cliente paga no checkout da Cakto</li>
+          <li>A Cakto redireciona automaticamente para sua página de entrega (entrega.html)</li>
+          <li>Na página de entrega, o cliente clica nos botões de download</li>
+          <li>Os botões abrem os arquivos no Google Drive</li>
+        </ol>
+        <div class="tip"><strong>💡 Importante:</strong> Certifique-se de que os links do Google Drive estão configurados para "Qualquer pessoa com o link pode visualizar". Do contrário, o cliente não consegue baixar.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como sacar o dinheiro das vendas?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>No painel da Cakto, vá em <strong>Financeiro → Saques</strong></li>
+          <li>Cadastre sua conta bancária ou chave Pix</li>
+          <li>Solicite o saque — o prazo varia conforme a Cakto (geralmente D+15 para cartão)</li>
+          <li>Vendas via Pix têm liberação mais rápida</li>
+        </ol>
+        <div class="tip"><strong>💡 Dica:</strong> Ative o Pix como método de pagamento na Cakto. Ele tem aprovação instantânea e saque mais rápido — o que melhora seu fluxo de caixa no início.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como fazer um pedido de teste para ver se está funcionando?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>No painel da Cakto, vá nas configurações do produto</li>
+          <li>Procure a opção <strong>"Modo de teste"</strong> ou <strong>"Pedido de teste"</strong></li>
+          <li>Faça uma compra de teste para verificar todo o fluxo</li>
+          <li>Confirme que o redirecionamento para entrega.html funciona</li>
+          <li>Confirme que os links do Google Drive abrem corretamente</li>
+        </ol>
+        <div class="success">✅ Sempre faça um teste antes de ligar os anúncios. Descobrir um problema depois que o cliente pagou é muito pior do que descobrir antes.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Um cliente pediu reembolso. O que faço?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Reembolsos fazem parte do negócio. Enfrente com naturalidade:</p>
+        <ol>
+          <li>No painel da Cakto, localize o pedido do cliente</li>
+          <li>Clique em <strong>"Reembolsar"</strong></li>
+          <li>Confirme o reembolso — a Cakto processa automaticamente</li>
+        </ol>
+        <div class="tip"><strong>💡 Perspectiva:</strong> Uma taxa de reembolso abaixo de 5% é completamente normal e saudável. Se estiver acima disso, revise a comunicação do produto — talvez a expectativa criada não esteja alinhada com o que é entregue.</div>
+        <div class="success">✅ Nunca discuta com o cliente nem dificulte o reembolso. A garantia de 7 dias é um diferencial de venda — honre ela sem questionamentos.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CANVA & PDF -->
+  <div class="cat-section" data-cat="canva">
+    <div class="cat-header">
+      <div class="cat-icon canva">🎨</div>
+      <div class="cat-title">Canva & Criação de PDF</div>
+      <span class="cat-count">5 respostas</span>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como criar um PDF profissional no Canva gratuitamente?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>Acesse <a href="https://canva.com" target="_blank">canva.com</a> e crie sua conta gratuita</li>
+          <li>Clique em <strong>"Criar design" → "Documento A4"</strong></li>
+          <li>Na barra de pesquisa de templates, busque por <strong>"Ebook"</strong> ou <strong>"Guia"</strong></li>
+          <li>Escolha um template e customize com suas cores e texto</li>
+          <li>Adicione novas páginas clicando no <strong>"+"</strong> no painel de páginas</li>
+          <li>Para exportar: <strong>Compartilhar → Baixar → PDF padrão</strong></li>
+        </ol>
+        <div class="tip"><strong>💡 Dica de design:</strong> Use no máximo 2 fontes, mantenha margens generosas e use cores consistentes. Simplicidade converte mais que excesso de elementos.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Qual tamanho de arquivo é recomendado para o PDF?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>O ideal é que o PDF tenha <strong>menos de 10MB</strong> para facilitar o download e evitar problemas no Google Drive.</p>
+        <p>Para reduzir o tamanho:</p>
+        <ul>
+          <li>No Canva, ao exportar, escolha <strong>"PDF compactado"</strong> em vez de PDF padrão</li>
+          <li>Evite imagens de altíssima resolução no interior do PDF</li>
+          <li>Use o site <a href="https://ilovepdf.com" target="_blank">ilovepdf.com</a> para comprimir gratuitamente</li>
+        </ul>
+        <div class="success">✅ Um PDF bem comprimido carrega mais rápido, melhora a experiência do cliente e reduz reclamações.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como subir o PDF no Google Drive e gerar o link de download?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>Acesse <a href="https://drive.google.com" target="_blank">drive.google.com</a></li>
+          <li>Clique em <strong>"+ Novo" → "Upload de arquivo"</strong></li>
+          <li>Selecione seu PDF</li>
+          <li>Após o upload, clique com botão direito no arquivo → <strong>"Compartilhar"</strong></li>
+          <li>Clique em <strong>"Alterar para qualquer pessoa com o link"</strong></li>
+          <li>Mude a permissão para <strong>"Visualizador"</strong></li>
+          <li>Clique em <strong>"Copiar link"</strong></li>
+        </ol>
+        <div class="danger"><strong>⚠️ Atenção:</strong> Se esquecer de mudar para "qualquer pessoa com o link", o cliente verá uma tela de "Acesso negado" ao tentar baixar.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como criar a imagem do anúncio no Canva?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <ol>
+          <li>No Canva, clique em <strong>"Criar design"</strong></li>
+          <li>Pesquise <strong>"Facebook Ad"</strong> — o tamanho correto é 1200x628px</li>
+          <li>Use fundo escuro (preto ou azul-escuro) para se destacar no feed</li>
+          <li>Coloque o texto principal grande e legível</li>
+          <li>Adicione um elemento de contraste — uma cor vibrante, um número grande</li>
+          <li>Exporte como <strong>PNG</strong> para melhor qualidade</li>
+        </ol>
+        <div class="tip"><strong>💡 Dica:</strong> Imagens simples com texto direto geralmente superam imagens muito elaboradas em CTR. Teste sempre.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Posso usar fontes e elementos do Canva comercialmente?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p><strong>Sim!</strong> O Canva Free permite uso comercial dos elementos e fontes disponíveis gratuitamente. Você pode usar nos seus produtos digitais, anúncios e páginas de vendas sem problema.</p>
+        <div class="tip"><strong>💡 Atenção:</strong> Elementos marcados com coroa (Canva Pro) não estão disponíveis no plano gratuito. Se usar por acidente, o Canva vai te avisar na hora do download.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GERAL -->
+  <div class="cat-section" data-cat="geral">
+    <div class="cat-header">
+      <div class="cat-icon geral">❓</div>
+      <div class="cat-title">Dúvidas Gerais</div>
+      <span class="cat-count">5 respostas</span>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Preciso ter CNPJ para vender com a Cakto?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p><strong>Não.</strong> Você pode começar como pessoa física usando seu CPF. A Cakto aceita cadastro com CPF normalmente.</p>
+        <p>Quando começar a faturar bem (acima de R$3.000/mês), vale abrir um MEI para emitir nota fiscal e pagar menos imposto. Mas para começar, CPF resolve.</p>
+        <div class="tip"><strong>💡 Dica:</strong> Abrir MEI é gratuito e leva menos de 10 minutos no portal gov.br. Faça quando estiver gerando renda consistente.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Quanto tempo leva para fazer a primeira venda?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Depende muito de como você divulga. Com anúncios pagos:</p>
+        <ul>
+          <li><strong>Primeiros cliques:</strong> dentro de horas após ligar o anúncio</li>
+          <li><strong>Primeira venda:</strong> geralmente entre o 2º e o 5º dia</li>
+          <li><strong>Resultado consistente:</strong> após 2-3 semanas de otimização</li>
+        </ul>
+        <div class="tip"><strong>💡 Expectativa realista:</strong> Os primeiros dias servem para o algoritmo aprender. Não se preocupe se não vender no primeiro dia — isso é completamente normal.</div>
+        <div class="danger"><strong>⚠️ Evite:</strong> Pausar os anúncios nas primeiras 48h por ansiedade. Isso destrói o aprendizado do algoritmo e desperdiça o investimento inicial.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Posso vender para outros países?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Sim! Portugal e outros países lusófonos são mercados excelentes para produtos em português.</p>
+        <p>Para vender internacionalmente:</p>
+        <ul>
+          <li>Configure a Cakto para aceitar pagamentos internacionais</li>
+          <li>No Facebook Ads, adicione Portugal, Angola e Moçambique como localizações</li>
+          <li>O conteúdo do seu PDF já funciona para esses mercados</li>
+        </ul>
+        <div class="tip"><strong>💡 Dica:</strong> Comece focado no Brasil. Depois que estiver com resultado consistente, expanda para Portugal — o CPM é mais barato e a concorrência é menor.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como coletar depoimentos dos clientes?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Depoimentos são ouro para aumentar conversão. Veja como conseguir:</p>
+        <ol>
+          <li>7 dias após a compra, envie uma mensagem no WhatsApp perguntando como está sendo a experiência</li>
+          <li>Se o feedback for positivo, peça uma avaliação em texto ou vídeo curto</li>
+          <li>Facilite: envie as perguntas prontas ("O que você achou do produto? Você recomendaria?")</li>
+          <li>Ofereça um bônus extra em troca do depoimento em vídeo</li>
+        </ol>
+        <div class="success">✅ Com 5 depoimentos reais na página de vendas, sua conversão pode dobrar. Priorize conseguir depoimentos nas primeiras semanas.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        <span class="faq-q-text">Como adicionar depoimentos na página de vendas?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Quando tiver os primeiros depoimentos, me manda mensagem no WhatsApp que adiciono para você na página — ou siga esses passos:</p>
+        <ol>
+          <li>Abra o <strong>index.html</strong> no bloco de notas</li>
+          <li>Antes da seção <strong>&lt;!-- FAQ --&gt;</strong>, adicione uma nova seção de depoimentos</li>
+          <li>Suba o arquivo atualizado no GitHub</li>
+        </ol>
+        <div class="tip"><strong>💡 Dica:</strong> Depoimentos com foto da pessoa e nome completo convertem muito mais do que depoimentos anônimos. Sempre peça autorização para usar a imagem.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NO RESULTS -->
+  <div class="no-results" id="noResults">
+    <div class="emoji">🔍</div>
+    <h3>Nenhum resultado encontrado</h3>
+    <p>Não encontramos resposta para sua dúvida. Fala diretamente com o Lucas no WhatsApp!</p>
+  </div>
+
+  <!-- CALCULADORA -->
+  <div class="cat-section" data-cat="calc">
+    <div class="cat-header">
+      <div class="cat-icon" style="background:rgba(245,166,35,0.1)">🧮</div>
+      <div class="cat-title" style="color:var(--dark)">Calculadora de ROAS & Lucro</div>
+      <span class="cat-count">4 ferramentas</span>
+    </div>
+
+    <div style="background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:10px;">
+
+      <!-- CALC TABS -->
+      <div style="display:flex;gap:4px;padding:16px 16px 0;flex-wrap:wrap;border-bottom:1px solid var(--border);">
+        <button class="calc-tab active" onclick="showCalcTab('roas',this)" style="padding:8px 18px;border-radius:8px 8px 0 0;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'Manrope',sans-serif;background:var(--dark);color:white;">📊 ROAS & Lucro</button>
+        <button class="calc-tab" onclick="showCalcTab('breakeven',this)" style="padding:8px 18px;border-radius:8px 8px 0 0;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'Manrope',sans-serif;background:var(--light);color:var(--gray);">⚖️ Ponto de Equilíbrio</button>
+        <button class="calc-tab" onclick="showCalcTab('escala',this)" style="padding:8px 18px;border-radius:8px 8px 0 0;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'Manrope',sans-serif;background:var(--light);color:var(--gray);">🚀 Simulador de Escala</button>
+        <button class="calc-tab" onclick="showCalcTab('projecao',this)" style="padding:8px 18px;border-radius:8px 8px 0 0;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'Manrope',sans-serif;background:var(--light);color:var(--gray);">📅 Projeção Mensal</button>
+      </div>
+
+      <div style="padding:28px;">
+
+        <!-- ROAS -->
+        <div id="cpanel-roas" class="cpanel">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+            <div>
+              <p style="font-size:13px;color:var(--gray);margin-bottom:20px">Preencha com seus dados reais — atualiza em tempo real.</p>
+              <div class="cfield"><label class="clabel">Gasto total em anúncios</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="gasto" value="300" oninput="calcRoas()" min="0"></div></div>
+              <div class="cfield"><label class="clabel">Número de vendas</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="vendas" value="7" oninput="calcRoas()" min="0"></div></div>
+              <div class="cfield"><label class="clabel">Preço do produto (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="preco" value="67" oninput="calcRoas()" min="0"></div></div>
+              <div class="cfield"><label class="clabel">Cliques na página</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="cliques" value="400" oninput="calcRoas()" min="0"></div></div>
+              <div class="cfield"><label class="clabel">Taxa da plataforma (%)</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="taxa" value="5" oninput="calcRoas()" min="0"><span class="csfx">%</span></div></div>
+            </div>
+            <div>
+              <div style="background:var(--dark);border-radius:14px;padding:24px;">
+                <div id="roas-num" style="font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:1;color:var(--gold)">1.6x</div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:14px">ROAS</div>
+                <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden;margin-bottom:20px"><div id="roas-bar" style="height:100%;width:30%;background:var(--gold);border-radius:100px;transition:width 0.4s,background 0.4s"></div></div>
+                <div class="crow"><span class="crow-l">Receita bruta</span><span class="crow-v" id="r-receita">R$469</span></div>
+                <div class="crow"><span class="crow-l">Custo anúncios</span><span class="crow-v" style="color:#ff6b6b" id="r-gasto">-R$300</span></div>
+                <div class="crow"><span class="crow-l">Taxa plataforma</span><span class="crow-v" style="color:#ff6b6b" id="r-taxa">-R$23</span></div>
+                <div class="crow" style="border-bottom:none"><span class="crow-l">Lucro líquido</span><span class="crow-v" id="r-lucro" style="font-size:18px">R$146</span></div>
+                <div style="height:1px;background:rgba(255,255,255,0.08);margin:12px 0"></div>
+                <div class="crow"><span class="crow-l">CPA</span><span class="crow-v" id="r-cpa">R$43</span></div>
+                <div class="crow" style="border-bottom:none"><span class="crow-l">CVR da página</span><span class="crow-v" id="r-cvr">1.8%</span></div>
+                <div id="r-verdict" style="margin-top:16px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);border-radius:10px;padding:14px;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6">🟡 Campanha no limite. Melhore o CVR da página.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BREAKEVEN -->
+        <div id="cpanel-breakeven" class="cpanel" style="display:none">
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px">Descubra quantas vendas você precisa por dia para cobrir o gasto.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+            <div class="cfield"><label class="clabel">Preço do produto (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="be-preco" value="67" oninput="calcBreakeven()" min="1"></div></div>
+            <div class="cfield"><label class="clabel">Budget diário (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="be-budget" value="30" oninput="calcBreakeven()" min="1"></div></div>
+            <div class="cfield"><label class="clabel">Taxa da plataforma (%)</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="be-taxa" value="5" oninput="calcBreakeven()" min="0"><span class="csfx">%</span></div></div>
+            <div class="cfield"><label class="clabel">Outros custos/mês (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="be-outros" value="0" oninput="calcBreakeven()" min="0"></div></div>
+          </div>
+          <div id="be-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px"></div>
+          <div id="be-verdict" style="background:rgba(0,196,140,0.08);border:1px solid rgba(0,196,140,0.25);border-radius:10px;padding:14px;font-size:14px;color:#005a3c;line-height:1.6"></div>
+        </div>
+
+        <!-- ESCALA -->
+        <div id="cpanel-escala" class="cpanel" style="display:none">
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px">Veja o lucro em 6 cenários de budget mantendo seu ROAS atual.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px">
+            <div class="cfield"><label class="clabel">Preço do produto (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="sc-preco" value="67" oninput="calcEscala()" min="1"></div></div>
+            <div class="cfield"><label class="clabel">ROAS atual</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="sc-roas" value="2" oninput="calcEscala()" min="0.1" step="0.1"><span class="csfx">x</span></div></div>
+            <div class="cfield"><label class="clabel">Taxa plataforma (%)</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="sc-taxa" value="5" oninput="calcEscala()" min="0"><span class="csfx">%</span></div></div>
+          </div>
+          <div style="display:grid;gap:8px" id="sc-rows"></div>
+        </div>
+
+        <!-- PROJEÇÃO -->
+        <div id="cpanel-projecao" class="cpanel" style="display:none">
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px">Projeção para os próximos 6 meses com base no seu desempenho atual.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+            <div class="cfield"><label class="clabel">Vendas na última semana</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="pj-vendas" value="7" oninput="calcProjecao()" min="0"></div></div>
+            <div class="cfield"><label class="clabel">Preço do produto (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="pj-preco" value="67" oninput="calcProjecao()" min="1"></div></div>
+            <div class="cfield"><label class="clabel">Gasto semanal em anúncios (R$)</label><div class="cfield-wrap"><span class="cpfx">R$</span><input class="cinput" type="number" id="pj-gasto" value="210" oninput="calcProjecao()" min="0"></div></div>
+            <div class="cfield"><label class="clabel">Crescimento mensal esperado (%)</label><div class="cfield-wrap"><input class="cinput cnpfx" type="number" id="pj-cresc" value="20" oninput="calcProjecao()" min="0"><span class="csfx">%</span></div></div>
+          </div>
+          <div style="overflow-x:auto"><table id="pj-table" style="width:100%;border-collapse:collapse;font-size:14px">
+            <thead><tr style="background:var(--dark);color:white">
+              <th style="padding:12px 14px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase">Mês</th>
+              <th style="padding:12px 14px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase">Vendas</th>
+              <th style="padding:12px 14px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase">Receita</th>
+              <th style="padding:12px 14px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase">Gasto Ads</th>
+              <th style="padding:12px 14px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase">Lucro</th>
+              <th style="padding:12px 14px;text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase">ROAS</th>
+            </tr></thead>
+            <tbody id="pj-body"></tbody>
+          </table></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- STILL STUCK -->
+  <div class="still-stuck">
+    <h2>Ainda com dúvida?</h2>
+    <p>Não encontrou o que precisava? Manda mensagem diretamente — respondo o mais rápido possível.</p>
+    <a href="https://wa.me/55SEU_NUMERO?text=Oi%20Lucas!%20Comprei%20o%20PDF%20e%20preciso%20de%20ajuda%20com%20uma%20d%C3%BAvida." class="wpp-big" target="_blank">
+      💬 Falar no WhatsApp
+    </a>
+  </div>
+
+</main>
+
+<script>
+  // TOGGLE FAQ
+  function toggleFaq(item) {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // FILTER BY CATEGORY
+  function filterCat(cat, pill) {
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    document.querySelectorAll('.cat-section').forEach(s => {
+      s.style.display = (cat === 'all' || s.dataset.cat === cat) ? 'block' : 'none';
+    });
+    document.getElementById('searchInput').value = '';
+    document.getElementById('noResults').style.display = 'none';
+  }
+
+  // SEARCH
+  function filterFaqs() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    let found = 0;
+
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    document.querySelector('.cat-pill').classList.add('active');
+    document.querySelectorAll('.cat-section').forEach(s => s.style.display = 'block');
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const text = item.innerText.toLowerCase();
+      const match = q === '' || text.includes(q);
+      item.style.display = match ? 'block' : 'none';
+      if (match) found++;
+    });
+
+    document.querySelectorAll('.cat-section').forEach(s => {
+      const visible = [...s.querySelectorAll('.faq-item')].some(i => i.style.display !== 'none');
+      s.style.display = visible ? 'block' : 'none';
+    });
+
+    document.getElementById('noResults').style.display = (found === 0 && q !== '') ? 'block' : 'none';
+  }
+
+  // ── CALCULATOR ──
+  const fmt = v => 'R$' + Math.abs(v).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0});
+  const fmtN = v => v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1});
+
+  function showCalcTab(id, btn) {
+    document.querySelectorAll('.cpanel').forEach(p => p.style.display = 'none');
+    document.querySelectorAll('.calc-tab').forEach(b => { b.style.background = 'var(--light)'; b.style.color = 'var(--gray)'; });
+    document.getElementById('cpanel-' + id).style.display = 'block';
+    btn.style.background = 'var(--dark)'; btn.style.color = 'white';
+  }
+
+  function calcRoas() {
+    const gasto = parseFloat(document.getElementById('gasto').value) || 0;
+    const vendas = parseFloat(document.getElementById('vendas').value) || 0;
+    const preco = parseFloat(document.getElementById('preco').value) || 0;
+    const cliques = parseFloat(document.getElementById('cliques').value) || 0;
+    const taxa = parseFloat(document.getElementById('taxa').value) || 0;
+    const receita = vendas * preco;
+    const taxaVal = receita * (taxa / 100);
+    const lucro = receita - taxaVal - gasto;
+    const roas = gasto > 0 ? receita / gasto : 0;
+    const cpa = vendas > 0 ? gasto / vendas : 0;
+    const cvr = cliques > 0 ? (vendas / cliques) * 100 : 0;
+
+    document.getElementById('roas-num').textContent = fmtN(roas) + 'x';
+    document.getElementById('r-receita').textContent = fmt(receita);
+    document.getElementById('r-gasto').textContent = '-' + fmt(gasto);
+    document.getElementById('r-taxa').textContent = '-' + fmt(taxaVal);
+    document.getElementById('r-lucro').textContent = (lucro < 0 ? '-' : '') + fmt(lucro);
+    document.getElementById('r-cpa').textContent = fmt(cpa);
+    document.getElementById('r-cvr').textContent = fmtN(cvr) + '%';
+
+    const bar = document.getElementById('roas-bar');
+    const roasEl = document.getElementById('roas-num');
+    const verdict = document.getElementById('r-verdict');
+    bar.style.width = Math.min((roas / 4) * 100, 100) + '%';
+
+    if (roas >= 3) {
+      bar.style.background = 'var(--green)'; roasEl.style.color = 'var(--green)';
+      verdict.style.cssText = 'margin-top:16px;background:rgba(0,196,140,0.15);border:1px solid rgba(0,196,140,0.3);border-radius:10px;padding:14px;font-size:13px;color:rgba(255,255,255,0.9);line-height:1.6';
+      verdict.textContent = '🟢 Excelente! Aumente o budget em 20-30% e escale com confiança.';
+    } else if (roas >= 1.5) {
+      bar.style.background = 'var(--gold)'; roasEl.style.color = 'var(--gold)';
+      verdict.style.cssText = 'margin-top:16px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);border-radius:10px;padding:14px;font-size:13px;color:rgba(255,255,255,0.9);line-height:1.6';
+      verdict.textContent = '🟡 No limite. Otimize o CVR da página de vendas para aumentar o lucro sem gastar mais.';
+    } else {
+      bar.style.background = 'var(--red)'; roasEl.style.color = 'var(--red)';
+      verdict.style.cssText = 'margin-top:16px;background:rgba(233,69,96,0.15);border:1px solid rgba(233,69,96,0.3);border-radius:10px;padding:14px;font-size:13px;color:rgba(255,255,255,0.9);line-height:1.6';
+      verdict.textContent = '🔴 Prejuízo. Pause a campanha, revise o criativo e a página antes de continuar investindo.';
+    }
+    document.getElementById('r-lucro').style.color = lucro >= 0 ? 'var(--green)' : 'var(--red)';
+  }
+
+  function calcBreakeven() {
+    const preco = parseFloat(document.getElementById('be-preco').value) || 67;
+    const budget = parseFloat(document.getElementById('be-budget').value) || 30;
+    const taxa = parseFloat(document.getElementById('be-taxa').value) || 5;
+    const outros = parseFloat(document.getElementById('be-outros').value) || 0;
+    const lucroVenda = preco * (1 - taxa / 100);
+    const custoMes = (budget * 30) + outros;
+    const vendasBreak = custoMes / lucroVenda;
+    const vendasDia = vendasBreak / 30;
+    const cpaMax = budget / vendasDia;
+    document.getElementById('be-grid').innerHTML = `
+      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;border:1px solid var(--border)">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:6px">Vendas/mês p/ empatar</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:#8a6000">${Math.ceil(vendasBreak)}</div>
+      </div>
+      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;border:1px solid var(--border)">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:6px">Vendas/dia p/ empatar</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:#8a6000">${fmtN(vendasDia)}</div>
+      </div>
+      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;border:1px solid var(--border)">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:6px">CPA máximo permitido</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--red)">${fmt(cpaMax)}</div>
+      </div>
+      <div style="background:var(--light);border-radius:10px;padding:16px;text-align:center;border:1px solid var(--border)">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:6px">Lucro por venda</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--green)">${fmt(lucroVenda)}</div>
+      </div>`;
+    document.getElementById('be-verdict').textContent =
+      `Com R$${budget}/dia, você precisa de ${fmtN(vendasDia)} venda(s)/dia para empatar. Cada venda acima disso gera ${fmt(lucroVenda)} de lucro líquido.`;
+  }
+
+  function calcEscala() {
+    const preco = parseFloat(document.getElementById('sc-preco').value) || 67;
+    const roas = parseFloat(document.getElementById('sc-roas').value) || 2;
+    const taxa = parseFloat(document.getElementById('sc-taxa').value) || 5;
+    const cenarios = [
+      {label:'🌱 Teste inicial', budget:10},
+      {label:'📈 Crescimento', budget:30},
+      {label:'⚡ Aceleração', budget:50},
+      {label:'🔥 Escala média', budget:100},
+      {label:'🚀 Escala alta', budget:200},
+      {label:'💎 Profissional', budget:500},
+    ];
+    let html = `<div class="sc-row sc-header"><div>Cenário</div><div>Budget/dia</div><div>Receita/mês</div><div>Lucro/mês</div></div>`;
+    cenarios.forEach(c => {
+      const bMes = c.budget * 30;
+      const receita = bMes * roas;
+      const lucro = receita * (1 - taxa/100) - bMes;
+      const color = lucro > 0 ? '#007a57' : '#8a0020';
+      html += `<div class="sc-row"><div style="font-weight:700">${c.label}</div><div style="color:#8a6000;font-weight:700">${fmt(c.budget)}/dia</div><div style="font-weight:700">${fmt(receita)}/mês</div><div style="color:${color};font-weight:700">${lucro>=0?'':'-'}${fmt(lucro)}/mês</div></div>`;
+    });
+    document.getElementById('sc-rows').innerHTML = html;
+  }
+
+  function calcProjecao() {
+    const vendasSem = parseFloat(document.getElementById('pj-vendas').value) || 7;
+    const preco = parseFloat(document.getElementById('pj-preco').value) || 67;
+    const gastoSem = parseFloat(document.getElementById('pj-gasto').value) || 210;
+    const cresc = parseFloat(document.getElementById('pj-cresc').value) || 20;
+    const meses = ['Mês 1 (Atual)','Mês 2','Mês 3','Mês 4','Mês 5','Mês 6'];
+    let v = vendasSem * 4.3, g = gastoSem * 4.3, html = '';
+    meses.forEach((m, i) => {
+      const rec = v * preco, lucro = rec - g, roasV = g > 0 ? rec / g : 0;
+      const lc = lucro > 0 ? '#007a57' : '#8a0020';
+      const rc = roasV >= 3 ? '#007a57' : roasV >= 1.5 ? '#8a6000' : '#8a0020';
+      const bg = i === 2 ? 'background:rgba(0,196,140,0.05)' : i%2===0 ? 'background:white' : 'background:var(--light)';
+      html += `<tr style="${bg}">
+        <td style="padding:11px 14px;font-weight:700;color:${i===0?'#8a6000':'var(--dark)'}">${m}</td>
+        <td style="padding:11px 14px">${Math.round(v)}</td>
+        <td style="padding:11px 14px">${fmt(rec)}</td>
+        <td style="padding:11px 14px;color:#8a0020">${fmt(g)}</td>
+        <td style="padding:11px 14px;color:${lc};font-weight:700">${lucro>=0?'':'-'}${fmt(lucro)}</td>
+        <td style="padding:11px 14px;color:${rc};font-weight:700">${fmtN(roasV)}x</td>
+      </tr>`;
+      v *= (1 + cresc/100); g *= (1 + cresc/100);
+    });
+    document.getElementById('pj-body').innerHTML = html;
+  }
+
+  // Init calculadora
+  calcRoas(); calcBreakeven(); calcEscala(); calcProjecao();
+</script>
+</body>
+</html>
