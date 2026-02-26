@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seus Materiais VIP — Pacote Completo de Lançamento</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e94560;
+    --dark: #0f0f1a;
+    --dark2: #1a1a2e;
+    --gold: #f5a623;
+    --green: #00c48c;
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+    --white: #ffffff;
+    --gray: #8a8a9a;
+    --light: #f8f8fc;
+    --border: #e5e7eb;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Manrope',sans-serif; background:var(--light); color:var(--dark); min-height:100vh; }
+
+  header {
+    background:var(--dark); padding:20px 32px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  .logo { font-family:'Bebas Neue',sans-serif; font-size:22px; color:white; letter-spacing:1px; }
+  .logo span { color:var(--gold); }
+  .header-badge {
+    background:rgba(245,166,35,0.15); border:1px solid rgba(245,166,35,0.3);
+    color:var(--gold); font-size:12px; font-weight:700; padding:6px 14px;
+    border-radius:100px; letter-spacing:1px; text-transform:uppercase;
+  }
+
+  /* HERO VIP */
+  .hero {
+    background:linear-gradient(135deg, #0a0a14, #1a1a2e);
+    padding:60px 20px 50px; text-align:center; position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute;
+    width:600px; height:600px;
+    background:radial-gradient(circle, rgba(245,166,35,0.14) 0%, transparent 70%);
+    top:-150px; left:50%; transform:translateX(-50%);
+    pointer-events:none;
+  }
+  .hero::after {
+    content:''; position:absolute;
+    width:300px; height:300px;
+    background:radial-gradient(circle, rgba(233,69,96,0.10) 0%, transparent 70%);
+    bottom:-80px; right:10%;
+    pointer-events:none;
+  }
+  .vip-crown { font-size:64px; margin-bottom:12px; animation:bounce 1s ease; position:relative; z-index:1; }
+  .vip-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(245,166,35,0.15); border:1px solid rgba(245,166,35,0.4);
+    color:var(--gold); font-size:11px; font-weight:800; letter-spacing:3px;
+    text-transform:uppercase; padding:8px 18px; border-radius:100px;
+    margin-bottom:16px; position:relative; z-index:1;
+  }
+  .hero h1 {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(36px,7vw,72px);
+    color:white; line-height:1; margin-bottom:16px;
+    position:relative; z-index:1;
+  }
+  .hero h1 span { color:var(--gold); }
+  .hero p {
+    font-size:16px; color:rgba(255,255,255,0.55);
+    max-width:520px; margin:0 auto; line-height:1.7;
+    position:relative; z-index:1;
+  }
+  .hero p strong { color:white; }
+
+  main { max-width:720px; margin:0 auto; padding:48px 20px 80px; }
+
+  /* STEPS */
+  .steps {
+    display:flex; gap:8px; align-items:center; justify-content:center;
+    margin-bottom:40px; flex-wrap:wrap;
+  }
+  .step-item { display:flex; align-items:center; gap:8px; }
+  .step-dot {
+    width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:800;
+  }
+  .step-dot.done { background:var(--green); color:white; }
+  .step-dot.active { background:var(--gold); color:var(--dark); }
+  .step-label { font-size:13px; font-weight:600; }
+  .step-label.done { color:var(--green); }
+  .step-label.active { color:var(--dark); }
+  .step-arrow { color:var(--border); font-size:18px; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size:11px; font-weight:700; letter-spacing:3px;
+    text-transform:uppercase; margin-bottom:16px; text-align:center;
+  }
+  .section-title.red { color:var(--red); }
+  .section-title.gold { color:var(--gold); }
+  .section-title.blue { color:var(--blue); }
+  .section-title.purple { color:var(--purple); }
+
+  .section-divider {
+    display:flex; align-items:center; gap:12px; margin:32px 0 20px;
+  }
+  .section-divider::before, .section-divider::after {
+    content:''; flex:1; height:1px; background:var(--border);
+  }
+  .section-divider span {
+    font-size:11px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; color:var(--gray); white-space:nowrap;
+  }
+
+  /* DOWNLOAD CARDS */
+  .download-card {
+    background:white; border:1px solid var(--border);
+    border-radius:16px; overflow:hidden; margin-bottom:12px;
+    transition:box-shadow 0.2s, transform 0.2s;
+  }
+  .download-card:hover { box-shadow:0 8px 32px rgba(0,0,0,0.08); transform:translateY(-2px); }
+  .download-card-inner { padding:20px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+
+  .file-icon {
+    width:52px; height:52px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px; flex-shrink:0;
+  }
+  .file-icon.red   { background:rgba(233,69,96,0.1); }
+  .file-icon.gold  { background:rgba(245,166,35,0.1); }
+  .file-icon.blue  { background:rgba(59,130,246,0.1); }
+  .file-icon.purple{ background:rgba(139,92,246,0.1); }
+  .file-icon.green { background:rgba(0,196,140,0.1); }
+
+  .file-info { flex:1; min-width:180px; }
+  .file-tag {
+    font-size:10px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; margin-bottom:5px;
+  }
+  .file-tag.red    { color:var(--red); }
+  .file-tag.gold   { color:var(--gold); }
+  .file-tag.blue   { color:var(--blue); }
+  .file-tag.purple { color:var(--purple); }
+  .file-tag.green  { color:var(--green); }
+  .file-name { font-size:15px; font-weight:700; color:var(--dark); margin-bottom:3px; line-height:1.3; }
+  .file-meta { font-size:12px; color:var(--gray); }
+
+  .btn-download {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:8px;
+    font-size:13px; font-weight:800; text-decoration:none;
+    transition:transform 0.2s, box-shadow 0.2s; white-space:nowrap;
+    font-family:'Manrope',sans-serif; border:none; cursor:pointer;
+  }
+  .btn-download.red    { background:var(--red); color:white; box-shadow:0 4px 16px rgba(233,69,96,0.3); }
+  .btn-download.gold   { background:var(--gold); color:var(--dark); box-shadow:0 4px 16px rgba(245,166,35,0.25); }
+  .btn-download.blue   { background:var(--blue); color:white; box-shadow:0 4px 16px rgba(59,130,246,0.25); }
+  .btn-download.purple { background:var(--purple); color:white; box-shadow:0 4px 16px rgba(139,92,246,0.25); }
+  .btn-download.green  { background:var(--green); color:white; box-shadow:0 4px 16px rgba(0,196,140,0.25); }
+  .btn-download:hover  { transform:translateY(-2px); }
+
+  /* VIP HIGHLIGHT BOX */
+  .vip-box {
+    background:linear-gradient(135deg, rgba(245,166,35,0.08), rgba(233,69,96,0.04));
+    border:1px solid rgba(245,166,35,0.25);
+    border-radius:16px; padding:20px 24px; margin-bottom:12px;
+  }
+  .vip-box-label {
+    font-size:10px; font-weight:800; letter-spacing:3px;
+    text-transform:uppercase; color:var(--gold); margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .vip-box-label::after {
+    content:''; flex:1; height:1px; background:rgba(245,166,35,0.2);
+  }
+
+  /* TOOLS GRID */
+  .tools-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+  .tool-card {
+    background:white; border:1px solid var(--border); border-radius:12px;
+    padding:18px; text-align:center; text-decoration:none; color:var(--dark);
+    transition:transform 0.2s, box-shadow 0.2s;
+  }
+  .tool-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+  .tool-card-icon { font-size:28px; margin-bottom:8px; }
+  .tool-card-title { font-size:13px; font-weight:700; margin-bottom:4px; }
+  .tool-card-desc { font-size:11px; color:var(--gray); line-height:1.4; }
+  .tool-card-badge {
+    display:inline-block; margin-top:8px;
+    font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    padding:3px 10px; border-radius:100px;
+  }
+
+  /* NEXT STEPS */
+  .next-steps {
+    background:var(--dark); border-radius:16px; padding:28px; margin:32px 0;
+  }
+  .next-steps h3 { font-family:'Bebas Neue',sans-serif; font-size:28px; color:white; margin-bottom:20px; }
+  .next-step-item {
+    display:flex; gap:16px; align-items:flex-start;
+    padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .next-step-item:last-child { border-bottom:none; }
+  .next-num {
+    width:32px; height:32px; border-radius:8px;
+    background:var(--gold); color:var(--dark);
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:800; flex-shrink:0;
+  }
+  .next-info strong { font-size:14px; color:white; display:block; margin-bottom:3px; }
+  .next-info span { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.5; }
+
+  /* PROGRESS */
+  .progress-card {
+    background:white; border:1px solid var(--border);
+    border-radius:16px; padding:24px; margin-bottom:24px;
+  }
+  .progress-card h3 { font-size:15px; font-weight:700; margin-bottom:16px; }
+  .checklist-item {
+    display:flex; align-items:center; gap:14px;
+    padding:11px 0; border-bottom:1px solid var(--border);
+    cursor:pointer; user-select:none;
+  }
+  .checklist-item:last-child { border-bottom:none; }
+  .check-circle {
+    width:22px; height:22px; border-radius:50%;
+    border:2px solid var(--border); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.2s; font-size:11px; color:white;
+  }
+  .checklist-item.checked .check-circle { background:var(--green); border-color:var(--green); }
+  .checklist-item.checked .check-text { text-decoration:line-through; color:var(--gray); }
+  .check-text { font-size:13px; color:var(--dark); line-height:1.4; transition:all 0.2s; }
+  .progress-bar-wrap { margin-top:16px; }
+  .progress-bar-label { font-size:11px; font-weight:700; color:var(--gray); margin-bottom:6px; display:flex; justify-content:space-between; }
+  .progress-bar { height:6px; background:var(--border); border-radius:100px; overflow:hidden; }
+  .progress-fill { height:100%; background:linear-gradient(90deg, var(--gold), #ffcd6b); border-radius:100px; transition:width 0.5s ease; }
+
+  /* SUPPORT */
+  .support-card {
+    background:rgba(245,166,35,0.06); border:1px solid rgba(245,166,35,0.2);
+    border-radius:14px; padding:24px; text-align:center; margin-bottom:24px;
+  }
+  .support-card h3 { font-size:15px; font-weight:700; margin-bottom:6px; }
+  .support-card p { font-size:13px; color:var(--gray); line-height:1.6; margin-bottom:14px; }
+  .support-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .support-btn {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:8px;
+    font-size:13px; font-weight:700; text-decoration:none; transition:background 0.2s;
+  }
+  .support-btn.dark { background:var(--dark); color:white; }
+  .support-btn.dark:hover { background:var(--red); }
+  .support-btn.wpp { background:#25d366; color:white; }
+  .support-btn.wpp:hover { opacity:0.85; }
+
+  footer {
+    background:var(--dark); padding:28px 20px;
+    text-align:center; color:rgba(255,255,255,0.2);
+    font-size:12px; line-height:1.8;
+  }
+
+  @keyframes bounce {
+    0%,100%{ transform:translateY(0); }
+    40%{ transform:translateY(-16px); }
+    60%{ transform:translateY(-8px); }
+  }
+  @media(max-width:600px){
+    .download-card-inner { flex-direction:column; align-items:flex-start; }
+    .btn-download { width:100%; justify-content:center; }
+    .tools-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lucas <span>PDF</span></div>
+  <span class="header-badge">⭐ Pacote VIP confirmado</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="vip-crown">👑</div>
+  <div class="vip-badge">✦ Pacote Completo de Lançamento</div>
+  <h1>Tudo pronto,<br><span>acesso completo liberado!</span></h1>
+  <p>Você garantiu o pacote completo. <strong>Todos os seus materiais</strong> estão disponíveis abaixo — produto principal, bônus e todos os arquivos do pacote de lançamento.</p>
+</div>
+
+<main>
+
+  <!-- STEPS -->
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-dot done">✓</div>
+      <span class="step-label done">Pagamento</span>
+    </div>
+    <span class="step-arrow">→</span>
+    <div class="step-item">
+      <div class="step-dot done">✓</div>
+      <span class="step-label done">Upsell</span>
+    </div>
+    <span class="step-arrow">→</span>
+    <div class="step-item">
+      <div class="step-dot active">3</div>
+      <span class="step-label active">Downloads</span>
+    </div>
+    <span class="step-arrow">→</span>
+    <div class="step-item">
+      <div class="step-dot" style="background:var(--border);color:var(--gray)">4</div>
+      <span class="step-label" style="color:var(--gray)">Lançar</span>
+    </div>
+  </div>
+
+  <!-- PRODUTO PRINCIPAL -->
+  <p class="section-title red">Produto principal</p>
+
+  <div class="download-card">
+    <div class="download-card-inner">
+      <div class="file-icon red">📘</div>
+      <div class="file-info">
+        <div class="file-tag red">✦ Produto principal</div>
+        <div class="file-name">As 3 Letras que Me Fizeram Sair do CLT: PDF</div>
+        <div class="file-meta">26 páginas · PDF · Acesso vitalício</div>
+      </div>
+      <a href="SEU_LINK_GOOGLE_DRIVE_PDF_PRINCIPAL" target="_blank" class="btn-download red">⬇ Baixar</a>
+    </div>
+  </div>
+
+  <div class="download-card">
+    <div class="download-card-inner">
+      <div class="file-icon gold">🎁</div>
+      <div class="file-info">
+        <div class="file-tag gold">🎁 Bônus exclusivo</div>
+        <div class="file-name">Guia de Métricas & Otimização Facebook Ads</div>
+        <div class="file-meta">16 páginas · PDF · Incluso gratuitamente</div>
+      </div>
+      <a href="SEU_LINK_GOOGLE_DRIVE_BONUS" target="_blank" class="btn-download gold">⬇ Baixar</a>
+    </div>
+  </div>
+
+  <!-- PACOTE VIP -->
+  <div class="section-divider"><span>⭐ Pacote de Lançamento — exclusivo para você</span></div>
+
+  <div class="vip-box">
+    <div class="vip-box-label">📁 Todos os arquivos do pacote numa pasta só</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> Guia Completo de Lançamento Digital (PDF)
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> 5 prompts de criativos com análise psicológica
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> Template 01 — Landing Page Fitness (HTML)
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> Template 02 — Landing Page Finanças (HTML)
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> Template 03 — Landing Page Produtividade (HTML)
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> Template 04 — Landing Page Mães (HTML)
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);">
+        <span style="color:var(--gold);font-weight:800;">✓</span> Template 05 — Landing Page Negócio Local (HTML)
+      </div>
+    </div>
+
+    <a href="https://drive.google.com/drive/folders/1pYcdMR_0OeEFyDb4vuKtuhERzA84WoEb?usp=drive_link"
+       target="_blank"
+       style="
+         display:flex; align-items:center; justify-content:center; gap:12px;
+         background:var(--gold); color:#0f0f1a;
+         padding:18px 24px; border-radius:12px;
+         font-size:16px; font-weight:900; text-decoration:none;
+         box-shadow:0 8px 32px rgba(245,166,35,0.35);
+         transition:transform .2s, box-shadow .2s;
+       "
+       onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 40px rgba(245,166,35,0.5)'"
+       onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(245,166,35,0.35)'"
+    >
+      <span style="font-size:22px;">📁</span>
+      Acessar pasta com todos os arquivos →
+    </a>
+  </div>
+
+  <!-- FERRAMENTAS -->
+  <div class="section-divider"><span>Ferramentas incluídas</span></div>
+  <div class="tools-grid">
+    <a href="suporte.html" class="tool-card">
+      <div class="tool-card-icon">🛟</div>
+      <div class="tool-card-title">Central de Suporte</div>
+      <div class="tool-card-desc">28 respostas para as dúvidas mais comuns</div>
+      <span class="tool-card-badge" style="background:rgba(233,69,96,0.1);color:var(--red)">Abrir →</span>
+    </a>
+    <a href="suporte.html#calc" class="tool-card">
+      <div class="tool-card-icon">🧮</div>
+      <div class="tool-card-title">Calculadora de ROAS</div>
+      <div class="tool-card-desc">4 módulos: lucro, escala, projeção</div>
+      <span class="tool-card-badge" style="background:rgba(245,166,35,0.1);color:var(--gold)">Calcular →</span>
+    </a>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="progress-card">
+    <h3>✅ Checklist de progresso</h3>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Baixei o PDF principal</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Baixei o Bônus de Métricas</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Baixei o Guia de Lançamento (PDF)</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Baixei os 5 templates HTML</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Li o guia do Canva e criei meu criativo</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Publiquei minha landing page no GitHub</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Cadastrei meu produto na Cakto</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Subi meu primeiro anúncio no Facebook Ads</span>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this)">
+      <div class="check-circle">✓</div>
+      <span class="check-text">Fiz minha primeira venda 🎉</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-label"><span>Progresso</span><span id="pct">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="pbar" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <div class="next-steps">
+    <h3>Seus próximos 7 dias</h3>
+    <div class="next-step-item">
+      <div class="next-num">1</div>
+      <div class="next-info">
+        <strong>Hoje — Baixe tudo e leia o guia principal</strong>
+        <span>Foque no capítulo de nicho e estrutura de conteúdo antes de qualquer coisa.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">2</div>
+      <div class="next-info">
+        <strong>Dia 2 — Crie seu criativo no Canva</strong>
+        <span>Siga os 16 passos do Guia de Lançamento. Use o Prompt 01 ou 05 no Leonardo AI.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">3</div>
+      <div class="next-info">
+        <strong>Dia 3 — Publique sua landing page</strong>
+        <span>Escolha um dos 5 templates, personalize e suba no GitHub Pages seguindo o guia.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">4</div>
+      <div class="next-info">
+        <strong>Dia 4 — Configure a Cakto</strong>
+        <span>Cadastre o produto, configure o redirect para a entrega e faça um pedido de teste.</span>
+      </div>
+    </div>
+    <div class="next-step-item">
+      <div class="next-num">5</div>
+      <div class="next-info">
+        <strong>Dias 5, 6 e 7 — Suba os anúncios</strong>
+        <span>R$10/dia por variação. 3 copies diferentes. Aguarde 3 dias antes de analisar.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPORTE -->
+  <div class="support-card">
+    <h3>Precisa de ajuda?</h3>
+    <p>Dúvida técnica, problema com arquivo ou qualquer coisa — estou disponível.</p>
+    <div class="support-row">
+      <a href="suporte.html" class="support-btn dark">🛟 Central de Suporte</a>
+      <a href="https://wa.me/55SEU_NUMERO?text=Oi%20Lucas!%20Comprei%20o%20Pacote%20VIP%20e%20preciso%20de%20ajuda." target="_blank" class="support-btn wpp">💬 WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Lucas PDF · Todos os direitos reservados<br>
+  Produto digital · Entrega imediata · Acesso vitalício
+</footer>
+
+<script>
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  updateProgress();
+}
+function updateProgress() {
+  const items = document.querySelectorAll('.checklist-item');
+  const done = [...items].filter(i => i.classList.contains('checked')).length;
+  const pct = Math.round((done / items.length) * 100);
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('pbar').style.width = pct + '%';
+}
+</script>
+
+</body>
+</html>
