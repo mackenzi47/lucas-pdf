@@ -175,38 +175,48 @@
   }
   .price-note{
     font-size:12px; color:rgba(255,255,255,0.35);
-    line-height:1.6; margin-bottom:24px;
+    line-height:1.6; margin-bottom:18px;
   }
 
-  .btn-accept{
-    display:block; width:100%;
-    background:var(--red); color:white;
-    border:none; border-radius:12px;
-    padding:18px 20px;
-    font-family:'Manrope',sans-serif;
-    font-size:16px; font-weight:900;
-    cursor:pointer; text-decoration:none; text-align:center;
-    box-shadow:0 12px 40px rgba(233,69,96,0.40);
-    transition:transform .2s, box-shadow .2s;
-    margin-bottom:10px;
+  /* ===== BOTÕES 1-CLIQUE (Cakto Web Components) ===== */
+  /* Aceitar (mesmo visual do seu .btn-accept) */
+  cakto-upsell-accept::part(button){
+    width:100%;
+    background:var(--red) !important;
+    color:#fff !important;
+    border:none !important;
+    border-radius:12px !important;
+    padding:18px 20px !important;
+    font-family:'Manrope',sans-serif !important;
+    font-size:16px !important;
+    font-weight:900 !important;
+    cursor:pointer !important;
+    text-decoration:none !important;
+    box-shadow:0 12px 40px rgba(233,69,96,0.40) !important;
+    transition:transform .2s, box-shadow .2s !important;
   }
-  .btn-accept:hover{
+  cakto-upsell-accept::part(button):hover{
     transform:translateY(-3px);
-    box-shadow:0 20px 56px rgba(233,69,96,0.55);
+    box-shadow:0 20px 56px rgba(233,69,96,0.55) !important;
   }
 
-  .btn-reject{
-    display:block; width:100%;
-    background:transparent;
-    color:rgba(255,255,255,0.35);
-    border:none;
-    padding:12px 20px;
-    font-family:'Manrope',sans-serif;
-    font-size:12px; font-weight:600;
-    cursor:pointer; text-decoration:none; text-align:center;
-    transition:color .2s;
+  /* Rejeitar (mesmo visual do seu .btn-reject) */
+  cakto-upsell-reject::part(button){
+    width:100%;
+    background:transparent !important;
+    border:none !important;
+    color:rgba(255,255,255,0.35) !important;
+    padding:12px 20px !important;
+    font-family:'Manrope',sans-serif !important;
+    font-size:12px !important;
+    font-weight:600 !important;
+    cursor:pointer !important;
+    transition:color .2s !important;
+    margin-top:10px !important;
   }
-  .btn-reject:hover{ color:rgba(255,255,255,0.55); }
+  cakto-upsell-reject::part(button):hover{
+    color:rgba(255,255,255,0.55) !important;
+  }
 
   .security{
     margin-top:14px;
@@ -295,25 +305,34 @@
           </div>
 
           <div class="delivery-note">
-            <strong>✅ Entrega imediata</strong> — após o pagamento você acessa todos os arquivos diretamente na página seguinte.
+            <strong>✅ Entrega imediata</strong> — após a decisão, você acessa todos os arquivos diretamente na página seguinte.
           </div>
         </div>
 
-        <!-- RIGHT — PREÇO + BOTÕES -->
+        <!-- RIGHT — PREÇO + BOTÕES 1-CLIQUE -->
         <div class="price-box">
           <div class="old-price">De R$97</div>
           <div class="price">R$27</div>
           <div class="price-note">pagamento único • acesso imediato<br>garantia de 7 dias</div>
 
-          <!-- ACEITAR → checkout Cakto do upsell -->
-          <a href="https://pay.cakto.com.br/rz538qw_784936" class="btn-accept">
-            ✅ Sim, quero o pacote completo →
-          </a>
+          <!-- ✅ BOTÕES 1-CLIQUE DA CAKTO (NO LUGAR DOS LINKS) -->
+          <cakto-upsell-buttons>
+            <cakto-upsell-accept
+              bg-color="#0f7865"
+              text-color="#ffffff"
+              upsell-accept-url="https://mackenzi47.github.io/lucas-pdf/entregavip.html"
+              offer-id="rz538qw"
+              app-base-url="https://app.cakto.com.br"
+              offer-type="upsell"
+              upsell-reject-url="https://mackenzi47.github.io/lucas-pdf/entrega.html">
+              ✅ Sim, quero o pacote completo →
+            </cakto-upsell-accept>
 
-          <!-- REJEITAR → entrega normal -->
-          <a href="https://mackenzi47.github.io/lucas-pdf/entrega.html" class="btn-reject">
-            Não, quero ir para meus materiais
-          </a>
+            <cakto-upsell-reject
+              upsell-reject-url="https://mackenzi47.github.io/lucas-pdf/entrega.html">
+              Não, quero ir para meus materiais
+            </cakto-upsell-reject>
+          </cakto-upsell-buttons>
 
           <div class="security">
             🔒 Pagamento 100% seguro via Cakto<br>
@@ -324,7 +343,7 @@
       </div>
 
       <div class="footer">
-        © 2025 Lucas PDF · Esta oferta aparece apenas uma vez, logo após a compra.<br>
+        © 2026 Lucas PDF · Esta oferta aparece apenas uma vez, logo após a compra.<br>
         Produto digital · Entrega imediata · Garantia de 7 dias
       </div>
 
@@ -349,6 +368,9 @@
   tick();
 })();
 </script>
+
+<!-- Script oficial do 1-clique -->
+<script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 
 </body>
 </html>
