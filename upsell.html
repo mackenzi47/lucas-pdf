@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oferta Pós-Compra — Pacote Completo de Lançamento</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red: #e94560;
+    --dark: #0f0f1a;
+    --dark2: #1a1a2e;
+    --gold: #f5a623;
+    --white: #ffffff;
+    --gray: #8a8a9a;
+    --light: #f8f8fc;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Manrope',sans-serif;
+    background:var(--dark);
+    color:var(--white);
+    overflow-x:hidden;
+  }
+
+  .wrap{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:70px 20px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .wrap::before{
+    content:'';
+    position:absolute;
+    width:650px;height:650px;
+    background:radial-gradient(circle, rgba(233,69,96,0.20) 0%, transparent 70%);
+    top:-200px;left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+  }
+  .wrap::after{
+    content:'';
+    position:absolute;
+    width:420px;height:420px;
+    background:radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+    bottom:-160px;right:-160px;
+    pointer-events:none;
+  }
+
+  .container{
+    width:100%;
+    max-width:920px;
+    position:relative;
+  }
+
+  .badge{
+    display:inline-block;
+    background:rgba(245,166,35,0.12);
+    border:1px solid rgba(245,166,35,0.35);
+    color:var(--gold);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    padding:10px 18px;
+    border-radius:999px;
+    margin:0 auto 18px;
+  }
+
+  .card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:18px;
+    box-shadow:0 24px 70px rgba(0,0,0,0.35);
+    overflow:hidden;
+  }
+
+  .top{
+    padding:34px 30px 26px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    background:linear-gradient(135deg, rgba(233,69,96,0.18), rgba(15,15,26,0.2));
+  }
+
+  h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(44px,6.5vw,78px);
+    letter-spacing:2px;
+    line-height:0.95;
+    margin:10px 0 10px;
+  }
+  h1 .hl{color:var(--gold);display:block}
+
+  .sub{
+    max-width:760px;
+    margin:0 auto;
+    color:rgba(255,255,255,0.72);
+    font-size:16px;
+    line-height:1.8;
+    font-weight:600;
+  }
+  .sub strong{color:#fff}
+
+  .body{
+    padding:28px 30px 30px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:18px;
+  }
+
+  .box{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:18px 18px 16px;
+  }
+
+  .box h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:34px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+
+  .list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+  }
+  .li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    color:rgba(255,255,255,0.78);
+    line-height:1.6;
+    font-size:14px;
+  }
+  .li .check{
+    color:var(--red);
+    font-weight:900;
+    min-width:18px;
+    padding-top:2px;
+  }
+
+  .value{
+    color:rgba(255,255,255,0.65);
+    font-size:13px;
+    line-height:1.7;
+    margin-top:10px;
+  }
+
+  .priceBox{
+    text-align:center;
+    padding:22px 18px;
+  }
+  .old{
+    color:rgba(255,255,255,0.35);
+    text-decoration:line-through;
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:8px;
+  }
+  .price{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:74px;
+    line-height:1;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  .note{
+    color:rgba(255,255,255,0.50);
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+
+  /* ── Estilização dos botões Cakto (mantém o snippet) ── */
+  cakto-upsell-accept::part(button){
+    width:100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: .3px;
+    cursor:pointer;
+    box-shadow:0 10px 42px rgba(233,69,96,0.40);
+    transition: transform .2s, box-shadow .2s, filter .2s;
+  }
+  cakto-upsell-accept::part(button):hover{
+    transform: translateY(-3px);
+    box-shadow:0 18px 56px rgba(233,69,96,0.55);
+    filter:saturate(1.05);
+  }
+
+  cakto-upsell-reject::part(button){
+    width:100%;
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor:pointer;
+    transition: transform .2s, background .2s, border-color .2s;
+    margin-top:10px;
+  }
+  cakto-upsell-reject::part(button):hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.30);
+  }
+
+  .smallWarn{
+    margin-top:12px;
+    font-size:12px;
+    color:rgba(255,255,255,0.45);
+    line-height:1.6;
+  }
+
+  .footerLine{
+    padding:18px 30px 26px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:rgba(255,255,255,0.45);
+    font-size:12px;
+    line-height:1.7;
+    text-align:center;
+  }
+
+  @media (max-width: 900px){
+    .body{grid-template-columns:1fr; }
+  }
+</style>
+</head>
+
+<body>
+<section class="wrap">
+  <div class="container">
+
+    <div class="card">
+      <div class="top">
+        <div class="badge">✅ OFERTA PÓS-COMPRA • 1 CLIQUE</div>
+
+        <h1>
+          Antes de ir…
+          <span class="hl">leve o Pacote Completo de Lançamento</span>
+        </h1>
+
+        <p class="sub">
+          Você já garantiu o guia principal. Agora eu quero te dar o caminho mais rápido pra você
+          <strong>não travar na execução</strong> e colocar sua estrutura no ar com velocidade.
+        </p>
+      </div>
+
+      <div class="body">
+        <div class="box">
+          <h2>O que você recebe agora</h2>
+
+          <ul class="list">
+            <li class="li"><span class="check">✓</span> <b>5 prompts prontos</b> para criar páginas e ofertas (nichos diferentes) — só copiar e adaptar.</li>
+            <li class="li"><span class="check">✓</span> <b>Guia Canva (16 passos)</b> pra deixar sua página com cara de produto profissional.</li>
+            <li class="li"><span class="check">✓</span> <b>GitHub Pages (8 passos)</b> pra publicar sua página sem pagar hospedagem no começo.</li>
+            <li class="li"><span class="check">✓</span> <b>Checklist completo (25 itens)</b> dividido em antes/durante/depois do lançamento.</li>
+            <li class="li"><span class="check">✓</span> <b>5 templates HTML</b> (Fitness, Finanças, Produtividade, Mães, Negócio Local).</li>
+          </ul>
+
+          <p class="value">
+            ✅ Entrega imediata: você recebe agora e consegue aplicar ainda hoje.
+          </p>
+        </div>
+
+        <div class="box priceBox">
+          <div class="old">De R$97</div>
+          <div class="price">R$27</div>
+          <div class="note">pagamento único • aceite em 1 clique</div>
+
+          <!-- SNIPPET CAKTO (mantido) -->
+          <cakto-upsell-buttons>
+            <cakto-upsell-accept
+              bg-color="#0f7865"
+              text-color="#ffffff"
+              upsell-accept-url="members_area"
+              offer-id="z5mwske"
+              app-base-url="https://app.cakto.com.br"
+              offer-type="upsell"
+              upsell-reject-url="members_area">
+              Sim, quero aproveitar a oferta
+            </cakto-upsell-accept>
+
+            <cakto-upsell-reject upsell-reject-url="members_area">
+              Não, eu não quero aproveitar a oferta
+            </cakto-upsell-reject>
+          </cakto-upsell-buttons>
+
+          <div class="smallWarn">
+            ⚠️ Essa oferta aparece apenas agora, logo após a compra. Se você recusar, segue para a área de membros.
+          </div>
+
+          <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+        </div>
+      </div>
+
+      <div class="footerLine">
+        © 2026 Lucas • Oferta pós-compra exibida automaticamente pelo funil da Cakto.
+      </div>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>
