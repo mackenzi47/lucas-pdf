@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>As 3 Letras que Me Fizeram Sair do CLT: PDF</title>
+
+<!-- SEO + Preview (WhatsApp/Instagram) -->
+<meta name="description" content="Guia prático para criar, lançar e vender seu primeiro infoproduto em PDF — mesmo com 0 seguidores. Acesso imediato.">
+<meta property="og:title" content="As 3 Letras que Me Fizeram Sair do CLT: PDF">
+<meta property="og:description" content="Em 7 dias: PDF pronto + página + checkout na Cakto. Bônus grátis: Guia de Métricas Facebook Ads.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://SEU-DOMINIO/thumbnail.jpg">
+<meta property="og:url" content="https://SEU-DOMINIO/">
+<meta name="twitter:card" content="summary_large_image">
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -98,7 +108,7 @@
     font-size: clamp(16px, 2.5vw, 20px);
     color: rgba(255,255,255,0.65);
     margin-top: 28px;
-    max-width: 600px;
+    max-width: 720px;
     line-height: 1.6;
     font-weight: 500;
     animation: fadeDown 0.7s ease 0.2s both;
@@ -106,8 +116,21 @@
 
   .hero-sub strong { color: var(--white); }
 
+  .hero-bullets{
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+    color:rgba(255,255,255,0.7);
+    font-size:14px;
+    line-height:1.5;
+    animation: fadeDown 0.7s ease 0.25s both;
+  }
+  .hero-bullets b{ color:#fff; }
+
   .cta-wrap {
-    margin-top: 48px;
+    margin-top: 40px;
     animation: fadeDown 0.7s ease 0.3s both;
     display: flex;
     flex-direction: column;
@@ -247,7 +270,7 @@
     text-align: center;
     color: rgba(255,255,255,0.5);
     font-size: 16px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .cards-grid {
@@ -285,6 +308,41 @@
     color: rgba(255,255,255,0.5);
     line-height: 1.6;
   }
+
+  /* ── 3 PERFIS (NOVO) ── */
+  .profiles {
+    background: #121224;
+    padding: 80px 20px;
+  }
+  .profiles h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(34px,6vw,56px);
+    text-align:center;
+    margin-bottom:14px;
+  }
+  .profiles .sub{
+    text-align:center;
+    color:rgba(255,255,255,0.55);
+    max-width:760px;
+    margin:0 auto 40px;
+    line-height:1.7;
+    font-size:16px;
+  }
+  .profiles-grid{
+    max-width:900px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:18px;
+  }
+  .profile{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 26px;
+  }
+  .profile b{ color:#fff; }
+  .profile p{ color: rgba(255,255,255,0.6); font-size:14px; line-height:1.7; }
 
   /* ── WHAT YOU LEARN ── */
   .what-learn {
@@ -364,7 +422,7 @@
   }
 
   .price-box {
-    max-width: 480px;
+    max-width: 520px;
     margin: 0 auto;
     background: var(--dark2);
     border: 1px solid rgba(233,69,96,0.3);
@@ -372,6 +430,7 @@
     padding: 48px 40px;
     position: relative;
     overflow: hidden;
+    text-align:left;
   }
 
   .price-box::before {
@@ -382,11 +441,17 @@
     background: linear-gradient(90deg, var(--red), var(--gold));
   }
 
+  .price-top{
+    text-align:center;
+    margin-bottom:24px;
+  }
+
   .price-box .old-price {
     font-size: 16px;
     color: rgba(255,255,255,0.35);
     text-decoration: line-through;
     margin-bottom: 8px;
+    text-align:center;
   }
 
   .price-box .price {
@@ -395,17 +460,32 @@
     color: var(--gold);
     line-height: 1;
     margin-bottom: 4px;
+    text-align:center;
   }
 
   .price-box .price-note {
     font-size: 14px;
     color: rgba(255,255,255,0.4);
-    margin-bottom: 32px;
+    margin-bottom: 18px;
+    text-align:center;
   }
+
+  .value-stack{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0 22px;
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .value-stack b{ color:#fff; }
+  .value-stack .cut{ text-decoration:line-through; opacity:.55; }
 
   .includes {
     text-align: left;
-    margin-bottom: 36px;
+    margin-bottom: 22px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -413,29 +493,39 @@
 
   .include-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     font-size: 15px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.82);
+    line-height: 1.45;
   }
 
   .include-item .check {
     color: var(--red);
     font-size: 18px;
     min-width: 24px;
+    padding-top:2px;
+  }
+
+  .offer-cta{
+    width:100%;
+    text-align:center;
+    display:block;
+    margin-top: 18px;
   }
 
   .guarantee {
-    margin-top: 24px;
+    margin-top: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.45);
     font-size: 13px;
+    text-align:center;
   }
 
-  .guarantee .shield { font-size: 24px; }
+  .guarantee .shield { font-size: 22px; }
 
   /* ── FAQ ── */
   .faq {
@@ -496,7 +586,7 @@
     transition: max-height 0.4s ease, padding 0.3s;
   }
 
-  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+  .faq-item.open .faq-a { max-height: 340px; padding-bottom: 20px; }
   .faq-item.open .arrow { transform: rotate(45deg); }
 
   /* ── FINAL CTA ── */
@@ -515,9 +605,9 @@
 
   .final-cta p {
     font-size: 18px;
-    opacity: 0.85;
+    opacity: 0.88;
     margin-bottom: 40px;
-    max-width: 500px;
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
@@ -616,10 +706,19 @@
     As 3 letras que me<br>fizeram sair do CLT:
     <span class="pdf-word">PDF</span>
   </h1>
+
   <p class="hero-sub">
-    Como criar, lançar e vender seu primeiro infoproduto em PDF —
-    <strong>sem audiência, sem experiência, sem desculpas.</strong>
+    Um passo a passo pra você criar e colocar seu primeiro infoproduto no ar —
+    <strong>mesmo com 0 seguidores</strong>.
+    Em 7 dias, você terá <strong>PDF pronto + página + checkout na Cakto</strong>.
   </p>
+
+  <div class="hero-bullets">
+    <div>✅ <b>Sem achismo:</b> como escolher um tema com demanda</div>
+    <div>✅ <b>Sem designer:</b> PDF profissional com ferramentas simples</div>
+    <div>✅ <b>Sem travar nos anúncios:</b> bônus de métricas pra saber o que fazer em cada situação</div>
+  </div>
+
   <div class="cta-wrap">
     <a href="#comprar" class="btn-cta">QUERO MEU PDF AGORA →</a>
     <span class="price-tag">Por apenas <strong>R$67</strong> — acesso imediato</span>
@@ -631,16 +730,16 @@
 <section class="story">
   <div class="container">
     <p class="section-label">A história real por trás deste guia</p>
-    <h2>Fui demitido depois de criar um sistema que ajudou a empresa inteira.</h2>
+    <h2>Eu achei que estava seguro… até perceber que segurança no CLT é ilusão.</h2>
 
     <p>Meu nome é <strong>Lucas</strong>. Não venho de família rica. Não tive herança, nem conexões, nem rede de apoio. O que eu sempre tive foi vontade de mudar de vida — e a certeza de que o digital era o caminho mais rápido para isso.</p>
 
-    <p>Estudei muito. Corri atrás. E quando a Inteligência Artificial chegou com força, percebi que o jogo havia mudado de vez. Aprendi programação praticamente do zero e, com ajuda da IA, desenvolvi um sistema completo de controle de estoque para a empresa onde trabalhava.</p>
+    <p>Estudei muito. Corri atrás. E quando a Inteligência Artificial chegou com força, percebi que o jogo havia mudado. Com ajuda da IA, aprendi programação praticamente do zero e desenvolvi um sistema completo de controle de estoque para a empresa onde eu trabalhava.</p>
 
     <img src="dashboard.png" alt="Dashboard do Sistema de Inventário criado por Lucas" class="dashboard-img" onerror="this.style.display='none'">
     <p class="img-caption">▲ Sistema de Inventário desenvolvido do zero com auxílio de IA — sem experiência prévia em programação.</p>
 
-    <p>Me senti invencível. Pensei: <em>"agora meu emprego está garantido."</em></p>
+    <p>Eu pensei: <em>"agora meu emprego está garantido."</em></p>
 
     <p>Então <strong>a empresa pegou fogo</strong>. Literalmente. E junto com as chamas, vieram os cortes. Mesmo tendo entregado muito — mesmo sendo parte da solução — meu nome estava no meio da lista de demitidos.</p>
 
@@ -648,13 +747,13 @@
       "Naquele momento entendi: não importa o quanto você se dedique, você nunca está seguro dependendo de uma única fonte de renda que não é sua."
     </div>
 
-    <p>A demissão me forçou a fazer o que eu deveria ter feito muito antes: ir de vez para o digital. Sem rede de segurança. Só eu, meu conhecimento e as ferramentas certas.</p>
+    <p>A demissão me forçou a tomar a decisão que eu deveria ter tomado antes: construir algo meu no digital. E foi um simples <strong>PDF</strong> que iniciou a virada.</p>
 
-    <p>Criei este guia para que <strong>você não precise esperar ser demitido para tomar essa decisão.</strong> Três letras foram suficientes para começar minha virada. Podem ser as suas também.</p>
+    <p>Criei este guia para que <strong>você não precise esperar ser demitido para começar.</strong> Três letras foram suficientes para eu dar o primeiro passo. Podem ser as suas também.</p>
   </div>
 </section>
 
-<!-- FOR WHO -->
+<!-- FOR WHO (MANTIDO) -->
 <section class="for-who">
   <p class="section-label" style="text-align:center">Este guia é para você?</p>
   <h2>Este guia foi feito para quem...</h2>
@@ -669,7 +768,7 @@
     <div class="card">
       <div class="card-icon">💸</div>
       <h3>Precisa de renda extra</h3>
-      <p>O salário não fecha o mês e você quer uma fonte de renda paralela que funcione enquanto você dorme.</p>
+      <p>O salário não fecha o mês e você quer uma fonte de renda paralela que funcione de forma previsível.</p>
     </div>
     <div class="card">
       <div class="card-icon">📱</div>
@@ -694,7 +793,31 @@
   </div>
 </section>
 
-<!-- WHAT YOU LEARN -->
+<!-- 3 PERFIS (NOVO, PARA OS 3 PÚBLICOS) -->
+<section class="profiles">
+  <div class="container">
+    <p class="section-label" style="text-align:center;color:var(--red)">Para os 3 tipos de pessoas</p>
+    <h2>Se você é 1 desses 3… isso aqui encaixa perfeito</h2>
+    <p class="sub">Eu pensei no guia pra funcionar tanto pra quem tem <b>0 seguidores</b>, quanto pra quem está no <b>CLT</b> e pra quem <b>já tentou e travou</b>.</p>
+
+    <div class="profiles-grid">
+      <div class="profile">
+        <p><b>📉 “Tenho 0 seguidores”</b></p>
+        <p>Você precisa de um tema com demanda + um PDF que resolve um problema real + uma página simples. O guia te entrega esse caminho sem depender de audiência.</p>
+      </div>
+      <div class="profile">
+        <p><b>⛓️ “Tô preso no CLT”</b></p>
+        <p>Você precisa de um plano direto: criar, colocar no ar e vender. Sem complicação, sem “anos de conteúdo”. Só execução.</p>
+      </div>
+      <div class="profile">
+        <p><b>🧱 “Já tentei e travei”</b></p>
+        <p>Você precisa de estrutura (checklist + templates) e de clareza pra não gastar dinheiro sem entender os números. O bônus de métricas resolve essa parte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LEARN (MANTIDO) -->
 <section class="what-learn">
   <p class="section-label" style="text-align:center;color:var(--red)">Conteúdo completo</p>
   <h2 style="color:var(--dark)">O que você vai aprender</h2>
@@ -712,7 +835,7 @@
       <span class="chapter-num">CAPÍTULO 1</span>
       <div class="chapter-info">
         <h4>O mercado de infoprodutos no Brasil</h4>
-        <p>Por que esse mercado é uma mina de ouro e os nichos que mais vendem.</p>
+        <p>Como funciona na prática e por que PDFs são o jeito mais rápido de começar.</p>
       </div>
     </div>
     <div class="divider"></div>
@@ -720,7 +843,7 @@
       <span class="chapter-num">CAPÍTULO 2</span>
       <div class="chapter-info">
         <h4>Escolhendo seu nicho e tema</h4>
-        <p>A fórmula para encontrar um tema que o mercado realmente quer comprar.</p>
+        <p>A fórmula para encontrar um tema que as pessoas realmente querem comprar.</p>
       </div>
     </div>
     <div class="divider"></div>
@@ -760,7 +883,7 @@
       <span class="chapter-num">CAPÍTULO 7</span>
       <div class="chapter-info">
         <h4>Página de vendas que converte</h4>
-        <p>Os 10 elementos que toda página de vendas de sucesso precisa ter.</p>
+        <p>Os 10 elementos que toda página de vendas precisa ter.</p>
       </div>
     </div>
     <div class="divider"></div>
@@ -768,7 +891,7 @@
       <span class="chapter-num">CAPÍTULO 8</span>
       <div class="chapter-info">
         <h4>Copy e textos de marketing</h4>
-        <p>A fórmula AIDA e templates prontos para Instagram e WhatsApp.</p>
+        <p>AIDA + templates prontos para Instagram e WhatsApp.</p>
       </div>
     </div>
     <div class="divider"></div>
@@ -783,8 +906,8 @@
     <div class="chapter-item">
       <span class="chapter-num">CAPÍTULO 10</span>
       <div class="chapter-info">
-        <h4>Escalando: de R$500 a R$5.000/mês</h4>
-        <p>As 4 alavancas para multiplicar seus resultados com infoprodutos.</p>
+        <h4>Escalando: crescer mês a mês</h4>
+        <p>As 4 alavancas para evoluir seus resultados com consistência.</p>
       </div>
     </div>
     <div class="divider"></div>
@@ -798,7 +921,7 @@
   </div>
 </section>
 
-<!-- BONUS -->
+<!-- BONUS (MANTIDO + COPY MELHORADA) -->
 <section class="what-learn" style="background:#fff9f0;">
   <p class="section-label" style="text-align:center;color:var(--red)">🎁 Bônus exclusivo incluso</p>
   <h2 style="color:var(--dark);text-align:center">Você também leva isso de graça</h2>
@@ -808,47 +931,49 @@
       <div style="font-size:48px;">📊</div>
       <div>
         <div style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:6px">BÔNUS — Valor R$47 — GRÁTIS</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;line-height:1.1">Guia de Métricas & Otimização<br>Facebook Ads</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;line-height:1.1">Guia Completo de Métricas & Otimização<br>Facebook Ads</div>
       </div>
     </div>
     <div style="padding:28px 32px;">
-      <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:24px">
-        Depois que seu produto estiver pronto, você vai precisar anunciar. E a maioria das pessoas perde dinheiro porque não sabe ler os números. Este guia resolve isso — ele te ensina exatamente o que fazer em cada situação.
+      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:18px">
+        A maioria das pessoas cria o produto… e trava na hora de anunciar porque não entende os números.
+        Esse guia te mostra <strong style="color:#fff">exatamente o que fazer em cada situação</strong> — sem achismo e sem queimar dinheiro.
       </p>
+
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
         <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #e94560;">
           <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">6 Métricas Essenciais</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4)">CTR, CPC, CPM, CPA, CVR e ROAS explicados com valores de referência</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45)">CTR, CPC, CPM, CPA, CVR e ROAS com valores de referência</div>
         </div>
         <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #f5a623;">
           <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Semáforo do Anúncio</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4)">Verde, amarelo ou vermelho — saiba na hora o que está acontecendo</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45)">Verde, amarelo ou vermelho — saiba na hora o que fazer</div>
         </div>
         <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #00c48c;">
           <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">4 Cenários + Solução</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4)">O que fazer quando não tem cliques, quando não tem vendas, quando está no prejuízo</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45)">Clique sem venda, CTR baixo, escala, CPA no prejuízo</div>
         </div>
         <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #3b82f6;">
           <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Calculadora de ROAS</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4)">Coloque seus números e receba o diagnóstico da campanha na hora</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45)">Calcule lucro real e tenha diagnóstico da campanha</div>
         </div>
         <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #e94560;">
           <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">8 Regras de Ouro</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4)">As lições que anunciantes pagam caro para aprender — você leva de graça</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45)">As lições que economizam dinheiro e evitam erro de iniciante</div>
         </div>
         <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #f5a623;">
           <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Rotina de Análise</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4)">O que verificar diariamente em 5 min e semanalmente em 30 min</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45)">O que checar diariamente em 5 min e semanalmente em 30 min</div>
         </div>
       </div>
-      <div style="margin-top:20px;text-align:center;font-size:14px;color:rgba(255,255,255,0.4)">
+      <div style="margin-top:20px;text-align:center;font-size:14px;color:rgba(255,255,255,0.45)">
         📄 16 páginas · PDF profissional · Incluso automaticamente na compra
       </div>
     </div>
   </div>
 </section>
 
-<!-- INDEPENDENCE SECTION -->
+<!-- INDEPENDENCE SECTION (MANTIDO) -->
 <section style="background:var(--dark);padding:80px 20px;text-align:center;position:relative;overflow:hidden;">
   <div style="position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(233,69,96,0.1) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none"></div>
   <div style="max-width:680px;margin:0 auto;position:relative;">
@@ -874,8 +999,8 @@
     </div>
 
     <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:28px;max-width:540px;margin-left:auto;margin-right:auto;">
-      A geração de hoje está formando o <strong style="color:white">maior número de milionários da história</strong> — e a diferença entre quem chegou lá e quem não chegou não foi talento.<br><br>
-      Foi uma decisão.
+      A diferença entre quem consegue e quem não consegue não é talento.<br>
+      É decisão.
     </p>
 
     <div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:16px;padding:32px;margin-bottom:36px;">
@@ -893,16 +1018,24 @@
   </div>
 </section>
 
-<!-- OFFER -->
+<!-- OFFER (ATUALIZADO + CAKTO LINK + VALUE STACK) -->
 <section class="offer" id="comprar">
   <p class="section-label" style="color:var(--red)">Oferta de lançamento</p>
   <h2>Garanta o seu agora</h2>
   <p class="sub">Preço especial de lançamento — pode aumentar a qualquer momento.</p>
 
   <div class="price-box">
-    <p class="old-price">De R$97</p>
-    <p class="price">R$67</p>
-    <p class="price-note">pagamento único • acesso imediato</p>
+    <div class="price-top">
+      <p class="old-price">De R$97</p>
+      <p class="price">R$67</p>
+      <p class="price-note">pagamento único • acesso imediato</p>
+    </div>
+
+    <div class="value-stack">
+      <div><b>Você leva 2 PDFs:</b></div>
+      <div>• Guia principal (26 páginas)</div>
+      <div>• <b>Bônus Métricas Facebook Ads</b> (16 páginas) <span class="cut">R$47</span> <b style="color:var(--gold)">GRÁTIS</b></div>
+    </div>
 
     <div class="includes">
       <div class="include-item"><span class="check">✓</span> Guia completo em PDF (26 páginas)</div>
@@ -912,22 +1045,24 @@
       <div class="include-item"><span class="check">✓</span> Template de mensagem de WhatsApp</div>
       <div class="include-item"><span class="check">✓</span> Acesso vitalício + atualizações gratuitas</div>
       <div class="include-item" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(233,69,96,0.3)">
-        <span class="check">🎁</span> <strong style="color:var(--gold)">BÔNUS:</strong> Guia de Métricas Facebook Ads (valor R$47)
+        <span class="check">🎁</span> <strong style="color:var(--gold)">BÔNUS:</strong> Guia de Métricas Facebook Ads (valor R$47) — GRÁTIS
       </div>
     </div>
 
-    <a href="SEU_LINK_DA_KIWIFY_AQUI" class="btn-cta" style="width:100%;text-align:center;display:block">
+    <!-- BOTÃO COM SEU CHECKOUT CAKTO -->
+    <a href="https://pay.cakto.com.br/z5mwske_778971?utm_source=lp&utm_medium=cta&utm_campaign=pdf"
+       class="btn-cta offer-cta">
       QUERO MEU PDF AGORA →
     </a>
 
     <div class="guarantee">
       <span class="shield">🛡️</span>
-      <span>Garantia de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro.</span>
+      <span>Garantia de 7 dias. Teste sem risco — se não fizer sentido, é só pedir reembolso.</span>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ (MANTIDO) -->
 <section class="faq">
   <p class="section-label" style="text-align:center;color:var(--red)">Dúvidas frequentes</p>
   <h2 style="color:var(--dark)">Perguntas & Respostas</h2>
@@ -939,45 +1074,45 @@
     </div>
     <div class="faq-item">
       <button class="faq-q">Quanto tempo leva para criar meu primeiro PDF? <span class="arrow">+</span></button>
-      <div class="faq-a">Com o cronograma do Capítulo 9, é possível ter seu produto no ar em 7 dias. Depende do tempo que você dedicar, mas muitas pessoas conseguem lançar em um final de semana.</div>
+      <div class="faq-a">Com o cronograma do Capítulo 9, é possível ter seu produto no ar em 7 dias. Depende do tempo que você dedicar, mas muita gente consegue lançar em um final de semana.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Preciso investir dinheiro para começar? <span class="arrow">+</span></button>
-      <div class="faq-a">Não. Todas as ferramentas indicadas no guia têm versão gratuita — Canva, Kiwify, Instagram. Você pode começar do absoluto zero sem investir nada além do valor deste guia.</div>
+      <div class="faq-a">Não. As ferramentas indicadas no guia têm versão gratuita — Canva, redes sociais e etc. Você pode começar do absoluto zero.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">E se eu não tiver seguidores no Instagram? <span class="arrow">+</span></button>
-      <div class="faq-a">O guia mostra como vender mesmo sem audiência — usando WhatsApp, grupos e estratégias orgânicas que funcionam mesmo para quem está começando do zero nas redes.</div>
+      <div class="faq-a">O guia mostra como começar mesmo sem audiência — usando estratégias orgânicas e posicionamento. E quando você decidir anunciar, o bônus de métricas te mostra como não queimar dinheiro.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Como recebo o PDF depois de comprar? <span class="arrow">+</span></button>
-      <div class="faq-a">Imediatamente após o pagamento aprovado, você recebe um e-mail com o link para download. O acesso é vitalício.</div>
+      <div class="faq-a">Imediatamente após o pagamento aprovado, você recebe o acesso. O acesso é vitalício.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">E se eu não gostar? <span class="arrow">+</span></button>
-      <div class="faq-a">Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito, basta solicitar o reembolso e devolvemos 100% do seu dinheiro, sem perguntas.</div>
+      <div class="faq-a">Você tem 7 dias de garantia. Se por qualquer motivo não ficar satisfeito, basta solicitar o reembolso.</div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- FINAL CTA (MANTIDO + TEXTO AJUSTADO) -->
 <section class="final-cta">
   <h2>Sua virada começa<br>com 3 letras.</h2>
-  <p>Não espere o momento perfeito. O melhor momento é agora — enquanto o preço ainda está no lançamento.</p>
-  <a href="#comprar" class="btn-cta-white">GARANTIR MINHA VAGA →</a>
+  <p>Você não precisa do momento perfeito. Você precisa começar — enquanto a oferta ainda está no lançamento.</p>
+  <a href="https://pay.cakto.com.br/z5mwske_778971?utm_source=lp&utm_medium=finalcta&utm_campaign=pdf" class="btn-cta-white">GARANTIR MEU ACESSO →</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Lucas — Todos os direitos reservados.</p>
-  <p style="margin-top:8px">Este produto é um infoproduto digital. Após a compra, o acesso é enviado imediatamente por e-mail.</p>
+  <p style="margin-top:8px">Este produto é um infoproduto digital. Após a compra, o acesso é enviado imediatamente.</p>
   <p style="margin-top:8px">Garantia de 7 dias conforme o Código de Defesa do Consumidor (Art. 49).</p>
 </footer>
 
 <!-- STICKY BAR -->
 <div class="sticky-bar" id="stickyBar">
   <span class="sticky-text">🔥 Oferta de lançamento — <strong>R$67</strong> pagamento único</span>
-  <a href="#comprar" class="btn-cta">COMPRAR AGORA →</a>
+  <a href="https://pay.cakto.com.br/z5mwske_778971?utm_source=lp&utm_medium=sticky&utm_campaign=pdf" class="btn-cta">COMPRAR AGORA →</a>
 </div>
 
 <script>
@@ -1004,9 +1139,13 @@
   // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      // Só aplica smooth scroll em âncoras internas (ex: #comprar)
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 </script>
