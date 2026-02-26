@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Oferta Pós-Compra — Pacote Completo de Lançamento</title>
+<title>Oferta Especial — Pacote Completo de Lançamento</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --red: #e94560;
     --dark: #0f0f1a;
     --dark2: #1a1a2e;
     --gold: #f5a623;
+    --green: #00c48c;
     --white: #ffffff;
     --gray: #8a8a9a;
-    --light: #f8f8fc;
   }
-
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:'Manrope',sans-serif;
@@ -27,296 +25,330 @@
 
   .wrap{
     min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:70px 20px;
-    position:relative;
-    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    padding:60px 20px;
+    position:relative; overflow:hidden;
   }
-
   .wrap::before{
     content:'';
     position:absolute;
-    width:650px;height:650px;
-    background:radial-gradient(circle, rgba(233,69,96,0.20) 0%, transparent 70%);
-    top:-200px;left:50%;
-    transform:translateX(-50%);
+    width:700px; height:700px;
+    background:radial-gradient(circle, rgba(233,69,96,0.18) 0%, transparent 70%);
+    top:-250px; left:50%; transform:translateX(-50%);
     pointer-events:none;
   }
   .wrap::after{
     content:'';
     position:absolute;
-    width:420px;height:420px;
-    background:radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
-    bottom:-160px;right:-160px;
+    width:400px; height:400px;
+    background:radial-gradient(circle, rgba(245,166,35,0.10) 0%, transparent 70%);
+    bottom:-150px; right:-100px;
     pointer-events:none;
   }
 
-  .container{
-    width:100%;
-    max-width:920px;
-    position:relative;
-  }
-
-  .badge{
-    display:inline-block;
-    background:rgba(245,166,35,0.12);
-    border:1px solid rgba(245,166,35,0.35);
-    color:var(--gold);
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    padding:10px 18px;
-    border-radius:999px;
-    margin:0 auto 18px;
-  }
+  .container{ width:100%; max-width:860px; position:relative; }
 
   .card{
     background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.10);
-    border-radius:18px;
-    box-shadow:0 24px 70px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:20px;
+    box-shadow:0 32px 80px rgba(0,0,0,0.4);
     overflow:hidden;
   }
 
+  /* TOP */
   .top{
-    padding:34px 30px 26px;
+    padding:40px 36px 32px;
     text-align:center;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    background:linear-gradient(135deg, rgba(233,69,96,0.18), rgba(15,15,26,0.2));
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    background:linear-gradient(160deg, rgba(233,69,96,0.15), transparent 60%);
   }
-
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(245,166,35,0.12);
+    border:1px solid rgba(245,166,35,0.3);
+    color:var(--gold); font-size:11px; font-weight:800;
+    letter-spacing:3px; text-transform:uppercase;
+    padding:9px 18px; border-radius:999px; margin-bottom:20px;
+  }
   h1{
     font-family:'Bebas Neue',sans-serif;
-    font-size:clamp(44px,6.5vw,78px);
-    letter-spacing:2px;
-    line-height:0.95;
-    margin:10px 0 10px;
+    font-size:clamp(42px,7vw,80px);
+    letter-spacing:2px; line-height:0.95;
+    margin-bottom:14px;
   }
-  h1 .hl{color:var(--gold);display:block}
-
+  h1 em{ color:var(--gold); display:block; font-style:normal; }
   .sub{
-    max-width:760px;
-    margin:0 auto;
-    color:rgba(255,255,255,0.72);
-    font-size:16px;
-    line-height:1.8;
-    font-weight:600;
-  }
-  .sub strong{color:#fff}
-
-  .body{
-    padding:28px 30px 30px;
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:18px;
-  }
-
-  .box{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:14px;
-    padding:18px 18px 16px;
-  }
-
-  .box h2{
-    font-family:'Bebas Neue',sans-serif;
-    font-size:34px;
-    letter-spacing:1px;
-    margin-bottom:10px;
-  }
-
-  .list{
-    list-style:none;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:10px;
-  }
-  .li{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    color:rgba(255,255,255,0.78);
-    line-height:1.6;
-    font-size:14px;
-  }
-  .li .check{
-    color:var(--red);
-    font-weight:900;
-    min-width:18px;
-    padding-top:2px;
-  }
-
-  .value{
+    max-width:700px; margin:0 auto;
     color:rgba(255,255,255,0.65);
-    font-size:13px;
-    line-height:1.7;
-    margin-top:10px;
+    font-size:16px; line-height:1.8; font-weight:500;
+  }
+  .sub strong{ color:white; }
+
+  /* TIMER */
+  .timer-wrap{
+    display:inline-flex; flex-direction:column; align-items:center;
+    margin:24px auto 0;
+    background:rgba(233,69,96,0.10);
+    border:1px solid rgba(233,69,96,0.22);
+    border-radius:12px; padding:12px 28px;
+  }
+  .timer-label{
+    font-size:10px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:4px;
+  }
+  .timer-digits{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:42px; color:var(--red); letter-spacing:4px; line-height:1;
+  }
+  @keyframes pulse-red{
+    0%,100%{ box-shadow:0 0 0 0 rgba(233,69,96,0); }
+    50%{ box-shadow:0 0 0 8px rgba(233,69,96,0.12); }
+  }
+  .timer-wrap.urgent{ animation:pulse-red 1.2s infinite; }
+
+  /* BODY */
+  .body{
+    padding:32px 36px 36px;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:20px;
+    align-items:start;
   }
 
-  .priceBox{
-    text-align:center;
-    padding:22px 18px;
+  /* LEFT */
+  .items-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:14px;
+    padding:24px;
   }
-  .old{
-    color:rgba(255,255,255,0.35);
+  .items-box h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:32px; letter-spacing:1px; margin-bottom:18px;
+    color:white;
+  }
+  .item{
+    display:flex; gap:12px; align-items:flex-start;
+    padding:13px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:14px; color:rgba(255,255,255,0.75); line-height:1.6;
+  }
+  .item:last-child{ border-bottom:none; }
+  .item-check{
+    width:20px; height:20px; border-radius:50%;
+    background:rgba(233,69,96,0.15); border:1px solid rgba(233,69,96,0.35);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--red); font-size:10px; font-weight:900;
+    flex-shrink:0; margin-top:2px;
+  }
+  .item b{ color:white; }
+
+  .delivery-note{
+    margin-top:18px;
+    padding:12px 16px;
+    background:rgba(0,196,140,0.08);
+    border:1px solid rgba(0,196,140,0.2);
+    border-radius:10px;
+    font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;
+  }
+  .delivery-note strong{ color:var(--green); }
+
+  /* RIGHT */
+  .price-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:14px;
+    padding:28px 24px;
+    text-align:center;
+    position:sticky; top:20px;
+  }
+  .old-price{
+    color:rgba(255,255,255,0.28);
     text-decoration:line-through;
-    font-weight:700;
-    font-size:14px;
-    margin-bottom:8px;
+    font-size:15px; font-weight:700;
+    margin-bottom:4px;
   }
   .price{
     font-family:'Bebas Neue',sans-serif;
-    font-size:74px;
-    line-height:1;
-    color:var(--gold);
-    margin-bottom:6px;
+    font-size:80px; line-height:1;
+    color:var(--gold); margin-bottom:4px;
   }
-  .note{
-    color:rgba(255,255,255,0.50);
-    font-size:13px;
-    line-height:1.6;
-    margin-bottom:14px;
+  .price-note{
+    font-size:12px; color:rgba(255,255,255,0.35);
+    line-height:1.6; margin-bottom:24px;
   }
 
-  /* ── Estilização dos botões Cakto (mantém o snippet) ── */
-  cakto-upsell-accept::part(button){
-    width:100%;
-    background: var(--red);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 18px;
-    font-weight: 900;
-    font-size: 16px;
-    letter-spacing: .3px;
-    cursor:pointer;
-    box-shadow:0 10px 42px rgba(233,69,96,0.40);
-    transition: transform .2s, box-shadow .2s, filter .2s;
+  .btn-accept{
+    display:block; width:100%;
+    background:var(--red); color:white;
+    border:none; border-radius:12px;
+    padding:18px 20px;
+    font-family:'Manrope',sans-serif;
+    font-size:16px; font-weight:900;
+    cursor:pointer; text-decoration:none; text-align:center;
+    box-shadow:0 12px 40px rgba(233,69,96,0.40);
+    transition:transform .2s, box-shadow .2s;
+    margin-bottom:10px;
   }
-  cakto-upsell-accept::part(button):hover{
-    transform: translateY(-3px);
-    box-shadow:0 18px 56px rgba(233,69,96,0.55);
-    filter:saturate(1.05);
+  .btn-accept:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 56px rgba(233,69,96,0.55);
   }
 
-  cakto-upsell-reject::part(button){
-    width:100%;
-    background: transparent;
-    color: rgba(255,255,255,0.75);
-    border: 1px solid rgba(255,255,255,0.20);
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-weight: 800;
-    font-size: 14px;
-    cursor:pointer;
-    transition: transform .2s, background .2s, border-color .2s;
-    margin-top:10px;
+  .btn-reject{
+    display:block; width:100%;
+    background:transparent;
+    color:rgba(255,255,255,0.35);
+    border:none;
+    padding:12px 20px;
+    font-family:'Manrope',sans-serif;
+    font-size:12px; font-weight:600;
+    cursor:pointer; text-decoration:none; text-align:center;
+    transition:color .2s;
   }
-  cakto-upsell-reject::part(button):hover{
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.04);
-    border-color: rgba(255,255,255,0.30);
-  }
+  .btn-reject:hover{ color:rgba(255,255,255,0.55); }
 
-  .smallWarn{
-    margin-top:12px;
-    font-size:12px;
-    color:rgba(255,255,255,0.45);
-    line-height:1.6;
-  }
-
-  .footerLine{
-    padding:18px 30px 26px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    color:rgba(255,255,255,0.45);
-    font-size:12px;
+  .security{
+    margin-top:14px;
+    font-size:11px; color:rgba(255,255,255,0.25);
     line-height:1.7;
-    text-align:center;
   }
 
-  @media (max-width: 900px){
-    .body{grid-template-columns:1fr; }
+  .footer{
+    padding:18px 36px 24px;
+    border-top:1px solid rgba(255,255,255,0.06);
+    text-align:center;
+    font-size:11px; color:rgba(255,255,255,0.22);
+    line-height:1.8;
+  }
+
+  @media(max-width:820px){
+    .body{ grid-template-columns:1fr; padding:24px 20px 28px; }
+    .top{ padding:32px 20px 28px; }
+    .footer{ padding:16px 20px 20px; }
+    .price-box{ position:static; }
   }
 </style>
 </head>
-
 <body>
-<section class="wrap">
-  <div class="container">
 
+<div class="wrap">
+  <div class="container">
     <div class="card">
+
+      <!-- TOP -->
       <div class="top">
-        <div class="badge">✅ OFERTA PÓS-COMPRA • 1 CLIQUE</div>
+        <div class="badge">✅ Compra confirmada • Oferta exclusiva</div>
 
         <h1>
           Antes de ir…
-          <span class="hl">leve o Pacote Completo de Lançamento</span>
+          <em>leve o Pacote Completo de Lançamento</em>
         </h1>
 
         <p class="sub">
-          Você já garantiu o guia principal. Agora eu quero te dar o caminho mais rápido pra você
-          <strong>não travar na execução</strong> e colocar sua estrutura no ar com velocidade.
+          Você já tem o guia. Agora eu quero te dar tudo que você precisa para
+          <strong>não travar na execução</strong> — criativos prontos, templates HTML,
+          guia do Canva passo a passo e como publicar no GitHub gratuitamente. Só aplicar.
         </p>
+
+        <div class="timer-wrap" id="timerWrap">
+          <div class="timer-label">Oferta expira em</div>
+          <div class="timer-digits" id="timer">10:00</div>
+        </div>
       </div>
 
+      <!-- PRODUCT IMAGE -->
+      <div style="padding:0 36px 0; border-bottom:1px solid rgba(255,255,255,0.07); background:rgba(0,0,0,0.15);">
+        <img
+          src="ChatGPT_Image_26_de_fev__de_2026__11_08_27.png"
+          alt="Pacote Completo de Lançamento — tudo que você recebe"
+          style="width:100%; max-width:800px; display:block; margin:0 auto; border-radius:0;"
+        />
+      </div>
+
+      <!-- BODY -->
       <div class="body">
-        <div class="box">
-          <h2>O que você recebe agora</h2>
 
-          <ul class="list">
-            <li class="li"><span class="check">✓</span> <b>5 prompts prontos</b> para criar páginas e ofertas (nichos diferentes) — só copiar e adaptar.</li>
-            <li class="li"><span class="check">✓</span> <b>Guia Canva (16 passos)</b> pra deixar sua página com cara de produto profissional.</li>
-            <li class="li"><span class="check">✓</span> <b>GitHub Pages (8 passos)</b> pra publicar sua página sem pagar hospedagem no começo.</li>
-            <li class="li"><span class="check">✓</span> <b>Checklist completo (25 itens)</b> dividido em antes/durante/depois do lançamento.</li>
-            <li class="li"><span class="check">✓</span> <b>5 templates HTML</b> (Fitness, Finanças, Produtividade, Mães, Negócio Local).</li>
-          </ul>
+        <!-- LEFT — O QUE INCLUI -->
+        <div class="items-box">
+          <h2>O que entra no pacote</h2>
 
-          <p class="value">
-            ✅ Entrega imediata: você recebe agora e consegue aplicar ainda hoje.
-          </p>
-        </div>
-
-        <div class="box priceBox">
-          <div class="old">De R$97</div>
-          <div class="price">R$27</div>
-          <div class="note">pagamento único • aceite em 1 clique</div>
-
-          <!-- SNIPPET CAKTO (mantido) -->
-          <cakto-upsell-buttons>
-            <cakto-upsell-accept
-              bg-color="#0f7865"
-              text-color="#ffffff"
-              upsell-accept-url="members_area"
-              offer-id="z5mwske"
-              app-base-url="https://app.cakto.com.br"
-              offer-type="upsell"
-              upsell-reject-url="members_area">
-              Sim, quero aproveitar a oferta
-            </cakto-upsell-accept>
-
-            <cakto-upsell-reject upsell-reject-url="members_area">
-              Não, eu não quero aproveitar a oferta
-            </cakto-upsell-reject>
-          </cakto-upsell-buttons>
-
-          <div class="smallWarn">
-            ⚠️ Essa oferta aparece apenas agora, logo após a compra. Se você recusar, segue para a área de membros.
+          <div class="item">
+            <div class="item-check">✓</div>
+            <div><b>5 prompts prontos de criativos</b> — cole no Leonardo AI ou DALL-E e tenha seu anúncio em minutos. Cada prompt com análise psicológica de por que converte.</div>
+          </div>
+          <div class="item">
+            <div class="item-check">✓</div>
+            <div><b>Guia Canva completo (16 passos)</b> — cores exatas, fontes, tamanhos e posições. Do fundo escuro ao botão CTA vermelho. Sem achismo.</div>
+          </div>
+          <div class="item">
+            <div class="item-check">✓</div>
+            <div><b>Como publicar no GitHub Pages (10 passos)</b> — hospedagem gratuita do zero. Do cadastro ao link funcionando. Inclui guia do Google Drive para os PDFs.</div>
+          </div>
+          <div class="item">
+            <div class="item-check">✓</div>
+            <div><b>Checklist de lançamento (25 itens)</b> — 3 fases: infraestrutura, criativo e otimização. Nada fica esquecido antes de ligar os anúncios.</div>
+          </div>
+          <div class="item">
+            <div class="item-check">✓</div>
+            <div><b>5 templates HTML prontos</b> — Fitness, Finanças, Produtividade, Mães e Negócio Local. Só trocar nome, produto e link da Cakto.</div>
           </div>
 
-          <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+          <div class="delivery-note">
+            <strong>✅ Entrega imediata</strong> — após o pagamento você acessa todos os arquivos diretamente na página seguinte.
+          </div>
         </div>
+
+        <!-- RIGHT — PREÇO + BOTÕES -->
+        <div class="price-box">
+          <div class="old-price">De R$97</div>
+          <div class="price">R$27</div>
+          <div class="price-note">pagamento único • acesso imediato<br>garantia de 7 dias</div>
+
+          <!-- ACEITAR → checkout Cakto do upsell -->
+          <a href="https://pay.cakto.com.br/rz538qw_784936" class="btn-accept">
+            ✅ Sim, quero o pacote completo →
+          </a>
+
+          <!-- REJEITAR → entrega normal -->
+          <a href="https://mackenzi47.github.io/lucas-pdf/entrega.html" class="btn-reject">
+            Não, quero ir para meus materiais
+          </a>
+
+          <div class="security">
+            🔒 Pagamento 100% seguro via Cakto<br>
+            Garantia incondicional de 7 dias
+          </div>
+        </div>
+
       </div>
 
-      <div class="footerLine">
-        © 2026 Lucas • Oferta pós-compra exibida automaticamente pelo funil da Cakto.
+      <div class="footer">
+        © 2025 Lucas PDF · Esta oferta aparece apenas uma vez, logo após a compra.<br>
+        Produto digital · Entrega imediata · Garantia de 7 dias
       </div>
+
     </div>
-
   </div>
-</section>
+</div>
+
+<script>
+(function(){
+  const el = document.getElementById('timer');
+  const wrap = document.getElementById('timerWrap');
+  let total = 10 * 60;
+  function tick(){
+    const m = Math.floor(total / 60);
+    const s = total % 60;
+    el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    if(total <= 60) wrap.classList.add('urgent');
+    if(total <= 0){ el.textContent = '00:00'; return; }
+    total--;
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
+
 </body>
 </html>
