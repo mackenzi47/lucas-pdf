@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Kit PLR — Copie. Venda. Lucre.</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit PLR — Domine o Mercado Digital</title>
+    
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,278 +17,329 @@
     fbq('init', '2035377250382905');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2035377250382905&ev=PageView&noscript=1"
-    /></noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ── RESET & VARIÁVEIS ── */
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --p:#07060a;
-            --p2:#0f0d14;
-            --p3:#161420;
-            --border:rgba(255,255,255,0.06);
-            --border2:rgba(255,255,255,0.11);
-            --o:#ff6b00;
-            --o2:#ff8c38;
-            --amber:#ffb347;
-            --w:#f2efe8;
-            --g:#6b6878;
-            --g2:#9896a4;
-            --card:rgba(255,255,255,0.03);
-        }
-        html{scroll-behavior:smooth}
-        body{font-family:'Inter',sans-serif;background:var(--p);color:var(--w);overflow-x:hidden;}
-
-        /* GRAIN EFFECT */
-        body::before{
-            content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;
-            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-            opacity:.55;
+        :root {
+            --p: #07060a;
+            --p2: #0f0d14;
+            --p3: #161420;
+            --o: #ff6b00;
+            --o2: #ff8c38;
+            --amber: #ffb347;
+            --w: #f2efe8;
+            --g: #6b6878;
+            --g2: #9896a4;
+            --border: rgba(255,255,255,0.06);
+            --border2: rgba(255,255,255,0.12);
         }
 
-        /* ── NAVEGAÇÃO ── */
-        nav{
-            position:fixed;top:0;left:0;right:0;z-index:500;
-            height:60px;padding:0 5%;
-            display:flex;align-items:center;justify-content:space-between;
-            background:rgba(7,6,10,0.9);backdrop-filter:blur(24px);
-            border-bottom:1px solid var(--border);
-        }
-        .logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--w);}
-        .logo em{color:var(--o);font-style:normal;}
-        .nav-pill{
-            background:var(--o);color:#000;
-            font-family:'Unbounded',sans-serif;
-            font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-            padding:10px 20px;border-radius:2px;text-decoration:none;
-            transition:background .2s,transform .15s;
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--p); color: var(--w); overflow-x: hidden; line-height: 1.5; }
+
+        /* Efeito de Ruído/Grain */
+        body::before {
+            content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.5;
         }
 
-        /* ── HERO ── */
-        #hero{
-            min-height:100vh;
-            padding:100px 5% 80px;
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:60px;
-            align-items:center;
-            position:relative;overflow:hidden;
+        /* Navegação Premium */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            height: 70px; padding: 0 6%;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(7, 6, 10, 0.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
-        .glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(160px);}
-        .glow1{width:700px;height:500px;background:rgba(255,107,0,0.09);top:-100px;right:-200px;}
-
-        h1{
-            font-family:'Unbounded',sans-serif;
-            font-size:clamp(44px,7vw,96px);
-            font-weight:900;line-height:.88;letter-spacing:-2px;margin-bottom:24px;
-        }
-        h1 .stroke{-webkit-text-stroke:1px rgba(242,239,232,0.2);-webkit-text-fill-color:transparent;color:transparent;display:block;}
-        h1 .fill{color:var(--w);display:block;}
-        h1 .accent{color:var(--o);display:block;}
-
-        .hero-desc{font-size:15px;color:var(--g2);line-height:1.75;font-weight:400;max-width:420px;margin-bottom:28px;}
-        .btn-main{
-            display:inline-flex;align-items:center;gap:12px;
-            background:var(--o);color:#000;
-            font-family:'Unbounded',sans-serif;
-            font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-            padding:18px 28px;border-radius:2px;text-decoration:none;
-            transition:0.3s;white-space:nowrap;
-        }
-        .btn-main:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,107,0,0.3);}
-
-        /* ── MOCKUPS ── */
-        .hero-right{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;}
-        .mock-main{
-            background:linear-gradient(135deg,rgba(255,107,0,0.12),rgba(255,107,0,0.03));
-            border:1px solid rgba(255,107,0,0.35);
-            border-radius:6px;padding:32px 28px 28px;position:relative;
-            box-shadow:0 32px 80px rgba(0,0,0,0.5);
-        }
-        .mock-bonus{
-            position:absolute;bottom:-28px;right:-28px;width:58%;
-            background:linear-gradient(135deg,rgba(255,179,71,0.1),rgba(255,179,71,0.03));
-            border:1px solid rgba(255,179,71,0.3);border-radius:6px;padding:18px 16px;
-            box-shadow:0 20px 60px rgba(0,0,0,0.6);
+        .logo { font-family: 'Unbounded', sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; }
+        .logo span { color: var(--o); }
+        .nav-btn {
+            background: var(--o); color: #000; font-family: 'Unbounded', sans-serif;
+            font-size: 10px; font-weight: 800; padding: 12px 24px; border-radius: 4px;
+            text-decoration: none; transition: 0.3s;
         }
 
-        /* ── TICKER ── */
-        .ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--p2);overflow:hidden;padding:14px 0;}
-        .tk-inner{display:flex;width:max-content;animation:tk 28s linear infinite;}
-        @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-        .tk-item{display:flex;align-items:center;gap:14px;padding:0 36px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);white-space:nowrap;}
-        .tk-dot{width:4px;height:4px;border-radius:50%;background:var(--o);}
+        /* Hero Section */
+        #hero {
+            min-height: 100vh; padding: 140px 6% 100px;
+            display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px;
+            align-items: center; position: relative;
+        }
+        .glow { position: absolute; pointer-events: none; border-radius: 50%; filter: blur(140px); z-index: 0; }
+        .glow-1 { width: 600px; height: 600px; background: rgba(255, 107, 0, 0.12); top: -100px; right: -100px; }
 
-        /* ── CALCULADORA ── */
-        #calc-section{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);}
-        .calc-widget{background:var(--p3);border:1px solid var(--border2);border-radius:4px;overflow:hidden; max-width: 600px; margin: 0 auto;}
-        .cw-bar{background:var(--p2);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
-        .cw-body{padding:22px 20px;}
-        .cw-ctrl{display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:3px;overflow:hidden; margin-bottom: 20px;}
-        .cw-btn{width:42px;height:42px;background:transparent;border:none;color:var(--g2);font-size:18px;cursor:pointer; display: flex; align-items: center; justify-content: center;}
-        .cw-display{flex:1;text-align:center;font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--w);}
-        .cw-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
-        .cw-box{border-radius:3px;padding:14px 12px;border:1px solid var(--border);}
-        .cw-blabel{font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:5px;font-family:'Unbounded',sans-serif;}
-        .cw-bval{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--o);}
+        h1 { font-family: 'Unbounded', sans-serif; font-size: clamp(48px, 8vw, 110px); font-weight: 900; line-height: 0.85; letter-spacing: -4px; margin-bottom: 30px; }
+        h1 .outline { -webkit-text-stroke: 1.5px rgba(242, 239, 232, 0.2); color: transparent; display: block; }
+        h1 .filled { color: var(--w); display: block; }
+        h1 .orange { color: var(--o); display: block; text-shadow: 0 0 40px rgba(255, 107, 0, 0.2); }
 
-        /* ── REVEAL ANIMATION ── */
-        .r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
-        .r.v{opacity:1;transform:translateY(0);}
+        .hero-text { font-size: 18px; color: var(--g2); max-width: 480px; margin-bottom: 40px; line-height: 1.6; }
+        .cta-main {
+            display: inline-flex; align-items: center; gap: 15px;
+            background: var(--o); color: #000; font-family: 'Unbounded', sans-serif;
+            font-size: 12px; font-weight: 800; padding: 22px 40px; border-radius: 4px;
+            text-decoration: none; transition: 0.4s;
+        }
+        .cta-main:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255, 107, 0, 0.4); }
 
-        /* [ADICIONANDO MAIS ESTILOS PARA CHEGAR NAS 600 LINHAS ORIGINAIS] */
-        #kit{padding:100px 5%;background:var(--p);}
-        .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
-        .pdf-c{border-radius:4px;padding:30px;border:1px solid var(--border); transition: 0.3s;}
-        .pdf-c:hover{border-color: var(--o); transform: translateY(-5px);}
+        /* Mockup Visual */
+        .hero-right { position: relative; }
+        .mockup-card {
+            background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,107,0,0.02));
+            border: 1px solid rgba(255,107,0,0.3); border-radius: 12px;
+            padding: 50px; position: relative; box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+        }
+        .badge-premium {
+            position: absolute; top: -15px; left: -15px;
+            background: var(--w); color: #000; font-family: 'Unbounded', sans-serif;
+            font-size: 10px; font-weight: 800; padding: 8px 16px; border-radius: 4px;
+        }
+
+        /* Ticker (Barra Infinita) */
+        .ticker-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--p2); padding: 20px 0; overflow: hidden; }
+        .ticker-move { display: flex; width: max-content; animation: ticker-run 30s linear infinite; }
+        @keyframes ticker-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .ticker-item { display: flex; align-items: center; gap: 20px; padding: 0 50px; font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 700; color: var(--g); text-transform: uppercase; white-space: nowrap; }
+        .ticker-dot { width: 6px; height: 6px; background: var(--o); border-radius: 50%; }
+
+        /* Calculadora Estilo Software */
+        #calculadora { padding: 120px 6%; background: var(--p); position: relative; }
+        .calc-container { max-width: 900px; margin: 0 auto; background: var(--p3); border: 1px solid var(--border2); border-radius: 8px; overflow: hidden; }
+        .calc-header { background: var(--p2); padding: 15px 25px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .calc-dot-group { display: flex; gap: 8px; }
+        .calc-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border2); }
+        .calc-content { padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         
-        #social{padding:100px 5%;background:var(--p2);}
-        .deps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
-        .dep{background:var(--p3);border:1px solid var(--border);border-radius:4px;padding:26px 22px;}
+        .calc-label { font-family: 'Unbounded', sans-serif; font-size: 10px; color: var(--g); letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
+        .calc-control { display: flex; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; height: 70px; }
+        .calc-btn { width: 70px; height: 100%; border: none; background: transparent; color: var(--w); font-size: 24px; cursor: pointer; transition: 0.2s; }
+        .calc-btn:hover { background: rgba(255,255,255,0.05); color: var(--o); }
+        .calc-num { flex: 1; text-align: center; font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 800; }
+        
+        .result-box { background: rgba(255, 107, 0, 0.03); border: 1px solid rgba(255, 107, 0, 0.1); padding: 30px; border-radius: 6px; }
+        .result-val { font-family: 'Unbounded', sans-serif; font-size: 32px; font-weight: 900; color: var(--o); margin-bottom: 5px; }
+        .result-desc { font-size: 12px; color: var(--g2); }
 
-        .fi{border-bottom:1px solid var(--border);cursor:pointer;}
-        .fq{display:flex;justify-content:space-between;padding:17px 0;font-size:13px;font-weight:600;}
-        .fa{font-size:12px;color:var(--g2);max-height:0;overflow:hidden;transition:0.3s;}
-        .fi.open .fa{max-height:100px; padding-bottom: 20px;}
+        /* Grade de Produtos (O que recebe) */
+        #entrega { padding: 120px 6%; background: var(--p2); }
+        .section-title { font-family: 'Unbounded', sans-serif; font-size: 40px; margin-bottom: 60px; text-align: center; }
+        .grid-kit { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .kit-card { 
+            background: var(--p3); border: 1px solid var(--border); padding: 40px; border-radius: 8px; 
+            transition: 0.4s; position: relative; overflow: hidden;
+        }
+        .kit-card:hover { border-color: var(--o); transform: translateY(-10px); }
+        .kit-card h3 { font-family: 'Unbounded', sans-serif; margin-bottom: 15px; }
+        .kit-card p { color: var(--g2); font-size: 15px; margin-bottom: 25px; }
+        .kit-price { font-family: 'Unbounded', sans-serif; font-size: 24px; color: var(--o); }
 
-        @media(max-width:960px){
-            #hero, .kit-grid, .deps, .steps{grid-template-columns:1fr;}
-            .mock-bonus{display:none;}
+        /* Depoimentos */
+        #depoimentos { padding: 120px 6%; }
+        .grid-deps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .dep-card { background: var(--p3); border: 1px solid var(--border); padding: 30px; border-radius: 6px; }
+        .dep-text { font-style: italic; color: var(--g2); margin-bottom: 20px; font-size: 15px; }
+        .dep-user { font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 700; color: var(--w); }
+
+        /* FAQ */
+        #faq { padding: 120px 6%; max-width: 900px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 25px 0; cursor: pointer; }
+        .faq-q { font-family: 'Unbounded', sans-serif; font-size: 15px; font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-a { max-height: 0; overflow: hidden; transition: 0.4s ease; color: var(--g2); font-size: 14px; margin-top: 0; }
+        .faq-item.active .faq-a { max-height: 200px; margin-top: 20px; }
+
+        /* Footer & CTA Final */
+        #final { padding: 150px 6%; text-align: center; background: radial-gradient(circle at center, rgba(255,107,0,0.08) 0%, transparent 70%); }
+        footer { padding: 60px 6%; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; color: var(--g); font-size: 12px; }
+
+        /* Animação de Surgimento */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 1000px) {
+            #hero, .calc-content, .grid-kit, .grid-deps { grid-template-columns: 1fr; }
+            h1 { font-size: 60px; }
+            #hero { padding-top: 120px; text-align: center; }
+            .hero-text { margin: 0 auto 40px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">KIT<em>PLR</em></div>
-    <a href="https://pay.cakto.com.br/z5mwske_778971" class="nav-pill" target="_blank">Comprar — R$ 67</a>
+    <div class="logo">KIT<span>PLR</span></div>
+    <a href="https://pay.cakto.com.br/z5mwske_778971" class="nav-btn" target="_blank">ACESSO IMEDIATO</a>
 </nav>
 
 <section id="hero">
-    <div class="glow glow1"></div>
-    <div class="hero-left">
-        <div style="font-family:'Unbounded'; font-size:9px; color:var(--o); margin-bottom:20px; letter-spacing:3px;">MÉTODO PLR · 2026</div>
+    <div class="glow glow-1"></div>
+    <div class="hero-left reveal">
+        <div style="font-family:'Unbounded'; font-size:10px; color:var(--o); margin-bottom:25px; letter-spacing:4px; font-weight:700;">PRODUTO PLR VALIDADO 2026</div>
         <h1>
-            <span class="stroke">COPIE.</span>
-            <span class="fill">VENDA.</span>
-            <span class="accent">LUCRE.</span>
+            <span class="outline">COPIE.</span>
+            <span class="filled">VENDA.</span>
+            <span class="orange">LUCRE.</span>
         </h1>
-        <p class="hero-desc">Você recebe <strong>2 PDFs prontos</strong> com licença de revenda. Coloque seu nome e comece a vender hoje.</p>
-        <div class="hero-btns">
-            <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-main" target="_blank">Quero o Kit Agora →</a>
-        </div>
+        <p class="hero-text">Esqueça a criação do zero. Entregamos os <strong>2 PDFs profissionais</strong> e a licença para você ser o dono. Configure em 15 minutos e comece a escalar.</p>
+        <a href="https://pay.cakto.com.br/z5mwske_778971" class="cta-main" target="_blank">GARANTIR MEU KIT AGORA →</a>
     </div>
-    <div class="hero-right">
-        <div class="mock-main">
-            <div style="font-family:'Unbounded'; font-size:18px; margin-bottom:10px;">Venda no Automático</div>
-            <p style="font-size:12px; color:var(--g);">26 páginas · PLR</p>
-            <div class="mock-bonus">
-                <div style="color:#10b981; font-size:9px; font-weight:700;">BÔNUS</div>
-                <div style="font-size:13px; font-weight:700;">Métricas Ads</div>
-            </div>
+    <div class="hero-right reveal">
+        <div class="mockup-card">
+            <div class="badge-premium">PREMIUM PLR</div>
+            <h2 style="font-family:'Unbounded'; font-size:24px; margin-bottom:15px;">Método Lucro<br>Automático</h2>
+            <div style="width:50px; height:2px; background:var(--o); margin-bottom:20px;"></div>
+            <p style="color:var(--g2); font-size:14px;">Inclui: 2 E-books + Checklist Ads + Licença de Revenda Vitalícia.</p>
         </div>
     </div>
 </section>
 
-<div class="ticker">
-    <div class="tk-inner" id="tki"></div>
+<div class="ticker-wrap">
+    <div class="ticker-move" id="ticker-target"></div>
 </div>
 
-<section id="calc-section">
-    <div class="r" style="text-align:center; margin-bottom:40px;">
-        <h2 style="font-family:'Unbounded'; font-size:28px;">SIMULADOR DE GANHOS</h2>
-    </div>
-    <div class="calc-widget r">
-        <div class="cw-bar"><div style="font-size:10px; color:var(--g);">SIMULADOR_PLR.EXE</div></div>
-        <div class="cw-body">
-            <p style="font-size:9px; color:var(--g); margin-bottom:8px;">VENDAS POR DIA</p>
-            <div class="cw-ctrl">
-                <button class="cw-btn" onclick="ch(-1)">−</button>
-                <div class="cw-display" id="nv">2</div>
-                <button class="cw-btn" onclick="ch(1)">+</button>
+<section id="calculadora">
+    <h2 class="section-title reveal">SIMULE SEU LUCRO</h2>
+    <div class="calc-container reveal">
+        <div class="calc-header">
+            <div class="calc-dot-group">
+                <div class="calc-dot"></div><div class="calc-dot"></div><div class="calc-dot"></div>
             </div>
-            <div class="cw-grid">
-                <div class="cw-box"><div class="cw-blabel">POR MÊS</div><div class="cw-bval" id="vm">R$ 4.020</div></div>
-                <div class="cw-box"><div class="cw-blabel">POR ANO</div><div class="cw-bval" id="va" style="color:var(--w);">R$ 48.910</div></div>
+            <div style="font-family:'Unbounded'; font-size:9px; color:var(--g); letter-spacing:2px;">PROFIT_CALC_V2.SYS</div>
+        </div>
+        <div class="calc-content">
+            <div class="calc-left">
+                <div class="calc-label">Vendas por dia</div>
+                <div class="calc-control">
+                    <button class="calc-btn" onclick="changeSales(-1)">−</button>
+                    <div class="calc-num" id="sales-display">2</div>
+                    <button class="calc-btn" onclick="changeSales(1)">+</button>
+                </div>
+                <p style="margin-top:20px; font-size:13px; color:var(--g2);">Simulação baseada no valor de venda de <strong>R$ 67,00</strong>.</p>
+            </div>
+            <div class="calc-right">
+                <div class="result-box" style="margin-bottom:20px;">
+                    <div class="calc-label">Lucro Mensal</div>
+                    <div class="result-val" id="month-val">R$ 4.020</div>
+                    <div class="result-desc">Dinheiro direto no seu bolso.</div>
+                </div>
+                <div class="result-box">
+                    <div class="calc-label">Lucro Anual</div>
+                    <div class="result-val" id="year-val" style="color:var(--w);">R$ 48.910</div>
+                    <div class="result-desc">Escalando o mesmo produto.</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="kit">
-    <h2 class="r" style="font-family:'Unbounded'; text-align:center;">O QUE ESTÁ INCLUSO</h2>
-    <div class="kit-grid">
-        <div class="pdf-c r">
-            <h3 style="font-family:'Unbounded'; font-size:18px; margin-bottom:10px;">PDF Principal</h3>
-            <p style="font-size:14px; color:var(--g2);">Toda a estratégia de vendas que me fez sair do CLT.</p>
-            <div class="pdf-price">R$ 67</div>
+<section id="entrega">
+    <h2 class="section-title reveal">O QUE VOCÊ VAI RECEBER</h2>
+    <div class="grid-kit">
+        <div class="kit-card reveal">
+            <div style="color:var(--o); font-size:30px; margin-bottom:20px;">01</div>
+            <h3>PDF: O Guia PLR</h3>
+            <p>O produto principal pronto para ser vendido. Conteúdo de alto valor que resolve o problema do cliente.</p>
+            <div class="kit-price">INCLUSO</div>
         </div>
-        <div class="pdf-c r">
-            <h3 style="font-family:'Unbounded'; font-size:18px; margin-bottom:10px;">Bônus: Métricas</h3>
-            <p style="font-size:14px; color:var(--g2);">Aprenda a ler o pixel e escalar seus anúncios.</p>
-            <div class="pdf-price" style="color:#10b981;">GRÁTIS</div>
-        </div>
-    </div>
-</section>
-
-<section id="social">
-    <h2 class="r" style="font-family:'Unbounded'; text-align:center; margin-bottom:50px;">QUEM JÁ ESTÁ VENDENDO</h2>
-    <div class="deps">
-        <div class="dep r">
-            <p style="font-style:italic; font-size:14px; color:var(--g2);">"Em 3 dias já fiz minha primeira venda. O kit é muito prático!"</p>
-            <div style="margin-top:20px; font-weight:700;">Ana M. - SP</div>
-        </div>
-        <div class="dep r">
-            <p style="font-style:italic; font-size:14px; color:var(--g2);">"O suporte é ótimo e os PDFs são de muita qualidade."</p>
-            <div style="margin-top:20px; font-weight:700;">Ricardo B. - PR</div>
-        </div>
-        <div class="dep r">
-            <p style="font-style:italic; font-size:14px; color:var(--g2);">"Finalmente um PLR que não parece cópia de tudo que tem por aí."</p>
-            <div style="margin-top:20px; font-weight:700;">Juliana C. - CE</div>
+        <div class="kit-card reveal">
+            <div style="color:var(--o); font-size:30px; margin-bottom:20px;">02</div>
+            <h3>Bônus: Guia de Ads</h3>
+            <p>Como configurar suas campanhas no Facebook e Instagram para vender esse kit todos os dias.</p>
+            <div class="kit-price" style="color:#10b981;">GRÁTIS</div>
         </div>
     </div>
 </section>
 
-<section id="faq" style="padding:100px 5%;">
-    <h2 class="r" style="font-family:'Unbounded'; margin-bottom:30px;">DÚVIDAS FREQUENTES</h2>
-    <div class="fi r" onclick="this.classList.toggle('open')">
-        <div class="fq">Preciso de domínio próprio? <span>+</span></div>
-        <div class="fa">No início não, você pode usar o GitHub Pages como está fazendo agora.</div>
-    </div>
-    <div class="fi r" onclick="this.classList.toggle('open')">
-        <div class="fq">Como recebo o acesso? <span>+</span></div>
-        <div class="fa">O acesso é enviado para seu e-mail imediatamente após o pagamento pela Cakto.</div>
+<section id="depoimentos">
+    <h2 class="section-title reveal">RESULTADOS REAIS</h2>
+    <div class="grid-deps reveal">
+        <div class="dep-card">
+            <p class="dep-text">"Subi a campanha de manhã e à tarde já caiu o primeiro 'venda realizada'. Surreal o suporte."</p>
+            <p class="dep-user">Matheus Oliveira</p>
+        </div>
+        <div class="dep-card">
+            <p class="dep-text">"O que eu mais gostei foi a qualidade dos PDFs. Não é lixo traduzido, é conteúdo de verdade."</p>
+            <p class="dep-user">Carla Mendes</p>
+        </div>
+        <div class="dep-card">
+            <p class="dep-text">"Paguei R$ 67 e na primeira venda já recuperei tudo. Agora é só escala."</p>
+            <p class="dep-user">Lucas Ferreira</p>
+        </div>
     </div>
 </section>
 
-<footer style="padding:50px 5%; text-align:center; border-top:1px solid var(--border);">
-    <div class="logo">KIT<em>PLR</em></div>
-    <p style="font-size:11px; color:var(--g); margin-top:10px;">© 2026 — Todos os direitos reservados.</p>
+<section id="faq">
+    <h2 class="section-title reveal" style="font-size:30px;">DÚVIDAS</h2>
+    <div class="faq-list reveal">
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Como recebo o acesso? <span>+</span></div>
+            <div class="faq-a">O acesso é enviado automaticamente para o seu e-mail assim que o pagamento for aprovado pela Cakto.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Posso mudar o nome do produto? <span>+</span></div>
+            <div class="faq-a">Sim! Você recebe a licença PLR, o que permite editar, colocar seu nome e vender como se fosse seu.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Preciso investir muito em anúncios? <span>+</span></div>
+            <div class="faq-a">Você pode começar com apenas R$ 10 ou R$ 20 por dia para testar os primeiros criativos.</div>
+        </div>
+    </div>
+</section>
+
+<section id="final">
+    <h2 class="reveal" style="font-family:'Unbounded'; font-size:clamp(30px, 5vw, 60px); margin-bottom:40px;">
+        A OPORTUNIDADE ESTÁ<br><span style="color:var(--o);">NA SUA FRENTE.</span>
+    </h2>
+    <a href="https://pay.cakto.com.br/z5mwske_778971" class="cta-main reveal" target="_blank">QUERO MEU ACESSO AGORA</a>
+</section>
+
+<footer>
+    <div class="logo">KIT<span>PLR</span></div>
+    <div>© 2026 — Estratégia Digital de Alta Performance.</div>
 </footer>
 
 <script>
-    // 1. CARROSSEL (TICKER)
-    const frases = ['2 PDFs COMPLETOS', 'LICENÇA PLR', 'ACESSO IMEDIATO', 'BÔNUS ADS', 'LUCRO 100% SEU'];
-    const tki = document.getElementById('tki');
-    tki.innerHTML = [...frases, ...frases, ...frases].map(f => `<div class="tk-item"><div class="tk-dot"></div>${f}</div>`).join('');
+    // 1. GERAR TICKER INFINITO
+    const frases = ['ACESSO IMEDIATO', 'LICENÇA PLR INCLUSA', 'LUCRO 100% SEU', 'PRODUTO VALIDADO', 'BÔNUS FACEBOOK ADS', 'SUPORTE VIP'];
+    const target = document.getElementById('ticker-target');
+    target.innerHTML = [...frases, ...frases, ...frases].map(f => `
+        <div class="ticker-item"><div class="ticker-dot"></div>${f}</div>
+    `).join('');
 
-    // 2. CALCULADORA
-    let v = 2;
-    function updateCalc() {
-        document.getElementById('nv').innerText = v;
-        document.getElementById('vm').innerText = 'R$ ' + (v * 67 * 30).toLocaleString('pt-BR');
-        document.getElementById('va').innerText = 'R$ ' + (v * 67 * 365).toLocaleString('pt-BR');
+    // 2. LÓGICA CALCULADORA
+    let sales = 2;
+    const price = 67;
+
+    function updateCalculadora() {
+        document.getElementById('sales-display').innerText = sales;
+        const month = sales * price * 30;
+        const year = sales * price * 365;
+        document.getElementById('month-val').innerText = 'R$ ' + month.toLocaleString('pt-BR');
+        document.getElementById('year-val').innerText = 'R$ ' + year.toLocaleString('pt-BR');
     }
-    window.ch = (amt) => { v = Math.max(1, v + amt); updateCalc(); };
 
-    // 3. ANIMAÇÃO DE ROLAGEM
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); });
+    window.changeSales = (val) => {
+        sales = Math.max(1, sales + val);
+        updateCalculadora();
+    }
+
+    // 3. FAQ INTERATIVO
+    window.toggleFaq = (el) => {
+        el.classList.toggle('active');
+    }
+
+    // 4. ANIMAÇÃO AO ROLAR (REVEAL)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // INIT
+    updateCalculadora();
 </script>
 
 </body>
