@@ -1,1175 +1,646 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>As 3 Letras que Me Fizeram Sair do CLT: PDF</title>
-
-<!-- SEO + Preview (WhatsApp/Instagram) -->
-<meta name="description" content="Guia prático para criar, lançar e vender seu primeiro infoproduto em PDF — mesmo com 0 seguidores. Acesso imediato.">
-<meta property="og:title" content="As 3 Letras que Me Fizeram Sair do CLT: PDF">
-<meta property="og:description" content="Em 7 dias: PDF pronto + página + checkout na Cakto. Bônus grátis: Guia de Métricas Facebook Ads.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://SEU-DOMINIO/thumbnail.jpg">
-<meta property="og:url" content="https://SEU-DOMINIO/">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '25632137326469278');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent'); // recomendado para página de vendas
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=25632137326469278&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kit PLR — Copie. Venda. Lucre.</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --red: #e94560;
-    --dark: #0f0f1a;
-    --dark2: #1a1a2e;
-    --gold: #f5a623;
-    --white: #ffffff;
-    --gray: #8a8a9a;
-    --light: #f8f8fc;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Manrope', sans-serif;
-    background: var(--dark);
-    color: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(233,69,96,0.18) 0%, transparent 70%);
-    top: -100px; left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%);
-    bottom: 0; right: -100px;
-    pointer-events: none;
-  }
-
-  .badge {
-    display: inline-block;
-    background: rgba(233,69,96,0.15);
-    border: 1px solid rgba(233,69,96,0.4);
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 8px 20px;
-    border-radius: 100px;
-    margin-bottom: 32px;
-    animation: fadeDown 0.6s ease both;
-  }
-
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 110px);
-    line-height: 0.92;
-    letter-spacing: 2px;
-    animation: fadeDown 0.7s ease 0.1s both;
-    max-width: 900px;
-  }
-
-  .hero h1 span {
-    color: var(--red);
-    display: block;
-  }
-
-  .hero h1 .pdf-word {
-    color: var(--gold);
-    font-size: clamp(80px, 15vw, 180px);
-    display: block;
-    line-height: 0.85;
-  }
-
-  .hero-sub {
-    font-size: clamp(16px, 2.5vw, 20px);
-    color: rgba(255,255,255,0.65);
-    margin-top: 28px;
-    max-width: 720px;
-    line-height: 1.6;
-    font-weight: 500;
-    animation: fadeDown 0.7s ease 0.2s both;
-  }
-
-  .hero-sub strong { color: var(--white); }
-
-  .hero-bullets{
-    margin-top:18px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    align-items:center;
-    color:rgba(255,255,255,0.7);
-    font-size:14px;
-    line-height:1.5;
-    animation: fadeDown 0.7s ease 0.25s both;
-  }
-  .hero-bullets b{ color:#fff; }
-
-  .cta-wrap {
-    margin-top: 40px;
-    animation: fadeDown 0.7s ease 0.3s both;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .btn-cta {
-    display: inline-block;
-    background: var(--red);
-    color: white;
-    font-family: 'Manrope', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    padding: 22px 56px;
-    border-radius: 6px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 8px 40px rgba(233,69,96,0.4);
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 50px rgba(233,69,96,0.55);
-  }
-
-  .price-tag {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-  }
-
-  .price-tag strong { color: var(--gold); font-size: 18px; }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255,255,255,0.3);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: bounce 2s infinite;
-  }
-
-  .scroll-hint::after {
-    content: '↓';
-    font-size: 20px;
-  }
-
-  /* ── STORY ── */
-  .story {
-    background: var(--light);
-    color: var(--dark);
-    padding: 100px 20px;
-  }
-
-  .container {
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 16px;
-  }
-
-  .story h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(38px, 6vw, 60px);
-    line-height: 1;
-    color: var(--dark);
-    margin-bottom: 36px;
-  }
-
-  .story p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 20px;
-  }
-
-  .story p strong { color: var(--dark); }
-
-  .quote-block {
-    border-left: 4px solid var(--red);
-    padding: 24px 32px;
-    background: var(--dark);
-    color: white;
-    font-size: 19px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 40px 0;
-    border-radius: 0 8px 8px 0;
-  }
-
-  .dashboard-img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid rgba(0,0,0,0.1);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-    margin: 32px 0 12px;
-  }
-
-  .img-caption {
-    font-size: 13px;
-    color: var(--gray);
-    text-align: center;
-    margin-bottom: 32px;
-  }
-
-  /* ── FOR WHO ── */
-  .for-who {
-    background: var(--dark2);
-    padding: 100px 20px;
-  }
-
-  .for-who h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(38px, 6vw, 60px);
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .for-who .sub {
-    text-align: center;
-    color: rgba(255,255,255,0.5);
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 28px;
-    transition: border-color 0.3s, transform 0.3s;
-  }
-
-  .card:hover {
-    border-color: rgba(233,69,96,0.4);
-    transform: translateY(-4px);
-  }
-
-  .card-icon { font-size: 32px; margin-bottom: 16px; }
-
-  .card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: white;
-  }
-
-  .card p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.6;
-  }
-
-  /* ── 3 PERFIS (NOVO) ── */
-  .profiles {
-    background: #121224;
-    padding: 80px 20px;
-  }
-  .profiles h2{
-    font-family:'Bebas Neue',sans-serif;
-    font-size:clamp(34px,6vw,56px);
-    text-align:center;
-    margin-bottom:14px;
-  }
-  .profiles .sub{
-    text-align:center;
-    color:rgba(255,255,255,0.55);
-    max-width:760px;
-    margin:0 auto 40px;
-    line-height:1.7;
-    font-size:16px;
-  }
-  .profiles-grid{
-    max-width:900px;
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:18px;
-  }
-  .profile{
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 26px;
-  }
-  .profile b{ color:#fff; }
-  .profile p{ color: rgba(255,255,255,0.6); font-size:14px; line-height:1.7; }
-
-  /* ── WHAT YOU LEARN ── */
-  .what-learn {
-    background: var(--light);
-    color: var(--dark);
-    padding: 100px 20px;
-  }
-
-  .what-learn h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(38px, 6vw, 60px);
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .chapters {
-    max-width: 780px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .chapter-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 24px;
-    border-radius: 8px;
-    transition: background 0.2s;
-    cursor: default;
-  }
-
-  .chapter-item:hover { background: rgba(233,69,96,0.05); }
-
-  .chapter-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    color: var(--red);
-    letter-spacing: 2px;
-    min-width: 90px;
-    padding-top: 2px;
-  }
-
-  .chapter-info h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 4px;
-  }
-
-  .chapter-info p {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.5;
-  }
-
-  .divider { height: 1px; background: rgba(0,0,0,0.08); margin: 0 24px; }
-
-  /* ── OFFER ── */
-  .offer {
-    background: var(--dark);
-    padding: 100px 20px;
-    text-align: center;
-  }
-
-  .offer h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(38px, 6vw, 60px);
-    margin-bottom: 16px;
-  }
-
-  .offer .sub {
-    color: rgba(255,255,255,0.5);
-    font-size: 16px;
-    margin-bottom: 60px;
-  }
-
-  .price-box {
-    max-width: 520px;
-    margin: 0 auto;
-    background: var(--dark2);
-    border: 1px solid rgba(233,69,96,0.3);
-    border-radius: 16px;
-    padding: 48px 40px;
-    position: relative;
-    overflow: hidden;
-    text-align:left;
-  }
-
-  .price-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--red), var(--gold));
-  }
-
-  .price-top{
-    text-align:center;
-    margin-bottom:24px;
-  }
-
-  .price-box .old-price {
-    font-size: 16px;
-    color: rgba(255,255,255,0.35);
-    text-decoration: line-through;
-    margin-bottom: 8px;
-    text-align:center;
-  }
-
-  .price-box .price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 80px;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 4px;
-    text-align:center;
-  }
-
-  .price-box .price-note {
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 18px;
-    text-align:center;
-  }
-
-  .value-stack{
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin: 14px 0 22px;
-    color: rgba(255,255,255,0.75);
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  .value-stack b{ color:#fff; }
-  .value-stack .cut{ text-decoration:line-through; opacity:.55; }
-
-  .includes {
-    text-align: left;
-    margin-bottom: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .include-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 15px;
-    color: rgba(255,255,255,0.82);
-    line-height: 1.45;
-  }
-
-  .include-item .check {
-    color: var(--red);
-    font-size: 18px;
-    min-width: 24px;
-    padding-top:2px;
-  }
-
-  .offer-cta{
-    width:100%;
-    text-align:center;
-    display:block;
-    margin-top: 18px;
-  }
-
-  .guarantee {
-    margin-top: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: rgba(255,255,255,0.45);
-    font-size: 13px;
-    text-align:center;
-  }
-
-  .guarantee .shield { font-size: 22px; }
-
-  /* ── FAQ ── */
-  .faq {
-    background: var(--light);
-    color: var(--dark);
-    padding: 100px 20px;
-  }
-
-  .faq h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(38px, 6vw, 60px);
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .faq-list {
-    max-width: 680px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-  }
-
-  .faq-q {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    padding: 22px 0;
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .faq-q .arrow {
-    font-size: 20px;
-    color: var(--red);
-    transition: transform 0.3s;
-    flex-shrink: 0;
-  }
-
-  .faq-a {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.7;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s;
-  }
-
-  .faq-item.open .faq-a { max-height: 340px; padding-bottom: 20px; }
-  .faq-item.open .arrow { transform: rotate(45deg); }
-
-  /* ── FINAL CTA ── */
-  .final-cta {
-    background: var(--red);
-    padding: 100px 20px;
-    text-align: center;
-  }
-
-  .final-cta h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(42px, 7vw, 80px);
-    margin-bottom: 20px;
-    line-height: 1;
-  }
-
-  .final-cta p {
-    font-size: 18px;
-    opacity: 0.88;
-    margin-bottom: 40px;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-  }
-
-  .btn-cta-white {
-    display: inline-block;
-    background: white;
-    color: var(--red);
-    font-family: 'Manrope', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    padding: 22px 56px;
-    border-radius: 6px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-cta-white:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 50px rgba(0,0,0,0.3);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    padding: 40px 20px;
-    text-align: center;
-    color: rgba(255,255,255,0.25);
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  /* ── STICKY BAR ── */
-  .sticky-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: var(--dark2);
-    border-top: 2px solid var(--red);
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    z-index: 999;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-    flex-wrap: wrap;
-  }
-
-  .sticky-bar.visible { transform: translateY(0); }
-
-  .sticky-bar .sticky-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.8);
-  }
-
-  .sticky-bar .sticky-text strong { color: var(--gold); }
-
-  .sticky-bar .btn-cta {
-    padding: 14px 32px;
-    font-size: 15px;
-    white-space: nowrap;
-  }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
-
-  @media (max-width: 600px) {
-    .sticky-bar { justify-content: center; }
-    .sticky-bar .sticky-text { text-align: center; }
-    .price-box { padding: 36px 24px; }
-    .chapter-item { flex-direction: column; gap: 6px; }
-    .chapter-num { min-width: auto; }
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --p:#07060a;
+  --p2:#0f0d14;
+  --p3:#161420;
+  --border:rgba(255,255,255,0.06);
+  --border2:rgba(255,255,255,0.11);
+  --o:#ff6b00;
+  --o2:#ff8c38;
+  --amber:#ffb347;
+  --w:#f2efe8;
+  --g:#6b6878;
+  --g2:#9896a4;
+  --card:rgba(255,255,255,0.03);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--p);color:var(--w);overflow-x:hidden;}
+
+/* GRAIN */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.55;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:60px;padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(7,6,10,0.9);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--w);}
+.logo em{color:var(--o);font-style:normal;}
+.nav-pill{
+  background:var(--o);color:#000;
+  font-family:'Unbounded',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:10px 20px;border-radius:2px;text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.nav-pill:hover{background:var(--o2);transform:translateY(-1px);}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  padding:100px 5% 80px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  position:relative;overflow:hidden;
+}
+#hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,107,0,0.018) 60px,rgba(255,107,0,0.018) 61px);
+}
+.glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(160px);}
+.glow1{width:700px;height:500px;background:rgba(255,107,0,0.09);top:-100px;right:-200px;}
+.glow2{width:400px;height:400px;background:rgba(255,107,0,0.05);bottom:0;left:-100px;}
+
+.hero-left{position:relative;z-index:1;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Unbounded',sans-serif;
+  font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--o);margin-bottom:28px;
+  border:1px solid rgba(255,107,0,0.25);
+  padding:8px 16px;border-radius:1px;background:rgba(255,107,0,0.05);
+}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--o);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+h1{
+  font-family:'Unbounded',sans-serif;
+  font-size:clamp(44px,7vw,96px);
+  font-weight:900;line-height:.88;letter-spacing:-2px;margin-bottom:24px;
+}
+h1 .stroke{-webkit-text-stroke:1px rgba(242,239,232,0.2);-webkit-text-fill-color:transparent;color:transparent;display:block;}
+h1 .fill{color:var(--w);display:block;}
+h1 .accent{color:var(--o);display:block;}
+
+.hero-desc{font-size:15px;color:var(--g2);line-height:1.75;font-weight:400;max-width:420px;margin-bottom:28px;}
+.hero-desc strong{color:var(--w);font-weight:600;}
+
+/* preço no hero */
+.hero-price{
+  display:flex;align-items:baseline;gap:12px;margin-bottom:24px;
+}
+.hero-price-val{
+  font-family:'Unbounded',sans-serif;
+  font-size:42px;font-weight:900;letter-spacing:-1.5px;color:var(--o);line-height:1;
+}
+.hero-price-de{font-size:13px;color:var(--g);text-decoration:line-through;}
+.hero-price-par{font-size:11px;color:var(--g);letter-spacing:.3px;}
+
+.hero-btns{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.btn-main{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--o);color:#000;
+  font-family:'Unbounded',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:18px 28px;border-radius:2px;text-decoration:none;
+  transition:background .2s,transform .2s,box-shadow .2s;white-space:nowrap;
+}
+.btn-main:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,107,0,0.3);}
+.hero-note{font-size:11px;color:var(--g);letter-spacing:.3px;}
+
+/* HERO RIGHT — mockup */
+.hero-right{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;}
+.mockup-wrap{position:relative;width:100%;max-width:460px;}
+/* PDF mockup principal */
+.mock-main{
+  background:linear-gradient(135deg,rgba(255,107,0,0.12),rgba(255,107,0,0.03));
+  border:1px solid rgba(255,107,0,0.35);
+  border-radius:6px;
+  padding:32px 28px 28px;
+  position:relative;
+  box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(255,107,0,0.1);
+}
+.mock-main::before{
+  content:'PDF';
+  position:absolute;top:16px;right:20px;
+  font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;color:rgba(255,107,0,0.3);
+}
+.mock-flag{
+  display:inline-block;
+  font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  background:rgba(255,107,0,0.15);color:var(--o);border:1px solid rgba(255,107,0,0.25);
+  padding:4px 10px;border-radius:1px;margin-bottom:16px;
+}
+.mock-title{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:8px;}
+.mock-pages{font-size:11px;color:var(--g);letter-spacing:1px;margin-bottom:20px;}
+/* linhas simulando conteúdo */
+.mock-lines{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.mock-line{height:8px;border-radius:2px;background:rgba(255,255,255,0.06);}
+.mock-line:nth-child(1){width:90%}
+.mock-line:nth-child(2){width:75%}
+.mock-line:nth-child(3){width:85%}
+.mock-line:nth-child(4){width:60%}
+.mock-price-row{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,107,0,0.15);}
+.mock-price{font-family:'Unbounded',sans-serif;font-size:24px;font-weight:800;color:var(--o);}
+.mock-label{font-size:11px;color:var(--g2);}
+
+/* PDF mockup bônus — flutuando */
+.mock-bonus{
+  position:absolute;
+  bottom:-28px;right:-28px;
+  width:58%;
+  background:linear-gradient(135deg,rgba(255,179,71,0.1),rgba(255,179,71,0.03));
+  border:1px solid rgba(255,179,71,0.3);
+  border-radius:6px;padding:18px 16px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+.mock-bonus-flag{
+  display:inline-block;
+  font-family:'Unbounded',sans-serif;font-size:7px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.25);
+  padding:3px 8px;border-radius:1px;margin-bottom:10px;
+}
+.mock-bonus-title{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;line-height:1.2;letter-spacing:-.2px;margin-bottom:6px;}
+.mock-bonus-pages{font-size:10px;color:var(--g);letter-spacing:1px;margin-bottom:10px;}
+.mock-bonus-price{display:flex;align-items:center;gap:8px;}
+.mock-bonus-was{font-size:11px;color:var(--g);text-decoration:line-through;}
+.mock-bonus-free{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;background:#10b981;color:#000;padding:3px 8px;border-radius:1px;}
+
+/* ── TICKER ── */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--p2);overflow:hidden;padding:14px 0;}
+.tk-inner{display:flex;width:max-content;animation:tk 28s linear infinite;}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tk-item{display:flex;align-items:center;gap:14px;padding:0 36px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);white-space:nowrap;}
+.tk-dot{width:4px;height:4px;border-radius:50%;background:var(--o);flex-shrink:0;}
+
+/* ── SEÇÕES ── */
+.s-eyebrow{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--o);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.s-eyebrow::after{content:'';flex:0 0 40px;height:1px;background:rgba(255,107,0,0.3);}
+.s-h2{font-family:'Unbounded',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.05;letter-spacing:-1px;margin-bottom:16px;}
+.s-sub{font-size:14px;color:var(--g2);line-height:1.7;max-width:420px;}
+
+/* ── CALCULADORA ── */
+#calc-section{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);position:relative;overflow:hidden;}
+#calc-section::after{content:'';position:absolute;right:-300px;top:50%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.06),transparent 70%);pointer-events:none;}
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;max-width:1100px;}
+.calc-widget{background:var(--p3);border:1px solid var(--border2);border-radius:4px;overflow:hidden;}
+.cw-bar{background:var(--p2);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.cw-dots{display:flex;gap:5px;}
+.cw-dot{width:9px;height:9px;border-radius:50%;}
+.cw-label{font-size:10px;color:var(--g);letter-spacing:1px;font-family:'Unbounded',sans-serif;}
+.cw-body{padding:22px 20px;}
+.cw-row{margin-bottom:18px;}
+.cw-rlabel{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:8px;font-family:'Unbounded',sans-serif;}
+.cw-ctrl{display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:3px;overflow:hidden;}
+.cw-btn{width:42px;height:42px;background:transparent;border:none;color:var(--g2);font-size:18px;cursor:pointer;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cw-btn:hover{background:rgba(255,107,0,0.12);color:var(--o);}
+.cw-display{flex:1;text-align:center;font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;color:var(--w);}
+.cw-sep{height:1px;background:var(--border);margin:4px 0 18px;}
+.cw-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.cw-box{border-radius:3px;padding:14px 12px;border:1px solid var(--border);}
+.cw-box.hi{border-color:rgba(255,107,0,0.3);background:rgba(255,107,0,0.05);}
+.cw-box.mid{border-color:rgba(255,179,71,0.25);background:rgba(255,179,71,0.04);}
+.cw-blabel{font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:5px;font-family:'Unbounded',sans-serif;}
+.cw-bval{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;}
+.cw-box.hi .cw-bval{color:var(--o);}
+.cw-box.mid .cw-bval{color:var(--amber);}
+.cw-box.lo .cw-bval{color:var(--w);}
+.cw-box.inv .cw-bval{color:var(--g2);font-size:16px;}
+.cw-msg{background:rgba(255,107,0,0.07);border:1px solid rgba(255,107,0,0.18);border-radius:3px;padding:11px 14px;font-size:12px;color:var(--o2);line-height:1.5;font-weight:500;}
+
+/* ── KIT ── */
+#kit{padding:100px 5%;background:var(--p);border-top:1px solid var(--border);}
+.kit-wrap{max-width:1100px;}
+.kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
+.pdf-c{border-radius:4px;padding:0;overflow:hidden;position:relative;transition:transform .3s;}
+.pdf-c:hover{transform:translateY(-4px);}
+.pdf-c.main{border:1px solid rgba(255,107,0,0.3);}
+.pdf-c.bonus{border:1px solid rgba(255,179,71,0.25);}
+.pdf-top{padding:28px 26px 20px;}
+.pdf-c.main .pdf-top{background:linear-gradient(135deg,rgba(255,107,0,0.08),rgba(255,107,0,0.02));}
+.pdf-c.bonus .pdf-top{background:linear-gradient(135deg,rgba(255,179,71,0.07),rgba(255,179,71,0.02));}
+.pdf-flag{display:inline-block;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:1px;margin-bottom:16px;}
+.pdf-c.main .pdf-flag{background:rgba(255,107,0,0.15);color:var(--o);border:1px solid rgba(255,107,0,0.25);}
+.pdf-c.bonus .pdf-flag{background:rgba(255,179,71,0.12);color:var(--amber);border:1px solid rgba(255,179,71,0.2);}
+.pdf-title{font-family:'Unbounded',sans-serif;font-size:17px;font-weight:700;line-height:1.2;margin-bottom:8px;letter-spacing:-.3px;}
+.pdf-pages{font-size:11px;color:var(--g);font-weight:500;letter-spacing:1px;margin-bottom:18px;}
+.pdf-bar{border-top:1px solid var(--border);padding:16px 26px;display:flex;align-items:center;justify-content:space-between;}
+.pdf-price{font-family:'Unbounded',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.5px;}
+.pdf-c.main .pdf-price{color:var(--o);}
+.pdf-price-wrap{display:flex;align-items:center;gap:10px;}
+.pdf-was{font-size:13px;color:var(--g);text-decoration:line-through;}
+.pdf-free{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;background:#10b981;color:#000;padding:4px 10px;border-radius:1px;}
+.pdf-c.bonus .pdf-price{color:#10b981;}
+
+/* ── COMO FUNCIONA ── */
+#como{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:56px;}
+.step{background:var(--p);padding:36px 28px;position:relative;transition:background .25s;}
+.step:hover{background:rgba(255,107,0,0.03);}
+.step-n{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--o);margin-bottom:20px;}
+.step-title{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;letter-spacing:-.2px;}
+.step-desc{font-size:13px;color:var(--g2);line-height:1.65;}
+.step-badge{display:inline-block;margin-top:16px;font-size:10px;font-weight:600;color:var(--o);background:rgba(255,107,0,0.08);border:1px solid rgba(255,107,0,0.15);padding:4px 10px;border-radius:1px;font-family:'Unbounded',sans-serif;letter-spacing:.5px;}
+
+/* ── DEPOIMENTOS ── */
+#social{padding:100px 5%;background:var(--p);border-top:1px solid var(--border);}
+.deps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
+.dep{background:var(--p3);border:1px solid var(--border);border-radius:4px;padding:26px 22px;transition:border-color .25s,transform .25s;}
+.dep:hover{border-color:rgba(255,107,0,0.25);transform:translateY(-3px);}
+.dep-stars{color:var(--o);font-size:12px;letter-spacing:3px;margin-bottom:14px;}
+.dep-text{font-size:13px;color:var(--g2);line-height:1.7;margin-bottom:18px;font-style:italic;}
+.dep-who{display:flex;align-items:center;gap:12px;}
+.dep-av{width:42px;height:42px;border-radius:50%;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--o);flex-shrink:0;}
+.dep-name{font-size:13px;font-weight:600;}
+.dep-role{font-size:11px;color:var(--g2);margin-bottom:2px;}
+.dep-loc{font-size:10px;color:var(--g);font-family:'Unbounded',sans-serif;letter-spacing:.5px;}
+
+/* ── FAQ + CTA ── */
+#faq{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);}
+.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.faq-list{margin-top:40px;}
+.fi{border-bottom:1px solid var(--border);cursor:pointer;}
+.fq{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 0;font-size:13px;font-weight:600;letter-spacing:-.1px;transition:color .2s;}
+.fi:hover .fq{color:var(--o);}
+.fi-ico{width:20px;height:20px;flex-shrink:0;border:1px solid var(--border2);border-radius:1px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--g);transition:all .2s;}
+.fi.open .fi-ico{background:var(--o);border-color:var(--o);color:#000;transform:rotate(45deg);}
+.fa{font-size:12px;color:var(--g2);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s;}
+.fi.open .fa{max-height:160px;padding-bottom:14px;}
+.oferta{background:var(--p);border:1px solid var(--border2);border-radius:4px;overflow:hidden;margin-top:40px;}
+.of-head{background:rgba(255,107,0,0.08);border-bottom:1px solid rgba(255,107,0,0.15);padding:14px 20px;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--o);}
+.of-body{padding:24px 20px;}
+.of-de{font-size:12px;color:var(--g);text-decoration:line-through;margin-bottom:4px;}
+.of-val{font-family:'Unbounded',sans-serif;font-size:56px;font-weight:900;line-height:1;color:var(--o);letter-spacing:-2px;margin-bottom:6px;}
+.of-par{font-size:11px;color:var(--g);margin-bottom:24px;letter-spacing:.3px;}
+.btn-of{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--o);color:#000;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px;border-radius:2px;text-decoration:none;width:100%;transition:background .2s,transform .15s;}
+.btn-of:hover{background:var(--o2);transform:translateY(-1px);}
+.of-gar{display:flex;align-items:center;gap:7px;margin-top:12px;font-size:11px;color:var(--g);letter-spacing:.3px;}
+.of-itens{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+.of-item{font-size:11px;color:var(--g2);padding:4px 0;display:flex;align-items:center;gap:8px;}
+.of-item::before{content:'—';color:var(--o);font-size:10px;}
+
+/* ── CTA FINAL ── */
+#ctaf{padding:120px 5%;background:var(--p);border-top:1px solid var(--border);position:relative;overflow:hidden;text-align:center;}
+#ctaf::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 80px,rgba(255,107,0,0.012) 80px,rgba(255,107,0,0.012) 81px);pointer-events:none;}
+.ctaf-glow{position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(255,107,0,0.08),transparent 65%);pointer-events:none;}
+.ctaf-inner{position:relative;z-index:1;}
+.ctaf-label{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--o);margin-bottom:24px;}
+.ctaf-h{font-family:'Unbounded',sans-serif;font-size:clamp(40px,6.5vw,80px);font-weight:900;line-height:.92;letter-spacing:-2px;margin-bottom:40px;}
+.ctaf-h .ghost{-webkit-text-stroke:1px rgba(242,239,232,0.15);-webkit-text-fill-color:transparent;}
+
+footer{border-top:1px solid var(--border);padding:22px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--g);letter-spacing:.3px;}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.r.v{opacity:1;transform:translateY(0);}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}
+
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;}
+  .mock-bonus{display:none;}
+  .calc-layout{grid-template-columns:1fr;}
+  .kit-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .deps{grid-template-columns:1fr;}
+  .faq-layout{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;align-items:flex-start;}
+}
 </style>
 </head>
 <body>
 
+<nav>
+  <div class="logo">KIT<em>PLR</em></div>
+  <a href="https://pay.cakto.com.br/z5mwske_778971" class="nav-pill" target="_blank">Comprar — R$ 67</a>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
-  <div class="badge">🔥 Lançamento — Oferta por tempo limitado</div>
-  <h1>
-    As 3 letras que me<br>fizeram sair do CLT:
-    <span class="pdf-word">PDF</span>
-  </h1>
+<section id="hero">
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
 
-  <p class="hero-sub">
-    Um passo a passo pra você criar e colocar seu primeiro infoproduto no ar —
-    <strong>mesmo com 0 seguidores</strong>.
-    Em 7 dias, você terá <strong>PDF pronto + página + checkout na Cakto</strong>.
-  </p>
-
-  <div class="hero-bullets">
-    <div>✅ <b>Sem achismo:</b> como escolher um tema com demanda</div>
-    <div>✅ <b>Sem designer:</b> PDF profissional com ferramentas simples</div>
-    <div>✅ <b>Sem travar nos anúncios:</b> bônus de métricas pra saber o que fazer em cada situação</div>
-  </div>
-
-  <div class="cta-wrap">
-    <a href="#comprar" class="btn-cta">QUERO MEU PDF AGORA →</a>
-    <span class="price-tag">Por apenas <strong>R$67</strong> — acesso imediato</span>
-  </div>
-  <div class="scroll-hint">role para ver</div>
-</section>
-
-<!-- STORY -->
-<section class="story">
-  <div class="container">
-    <p class="section-label">A história real por trás deste guia</p>
-    <h2>Eu achei que estava seguro… até perceber que segurança no CLT é ilusão.</h2>
-
-    <p>Meu nome é <strong>Lucas</strong>. Não venho de família rica. Não tive herança, nem conexões, nem rede de apoio. O que eu sempre tive foi vontade de mudar de vida — e a certeza de que o digital era o caminho mais rápido para isso.</p>
-
-    <p>Estudei muito. Corri atrás. E quando a Inteligência Artificial chegou com força, percebi que o jogo havia mudado. Com ajuda da IA, aprendi programação praticamente do zero e desenvolvi um sistema completo de controle de estoque para a empresa onde eu trabalhava.</p>
-
-    <img src="dashboard.png" alt="Dashboard do Sistema de Inventário criado por Lucas" class="dashboard-img" onerror="this.style.display='none'">
-    <p class="img-caption">▲ Sistema de Inventário desenvolvido do zero com auxílio de IA — sem experiência prévia em programação.</p>
-
-    <p>Eu pensei: <em>"agora meu emprego está garantido."</em></p>
-
-    <p>Então <strong>a empresa pegou fogo</strong>. Literalmente. E junto com as chamas, vieram os cortes. Mesmo tendo entregado muito — mesmo sendo parte da solução — meu nome estava no meio da lista de demitidos.</p>
-
-    <div class="quote-block">
-      "Naquele momento entendi: não importa o quanto você se dedique, você nunca está seguro dependendo de uma única fonte de renda que não é sua."
-    </div>
-
-    <p>A demissão me forçou a tomar a decisão que eu deveria ter tomado antes: construir algo meu no digital. E foi um simples <strong>PDF</strong> que iniciou a virada.</p>
-
-    <p>Criei este guia para que <strong>você não precise esperar ser demitido para começar.</strong> Três letras foram suficientes para eu dar o primeiro passo. Podem ser as suas também.</p>
-  </div>
-</section>
-
-<!-- FOR WHO (MANTIDO) -->
-<section class="for-who">
-  <p class="section-label" style="text-align:center">Este guia é para você?</p>
-  <h2>Este guia foi feito para quem...</h2>
-  <p class="sub">Se você se identificar com pelo menos um desses perfis, está no lugar certo.</p>
-
-  <div class="cards-grid">
-    <div class="card">
-      <div class="card-icon">😤</div>
-      <h3>Está cansado do CLT</h3>
-      <p>Quer parar de depender de um chefe e construir algo próprio — mas não sabe por onde começar.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">💸</div>
-      <h3>Precisa de renda extra</h3>
-      <p>O salário não fecha o mês e você quer uma fonte de renda paralela que funcione de forma previsível.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">📱</div>
-      <h3>Quer entrar no digital</h3>
-      <p>Vê pessoas ganhando dinheiro online e quer descobrir como fazer o mesmo — sem precisar de muito investimento.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🧠</div>
-      <h3>Tem conhecimento para compartilhar</h3>
-      <p>Sabe algo que outras pessoas pagariam para aprender — mas ainda não sabe como transformar isso em produto.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🚀</div>
-      <h3>Quer começar agora</h3>
-      <p>Sem esperar o momento perfeito, sem precisar de muito dinheiro, sem precisar ser expert em marketing.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🤖</div>
-      <h3>Quer usar a IA a seu favor</h3>
-      <p>Entende que a Inteligência Artificial mudou as regras do jogo e quer aproveitar essa janela de oportunidade.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 3 PERFIS (NOVO, PARA OS 3 PÚBLICOS) -->
-<section class="profiles">
-  <div class="container">
-    <p class="section-label" style="text-align:center;color:var(--red)">Para os 3 tipos de pessoas</p>
-    <h2>Se você é 1 desses 3… isso aqui encaixa perfeito</h2>
-    <p class="sub">Eu pensei no guia pra funcionar tanto pra quem tem <b>0 seguidores</b>, quanto pra quem está no <b>CLT</b> e pra quem <b>já tentou e travou</b>.</p>
-
-    <div class="profiles-grid">
-      <div class="profile">
-        <p><b>📉 “Tenho 0 seguidores”</b></p>
-        <p>Você precisa de um tema com demanda + um PDF que resolve um problema real + uma página simples. O guia te entrega esse caminho sem depender de audiência.</p>
-      </div>
-      <div class="profile">
-        <p><b>⛓️ “Tô preso no CLT”</b></p>
-        <p>Você precisa de um plano direto: criar, colocar no ar e vender. Sem complicação, sem “anos de conteúdo”. Só execução.</p>
-      </div>
-      <div class="profile">
-        <p><b>🧱 “Já tentei e travei”</b></p>
-        <p>Você precisa de estrutura (checklist + templates) e de clareza pra não gastar dinheiro sem entender os números. O bônus de métricas resolve essa parte.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU LEARN (MANTIDO) -->
-<section class="what-learn">
-  <p class="section-label" style="text-align:center;color:var(--red)">Conteúdo completo</p>
-  <h2 style="color:var(--dark)">O que você vai aprender</h2>
-
-  <div class="chapters">
-    <div class="chapter-item">
-      <span class="chapter-num">INTRODUÇÃO</span>
-      <div class="chapter-info">
-        <h4>A história por trás deste guia</h4>
-        <p>Como saí do CLT e por que um PDF foi o ponto de virada.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 1</span>
-      <div class="chapter-info">
-        <h4>O mercado de infoprodutos no Brasil</h4>
-        <p>Como funciona na prática e por que PDFs são o jeito mais rápido de começar.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 2</span>
-      <div class="chapter-info">
-        <h4>Escolhendo seu nicho e tema</h4>
-        <p>A fórmula para encontrar um tema que as pessoas realmente querem comprar.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 3</span>
-      <div class="chapter-info">
-        <h4>Estruturando o conteúdo do seu PDF</h4>
-        <p>A estrutura vencedora de todo infoproduto que vende — passo a passo.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 4</span>
-      <div class="chapter-info">
-        <h4>Criando um PDF profissional sem designer</h4>
-        <p>Ferramentas gratuitas e princípios de design para quem não é designer.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 5</span>
-      <div class="chapter-info">
-        <h4>Definindo preço e posicionamento</h4>
-        <p>A psicologia do preço e como cobrar o valor certo para maximizar vendas.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 6</span>
-      <div class="chapter-info">
-        <h4>Plataformas de venda: Hotmart, Kiwify e Cakto</h4>
-        <p>Qual escolher, como configurar e começar a receber em minutos.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 7</span>
-      <div class="chapter-info">
-        <h4>Página de vendas que converte</h4>
-        <p>Os 10 elementos que toda página de vendas precisa ter.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 8</span>
-      <div class="chapter-info">
-        <h4>Copy e textos de marketing</h4>
-        <p>AIDA + templates prontos para Instagram e WhatsApp.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 9</span>
-      <div class="chapter-info">
-        <h4>Estratégia de lançamento — Semana 1</h4>
-        <p>O cronograma dia a dia para lançar seu produto em 7 dias.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">CAPÍTULO 10</span>
-      <div class="chapter-info">
-        <h4>Escalando: crescer mês a mês</h4>
-        <p>As 4 alavancas para evoluir seus resultados com consistência.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="chapter-item">
-      <span class="chapter-num">BÔNUS</span>
-      <div class="chapter-info">
-        <h4>Templates e checklists prontos</h4>
-        <p>Checklist de lançamento completo + template de mensagem de WhatsApp.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BONUS (MANTIDO + COPY MELHORADA) -->
-<section class="what-learn" style="background:#fff9f0;">
-  <p class="section-label" style="text-align:center;color:var(--red)">🎁 Bônus exclusivo incluso</p>
-  <h2 style="color:var(--dark);text-align:center">Você também leva isso de graça</h2>
-
-  <div style="max-width:780px;margin:40px auto 0;background:var(--dark);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);">
-    <div style="background:linear-gradient(135deg,#e94560,#0f0f1a);padding:28px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-      <div style="font-size:48px;">📊</div>
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:6px">BÔNUS — Valor R$47 — GRÁTIS</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;line-height:1.1">Guia Completo de Métricas & Otimização<br>Facebook Ads</div>
-      </div>
-    </div>
-    <div style="padding:28px 32px;">
-      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:18px">
-        A maioria das pessoas cria o produto… e trava na hora de anunciar porque não entende os números.
-        Esse guia te mostra <strong style="color:#fff">exatamente o que fazer em cada situação</strong> — sem achismo e sem queimar dinheiro.
-      </p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #e94560;">
-          <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">6 Métricas Essenciais</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.45)">CTR, CPC, CPM, CPA, CVR e ROAS com valores de referência</div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #f5a623;">
-          <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Semáforo do Anúncio</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.45)">Verde, amarelo ou vermelho — saiba na hora o que fazer</div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #00c48c;">
-          <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">4 Cenários + Solução</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.45)">Clique sem venda, CTR baixo, escala, CPA no prejuízo</div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #3b82f6;">
-          <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Calculadora de ROAS</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.45)">Calcule lucro real e tenha diagnóstico da campanha</div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #e94560;">
-          <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">8 Regras de Ouro</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.45)">As lições que economizam dinheiro e evitam erro de iniciante</div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border-left:3px solid #f5a623;">
-          <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px">Rotina de Análise</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.45)">O que checar diariamente em 5 min e semanalmente em 30 min</div>
-        </div>
-      </div>
-      <div style="margin-top:20px;text-align:center;font-size:14px;color:rgba(255,255,255,0.45)">
-        📄 16 páginas · PDF profissional · Incluso automaticamente na compra
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INDEPENDENCE SECTION (MANTIDO) -->
-<section style="background:var(--dark);padding:80px 20px;text-align:center;position:relative;overflow:hidden;">
-  <div style="position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(233,69,96,0.1) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none"></div>
-  <div style="max-width:680px;margin:0 auto;position:relative;">
-    <p style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px">O gatilho que muda tudo</p>
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6vw,68px);line-height:1;margin-bottom:32px">
-      Você não está<br>procurando dinheiro.<br>
-      <span style="color:var(--gold)">Você está procurando<br>independência.</span>
-    </h2>
-
-    <div style="display:flex;flex-direction:column;gap:12px;max-width:460px;margin:0 auto 40px;text-align:left;">
-      <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,0.04);border-radius:10px;border-left:3px solid var(--red);">
-        <span style="font-size:20px">🚫</span>
-        <span style="font-size:15px;color:rgba(255,255,255,0.75)">Não depender dos seus pais</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,0.04);border-radius:10px;border-left:3px solid var(--red);">
-        <span style="font-size:20px">🚫</span>
-        <span style="font-size:15px;color:rgba(255,255,255,0.75)">Não depender do seu chefe</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,0.04);border-radius:10px;border-left:3px solid var(--red);">
-        <span style="font-size:20px">🚫</span>
-        <span style="font-size:15px;color:rgba(255,255,255,0.75)">Não depender de ninguém para pagar suas contas</span>
-      </div>
-    </div>
-
-    <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:28px;max-width:540px;margin-left:auto;margin-right:auto;">
-      A diferença entre quem consegue e quem não consegue não é talento.<br>
-      É decisão.
+  <!-- ESQUERDA -->
+  <div class="hero-left">
+    <div class="hero-tag">Método PLR · 2026</div>
+    <h1>
+      <span class="stroke">COPIE.</span>
+      <span class="fill">VENDA.</span>
+      <span class="accent">LUCRE.</span>
+    </h1>
+    <p class="hero-desc">
+      Você recebe <strong>2 PDFs prontos</strong> com licença de revenda. Coloque seu nome, troque a copy e comece a vender hoje.
     </p>
-
-    <div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:16px;padding:32px;margin-bottom:36px;">
-      <p style="font-size:18px;color:white;line-height:1.8;font-weight:600;">
-        "Você só precisa acertar <span style="color:var(--gold)">uma vez</span>.<br>
-        Mas vai ter que errar mil vezes antes.<br><br>
-        Você está disposto a perder mil vezes<br>para ganhar <span style="color:var(--gold)">só uma</span>?"
-      </p>
-      <p style="font-size:13px;color:rgba(255,255,255,0.3);margin-top:16px;">— Lucas, criador do guia</p>
-    </div>
-
-    <a href="#comprar" style="display:inline-block;background:var(--red);color:white;font-size:16px;font-weight:800;padding:20px 48px;border-radius:10px;text-decoration:none;letter-spacing:0.5px;box-shadow:0 8px 32px rgba(233,69,96,0.35);transition:transform 0.2s;">
-      ESTOU DISPOSTO — QUERO COMEÇAR →
-    </a>
-  </div>
-</section>
-
-<!-- OFFER (ATUALIZADO + CAKTO LINK + VALUE STACK) -->
-<section class="offer" id="comprar">
-  <p class="section-label" style="color:var(--red)">Oferta de lançamento</p>
-  <h2>Garanta o seu agora</h2>
-  <p class="sub">Preço especial de lançamento — pode aumentar a qualquer momento.</p>
-
-  <div class="price-box">
-    <div class="price-top">
-      <p class="old-price">De R$97</p>
-      <p class="price">R$67</p>
-      <p class="price-note">pagamento único • acesso imediato</p>
-    </div>
-
-    <div class="value-stack">
-      <div><b>Você leva 2 PDFs:</b></div>
-      <div>• Guia principal (26 páginas)</div>
-      <div>• <b>Bônus Métricas Facebook Ads</b> (16 páginas) <span class="cut">R$47</span> <b style="color:var(--gold)">GRÁTIS</b></div>
-    </div>
-
-    <div class="includes">
-      <div class="include-item"><span class="check">✓</span> Guia completo em PDF (26 páginas)</div>
-      <div class="include-item"><span class="check">✓</span> 10 capítulos com passo a passo completo</div>
-      <div class="include-item"><span class="check">✓</span> Templates de posts para Instagram</div>
-      <div class="include-item"><span class="check">✓</span> Checklist de lançamento completo</div>
-      <div class="include-item"><span class="check">✓</span> Template de mensagem de WhatsApp</div>
-      <div class="include-item"><span class="check">✓</span> Acesso vitalício + atualizações gratuitas</div>
-      <div class="include-item" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(233,69,96,0.3)">
-        <span class="check">🎁</span> <strong style="color:var(--gold)">BÔNUS:</strong> Guia de Métricas Facebook Ads (valor R$47) — GRÁTIS
+    <!-- PREÇO VISÍVEL NO HERO -->
+    <div class="hero-price">
+      <div class="hero-price-val">R$ 67</div>
+      <div>
+        <div class="hero-price-de">R$ 127</div>
+        <div class="hero-price-par">ou 3× de R$ 22,90</div>
       </div>
     </div>
+    <div class="hero-btns">
+      <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-main" target="_blank">
+        Quero o Kit → <span></span>
+      </a>
+      <span class="hero-note">🔒 Acesso imediato · 7 dias de garantia</span>
+    </div>
+  </div>
 
-    <!-- BOTÃO COM SEU CHECKOUT CAKTO -->
-    <a href="https://pay.cakto.com.br/z5mwske_778971?utm_source=lp&utm_medium=cta&utm_campaign=pdf"
-       class="btn-cta offer-cta">
-      QUERO MEU PDF AGORA →
-    </a>
-
-    <div class="guarantee">
-      <span class="shield">🛡️</span>
-      <span>Garantia de 7 dias. Teste sem risco — se não fizer sentido, é só pedir reembolso.</span>
+  <!-- DIREITA — MOCKUP DOS PDFs -->
+  <div class="hero-right">
+    <div class="mockup-wrap">
+      <!-- PDF principal -->
+      <div class="mock-main">
+        <div class="mock-flag">Produto principal</div>
+        <div class="mock-title">Venda Todos os Dias<br/>no Automático</div>
+        <div class="mock-pages">26 páginas · Licença PLR</div>
+        <div class="mock-lines">
+          <div class="mock-line"></div>
+          <div class="mock-line"></div>
+          <div class="mock-line"></div>
+          <div class="mock-line"></div>
+        </div>
+        <div class="mock-price-row">
+          <div class="mock-label">Você vende com seu nome</div>
+          <div class="mock-price">R$ 67</div>
+        </div>
+      </div>
+      <!-- PDF bônus flutuando -->
+      <div class="mock-bonus">
+        <div class="mock-bonus-flag">Bônus grátis</div>
+        <div class="mock-bonus-title">Métricas<br/>Facebook Ads</div>
+        <div class="mock-bonus-pages">16 páginas · PLR</div>
+        <div class="mock-bonus-price">
+          <span class="mock-bonus-was">R$ 47</span>
+          <span class="mock-bonus-free">GRÁTIS</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ (MANTIDO) -->
-<section class="faq">
-  <p class="section-label" style="text-align:center;color:var(--red)">Dúvidas frequentes</p>
-  <h2 style="color:var(--dark)">Perguntas & Respostas</h2>
-
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q">Preciso ter experiência para aplicar o conteúdo? <span class="arrow">+</span></button>
-      <div class="faq-a">Não. O guia foi criado especificamente para quem está partindo do zero. Cada passo é explicado de forma simples e direta, sem jargões técnicos.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Quanto tempo leva para criar meu primeiro PDF? <span class="arrow">+</span></button>
-      <div class="faq-a">Com o cronograma do Capítulo 9, é possível ter seu produto no ar em 7 dias. Depende do tempo que você dedicar, mas muita gente consegue lançar em um final de semana.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Preciso investir dinheiro para começar? <span class="arrow">+</span></button>
-      <div class="faq-a">Não. As ferramentas indicadas no guia têm versão gratuita — Canva, redes sociais e etc. Você pode começar do absoluto zero.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">E se eu não tiver seguidores no Instagram? <span class="arrow">+</span></button>
-      <div class="faq-a">O guia mostra como começar mesmo sem audiência — usando estratégias orgânicas e posicionamento. E quando você decidir anunciar, o bônus de métricas te mostra como não queimar dinheiro.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Como recebo o PDF depois de comprar? <span class="arrow">+</span></button>
-      <div class="faq-a">Imediatamente após o pagamento aprovado, você recebe o acesso. O acesso é vitalício.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">E se eu não gostar? <span class="arrow">+</span></button>
-      <div class="faq-a">Você tem 7 dias de garantia. Se por qualquer motivo não ficar satisfeito, basta solicitar o reembolso.</div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA (MANTIDO + TEXTO AJUSTADO) -->
-<section class="final-cta">
-  <h2>Sua virada começa<br>com 3 letras.</h2>
-  <p>Você não precisa do momento perfeito. Você precisa começar — enquanto a oferta ainda está no lançamento.</p>
-  <a href="https://pay.cakto.com.br/z5mwske_778971?utm_source=lp&utm_medium=finalcta&utm_campaign=pdf" class="btn-cta-white">GARANTIR MEU ACESSO →</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Lucas — Todos os direitos reservados.</p>
-  <p style="margin-top:8px">Este produto é um infoproduto digital. Após a compra, o acesso é enviado imediatamente.</p>
-  <p style="margin-top:8px">Garantia de 7 dias conforme o Código de Defesa do Consumidor (Art. 49).</p>
-</footer>
-
-<!-- STICKY BAR -->
-<div class="sticky-bar" id="stickyBar">
-  <span class="sticky-text">🔥 Oferta de lançamento — <strong>R$67</strong> pagamento único</span>
-  <a href="https://pay.cakto.com.br/z5mwske_778971?utm_source=lp&utm_medium=sticky&utm_campaign=pdf" class="btn-cta">COMPRAR AGORA →</a>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tk-inner" id="tki"></div>
 </div>
 
+<!-- CALCULADORA -->
+<section id="calc-section">
+  <div class="calc-layout">
+    <div class="calc-left r">
+      <div class="s-eyebrow">Simulador de lucro</div>
+      <h2 class="s-h2">QUANTO VOCÊ<br/>PODE GANHAR</h2>
+      <p class="s-sub">Ajuste as vendas por dia e o preço. Veja o número que você quer bater todo mês.</p>
+    </div>
+    <div class="r d1">
+      <div class="calc-widget">
+        <div class="cw-bar">
+          <div class="cw-dots">
+            <div class="cw-dot" style="background:#ff5f57"></div>
+            <div class="cw-dot" style="background:#febc2e"></div>
+            <div class="cw-dot" style="background:#28c840"></div>
+          </div>
+          <div class="cw-label">simulador_plr.exe</div>
+        </div>
+        <div class="cw-body">
+          <div class="cw-row">
+            <div class="cw-rlabel">Vendas / dia</div>
+            <div class="cw-ctrl">
+              <button class="cw-btn" onclick="ch(-1)">−</button>
+              <div class="cw-display" id="nv">2</div>
+              <button class="cw-btn" onclick="ch(1)">+</button>
+            </div>
+          </div>
+          <div class="cw-row">
+            <div class="cw-rlabel">Preço de venda</div>
+            <div class="cw-ctrl">
+              <button class="cw-btn" onclick="cp(-1)">−</button>
+              <div class="cw-display" id="np">R$ 67</div>
+              <button class="cw-btn" onclick="cp(1)">+</button>
+            </div>
+          </div>
+          <div class="cw-sep"></div>
+          <div class="cw-grid">
+            <div class="cw-box hi"><div class="cw-blabel">Por dia</div><div class="cw-bval" id="vd">R$134</div></div>
+            <div class="cw-box mid"><div class="cw-blabel">Por mês</div><div class="cw-bval" id="vm">R$4.020</div></div>
+            <div class="cw-box lo"><div class="cw-blabel">Por ano</div><div class="cw-bval" id="va">R$48.910</div></div>
+            <div class="cw-box inv"><div class="cw-blabel">Investimento</div><div class="cw-bval inv" id="vi">R$ 67</div></div>
+          </div>
+          <div class="cw-msg" id="cm">✓ Com <strong>1 venda</strong> você recupera o investimento — a partir da 2ª é <strong>lucro puro</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KIT -->
+<section id="kit">
+  <div class="kit-wrap">
+    <div class="r"><div class="s-eyebrow">O que você recebe</div></div>
+    <h2 class="s-h2 r d1">2 PDFS PRONTOS<br/>PARA VENDER</h2>
+    <div class="kit-grid r d2">
+      <div class="pdf-c main">
+        <div class="pdf-top">
+          <div class="pdf-flag">Produto principal</div>
+          <div class="pdf-title">Venda Todos os Dias<br/>no Automático</div>
+          <div class="pdf-pages">26 páginas · PDF completo · Licença PLR</div>
+        </div>
+        <div class="pdf-bar">
+          <div style="font-size:12px;color:var(--g2);">Você vende com seu nome</div>
+          <div class="pdf-price">R$ 67</div>
+        </div>
+      </div>
+      <div class="pdf-c bonus">
+        <div class="pdf-top">
+          <div class="pdf-flag">Bônus incluso</div>
+          <div class="pdf-title">Métricas<br/>Facebook Ads</div>
+          <div class="pdf-pages">16 páginas · Guia completo · Licença PLR</div>
+        </div>
+        <div class="pdf-bar">
+          <div class="pdf-price-wrap">
+            <span class="pdf-was">R$ 47</span>
+            <span class="pdf-free">GRÁTIS</span>
+          </div>
+          <div class="pdf-price">R$ 0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="r"><div class="s-eyebrow">O processo</div></div>
+  <h2 class="s-h2 r d1">3 PASSOS.<br/>HOJE MESMO.</h2>
+  <div class="steps r d2">
+    <div class="step">
+      <div class="step-n">— 01</div>
+      <div class="step-title">Compre o Kit</div>
+      <div class="step-desc">Acesso imediato aos 2 PDFs com licença de revenda. Link por e-mail em menos de 2 minutos.</div>
+      <div class="step-badge">Acesso &lt; 2 min</div>
+    </div>
+    <div class="step">
+      <div class="step-n">— 02</div>
+      <div class="step-title">Adapte a Copy</div>
+      <div class="step-desc">Coloque seu nome e seu link de checkout. Todo o conteúdo e estrutura já estão prontos.</div>
+      <div class="step-badge">30 min de trabalho</div>
+    </div>
+    <div class="step">
+      <div class="step-n">— 03</div>
+      <div class="step-title">Divulgue e Venda</div>
+      <div class="step-desc">Cadastre na Hotmart ou Kiwify e divulgue. Com 2 vendas por dia você já está no positivo.</div>
+      <div class="step-badge">1ª venda no dia 1</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="social">
+  <div class="r"><div class="s-eyebrow">Resultados reais</div></div>
+  <h2 class="s-h2 r d1">QUEM COMPROU<br/>JÁ VENDE</h2>
+  <div class="deps r d2">
+    <div class="dep">
+      <div class="dep-stars">★★★★★</div>
+      <div class="dep-text">"Comprei na segunda. Na quinta já tinha feito 5 vendas. Nunca tinha vendido nada online. O kit é absurdamente completo."</div>
+      <div class="dep-who">
+        <div class="dep-av">AM</div>
+        <div>
+          <div class="dep-role">Designer Freelancer</div>
+          <div class="dep-name">Ana Martins</div>
+          <div class="dep-loc">São Paulo · SP</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep">
+      <div class="dep-stars">★★★★★</div>
+      <div class="dep-text">"Tentei criar meu produto por 3 meses sem resultado. Com o kit, em 2 horas estava tudo no ar. R$ 470 na primeira semana."</div>
+      <div class="dep-who">
+        <div class="dep-av">RB</div>
+        <div>
+          <div class="dep-role">CLT migrando para digital</div>
+          <div class="dep-name">Rafael Borges</div>
+          <div class="dep-loc">Curitiba · PR</div>
+        </div>
+      </div>
+    </div>
+    <div class="dep">
+      <div class="dep-stars">★★★★★</div>
+      <div class="dep-text">"Achei que era mais um produto genérico. Mas realmente entrega. A proposta de vender o próprio material é inteligente demais."</div>
+      <div class="dep-who">
+        <div class="dep-av">JC</div>
+        <div>
+          <div class="dep-role">Empreendedora digital</div>
+          <div class="dep-name">Juliana Carvalho</div>
+          <div class="dep-loc">Fortaleza · CE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ + OFERTA -->
+<section id="faq">
+  <div class="faq-layout">
+    <div>
+      <div class="r"><div class="s-eyebrow">Dúvidas</div></div>
+      <h2 class="s-h2 r d1">PERGUNTAS<br/>FREQUENTES</h2>
+      <div class="faq-list r d2">
+        <div class="fi" onclick="this.classList.toggle('open')">
+          <div class="fq">Preciso de experiência prévia? <div class="fi-ico">+</div></div>
+          <div class="fa">Não. O kit foi criado para quem nunca vendeu nada online. Tudo é explicado do zero.</div>
+        </div>
+        <div class="fi" onclick="this.classList.toggle('open')">
+          <div class="fq">Posso vender com meu próprio nome? <div class="fi-ico">+</div></div>
+          <div class="fa">Sim. A licença PLR permite isso. Coloque seu nome, seu checkout — o produto é seu.</div>
+        </div>
+        <div class="fi" onclick="this.classList.toggle('open')">
+          <div class="fq">Preciso investir além dos R$ 67? <div class="fi-ico">+</div></div>
+          <div class="fa">Não obrigatoriamente. Hotmart e Kiwify são sem mensalidade. Para anúncios, R$ 10/dia já funciona.</div>
+        </div>
+        <div class="fi" onclick="this.classList.toggle('open')">
+          <div class="fq">Quando recebo o acesso? <div class="fi-ico">+</div></div>
+          <div class="fa">Imediatamente após o pagamento — link por e-mail em menos de 2 minutos.</div>
+        </div>
+        <div class="fi" onclick="this.classList.toggle('open')">
+          <div class="fq">Tem garantia? <div class="fi-ico">+</div></div>
+          <div class="fa">Sim. 7 dias de garantia incondicional. Se não gostar, devolvo 100% sem perguntas.</div>
+        </div>
+      </div>
+    </div>
+    <div class="r d2">
+      <div class="oferta">
+        <div class="of-head">// resumo da oferta</div>
+        <div class="of-body">
+          <div class="of-de">De R$ 127</div>
+          <div class="of-val">R$67</div>
+          <div class="of-par">ou 3× de R$ 22,90 sem juros</div>
+          <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-of" target="_blank">Comprar Agora →</a>
+          <div class="of-gar">🛡 7 dias de garantia incondicional</div>
+          <div class="of-itens">
+            <div class="of-item">Guia "Venda no Automático" — 26 págs</div>
+            <div class="of-item">Bônus Métricas Facebook Ads — 16 págs</div>
+            <div class="of-item">Licença PLR completa nos 2 PDFs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="ctaf">
+  <div class="ctaf-glow"></div>
+  <div class="ctaf-inner">
+    <div class="ctaf-label r">Última chamada</div>
+    <h2 class="ctaf-h r d1">
+      COMECE HOJE.<br/>
+      <span class="ghost">VENDA AMANHÃ.</span>
+    </h2>
+    <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-main r d2" target="_blank">
+      Quero o Kit por R$ 67 →
+    </a>
+    <div class="r d3" style="margin-top:16px;font-size:11px;color:var(--g);letter-spacing:.5px;">
+      🔒 Pagamento seguro via Cakto &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Kit PLR</span>
+  <span>Produto digital com licença PLR · Resultados individuais podem variar</span>
+</footer>
+
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
+const tkItems=['2 PDFs Completos','Licença de Revenda','Acesso Imediato','Bônus Facebook Ads','R$ 67 Uma Vez','Método PLR 2026','Recupera em 1 Venda','Hotmart e Kiwify','Comece Hoje','Copy Pronta'];
+const tki=document.getElementById('tki');
+tki.innerHTML=[...tkItems,...tkItems].map(t=>`<div class="tk-item"><div class="tk-dot"></div>${t}</div>`).join('');
 
-  // Sticky bar on scroll
-  const stickyBar = document.getElementById('stickyBar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) {
-      stickyBar.classList.add('visible');
-    } else {
-      stickyBar.classList.remove('visible');
-    }
-  });
+let v=2,pi=4;
+const ps=[17,27,37,47,67,97,127,197];
+const f=n=>'R$'+n.toLocaleString('pt-BR');
+function upd(){
+  const d=v*ps[pi],rec=Math.ceil(67/ps[pi]);
+  document.getElementById('nv').textContent=v;
+  document.getElementById('np').textContent='R$ '+ps[pi];
+  document.getElementById('vd').textContent=f(d);
+  document.getElementById('vm').textContent=f(d*30);
+  document.getElementById('va').textContent=f(d*365);
+  document.getElementById('vi').textContent='R$ '+ps[pi];
+  document.getElementById('cm').innerHTML='&#10003; Com <strong>'+rec+' '+(rec===1?'venda':'vendas')+'</strong> você recupera — o resto é <strong>lucro puro</strong>.';
+}
+function ch(d){v=Math.max(1,Math.min(50,v+d));upd();}
+function cp(d){pi=Math.max(0,Math.min(ps.length-1,pi+d));upd();}
 
-  // Smooth scroll for anchors
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      // Só aplica smooth scroll em âncoras internas (ex: #comprar)
-      const href = a.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');}),{threshold:.08});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
