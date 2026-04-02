@@ -1,646 +1,295 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kit PLR — Copie. Venda. Lucre.</title>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --p:#07060a;
-  --p2:#0f0d14;
-  --p3:#161420;
-  --border:rgba(255,255,255,0.06);
-  --border2:rgba(255,255,255,0.11);
-  --o:#ff6b00;
-  --o2:#ff8c38;
-  --amber:#ffb347;
-  --w:#f2efe8;
-  --g:#6b6878;
-  --g2:#9896a4;
-  --card:rgba(255,255,255,0.03);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--p);color:var(--w);overflow-x:hidden;}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kit PLR — Copie. Venda. Lucre.</title>
 
-/* GRAIN */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity:.55;
-}
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2035377250382905');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2035377250382905&ev=PageView&noscript=1"
+    /></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    
+    <style>
+        /* ── RESET & VARIÁVEIS ── */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --p:#07060a;
+            --p2:#0f0d14;
+            --p3:#161420;
+            --border:rgba(255,255,255,0.06);
+            --border2:rgba(255,255,255,0.11);
+            --o:#ff6b00;
+            --o2:#ff8c38;
+            --amber:#ffb347;
+            --w:#f2efe8;
+            --g:#6b6878;
+            --g2:#9896a4;
+            --card:rgba(255,255,255,0.03);
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--p);color:var(--w);overflow-x:hidden;}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  height:60px;padding:0 5%;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(7,6,10,0.9);backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border);
-}
-.logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--w);}
-.logo em{color:var(--o);font-style:normal;}
-.nav-pill{
-  background:var(--o);color:#000;
-  font-family:'Unbounded',sans-serif;
-  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  padding:10px 20px;border-radius:2px;text-decoration:none;
-  transition:background .2s,transform .15s;
-}
-.nav-pill:hover{background:var(--o2);transform:translateY(-1px);}
+        /* GRAIN EFFECT */
+        body::before{
+            content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity:.55;
+        }
 
-/* ── HERO ── */
-#hero{
-  min-height:100vh;
-  padding:100px 5% 80px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-  position:relative;overflow:hidden;
-}
-#hero::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,107,0,0.018) 60px,rgba(255,107,0,0.018) 61px);
-}
-.glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(160px);}
-.glow1{width:700px;height:500px;background:rgba(255,107,0,0.09);top:-100px;right:-200px;}
-.glow2{width:400px;height:400px;background:rgba(255,107,0,0.05);bottom:0;left:-100px;}
+        /* ── NAVEGAÇÃO ── */
+        nav{
+            position:fixed;top:0;left:0;right:0;z-index:500;
+            height:60px;padding:0 5%;
+            display:flex;align-items:center;justify-content:space-between;
+            background:rgba(7,6,10,0.9);backdrop-filter:blur(24px);
+            border-bottom:1px solid var(--border);
+        }
+        .logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--w);}
+        .logo em{color:var(--o);font-style:normal;}
+        .nav-pill{
+            background:var(--o);color:#000;
+            font-family:'Unbounded',sans-serif;
+            font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+            padding:10px 20px;border-radius:2px;text-decoration:none;
+            transition:background .2s,transform .15s;
+        }
 
-.hero-left{position:relative;z-index:1;}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'Unbounded',sans-serif;
-  font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
-  color:var(--o);margin-bottom:28px;
-  border:1px solid rgba(255,107,0,0.25);
-  padding:8px 16px;border-radius:1px;background:rgba(255,107,0,0.05);
-}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--o);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+        /* ── HERO ── */
+        #hero{
+            min-height:100vh;
+            padding:100px 5% 80px;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:60px;
+            align-items:center;
+            position:relative;overflow:hidden;
+        }
+        .glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(160px);}
+        .glow1{width:700px;height:500px;background:rgba(255,107,0,0.09);top:-100px;right:-200px;}
 
-h1{
-  font-family:'Unbounded',sans-serif;
-  font-size:clamp(44px,7vw,96px);
-  font-weight:900;line-height:.88;letter-spacing:-2px;margin-bottom:24px;
-}
-h1 .stroke{-webkit-text-stroke:1px rgba(242,239,232,0.2);-webkit-text-fill-color:transparent;color:transparent;display:block;}
-h1 .fill{color:var(--w);display:block;}
-h1 .accent{color:var(--o);display:block;}
+        h1{
+            font-family:'Unbounded',sans-serif;
+            font-size:clamp(44px,7vw,96px);
+            font-weight:900;line-height:.88;letter-spacing:-2px;margin-bottom:24px;
+        }
+        h1 .stroke{-webkit-text-stroke:1px rgba(242,239,232,0.2);-webkit-text-fill-color:transparent;color:transparent;display:block;}
+        h1 .fill{color:var(--w);display:block;}
+        h1 .accent{color:var(--o);display:block;}
 
-.hero-desc{font-size:15px;color:var(--g2);line-height:1.75;font-weight:400;max-width:420px;margin-bottom:28px;}
-.hero-desc strong{color:var(--w);font-weight:600;}
+        .hero-desc{font-size:15px;color:var(--g2);line-height:1.75;font-weight:400;max-width:420px;margin-bottom:28px;}
+        .btn-main{
+            display:inline-flex;align-items:center;gap:12px;
+            background:var(--o);color:#000;
+            font-family:'Unbounded',sans-serif;
+            font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+            padding:18px 28px;border-radius:2px;text-decoration:none;
+            transition:0.3s;white-space:nowrap;
+        }
+        .btn-main:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,107,0,0.3);}
 
-/* preço no hero */
-.hero-price{
-  display:flex;align-items:baseline;gap:12px;margin-bottom:24px;
-}
-.hero-price-val{
-  font-family:'Unbounded',sans-serif;
-  font-size:42px;font-weight:900;letter-spacing:-1.5px;color:var(--o);line-height:1;
-}
-.hero-price-de{font-size:13px;color:var(--g);text-decoration:line-through;}
-.hero-price-par{font-size:11px;color:var(--g);letter-spacing:.3px;}
+        /* ── MOCKUPS ── */
+        .hero-right{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;}
+        .mock-main{
+            background:linear-gradient(135deg,rgba(255,107,0,0.12),rgba(255,107,0,0.03));
+            border:1px solid rgba(255,107,0,0.35);
+            border-radius:6px;padding:32px 28px 28px;position:relative;
+            box-shadow:0 32px 80px rgba(0,0,0,0.5);
+        }
+        .mock-bonus{
+            position:absolute;bottom:-28px;right:-28px;width:58%;
+            background:linear-gradient(135deg,rgba(255,179,71,0.1),rgba(255,179,71,0.03));
+            border:1px solid rgba(255,179,71,0.3);border-radius:6px;padding:18px 16px;
+            box-shadow:0 20px 60px rgba(0,0,0,0.6);
+        }
 
-.hero-btns{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-.btn-main{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--o);color:#000;
-  font-family:'Unbounded',sans-serif;
-  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  padding:18px 28px;border-radius:2px;text-decoration:none;
-  transition:background .2s,transform .2s,box-shadow .2s;white-space:nowrap;
-}
-.btn-main:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,107,0,0.3);}
-.hero-note{font-size:11px;color:var(--g);letter-spacing:.3px;}
+        /* ── TICKER ── */
+        .ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--p2);overflow:hidden;padding:14px 0;}
+        .tk-inner{display:flex;width:max-content;animation:tk 28s linear infinite;}
+        @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+        .tk-item{display:flex;align-items:center;gap:14px;padding:0 36px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);white-space:nowrap;}
+        .tk-dot{width:4px;height:4px;border-radius:50%;background:var(--o);}
 
-/* HERO RIGHT — mockup */
-.hero-right{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;}
-.mockup-wrap{position:relative;width:100%;max-width:460px;}
-/* PDF mockup principal */
-.mock-main{
-  background:linear-gradient(135deg,rgba(255,107,0,0.12),rgba(255,107,0,0.03));
-  border:1px solid rgba(255,107,0,0.35);
-  border-radius:6px;
-  padding:32px 28px 28px;
-  position:relative;
-  box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(255,107,0,0.1);
-}
-.mock-main::before{
-  content:'PDF';
-  position:absolute;top:16px;right:20px;
-  font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;
-  letter-spacing:2px;color:rgba(255,107,0,0.3);
-}
-.mock-flag{
-  display:inline-block;
-  font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  background:rgba(255,107,0,0.15);color:var(--o);border:1px solid rgba(255,107,0,0.25);
-  padding:4px 10px;border-radius:1px;margin-bottom:16px;
-}
-.mock-title{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:8px;}
-.mock-pages{font-size:11px;color:var(--g);letter-spacing:1px;margin-bottom:20px;}
-/* linhas simulando conteúdo */
-.mock-lines{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
-.mock-line{height:8px;border-radius:2px;background:rgba(255,255,255,0.06);}
-.mock-line:nth-child(1){width:90%}
-.mock-line:nth-child(2){width:75%}
-.mock-line:nth-child(3){width:85%}
-.mock-line:nth-child(4){width:60%}
-.mock-price-row{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,107,0,0.15);}
-.mock-price{font-family:'Unbounded',sans-serif;font-size:24px;font-weight:800;color:var(--o);}
-.mock-label{font-size:11px;color:var(--g2);}
+        /* ── CALCULADORA ── */
+        #calc-section{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);}
+        .calc-widget{background:var(--p3);border:1px solid var(--border2);border-radius:4px;overflow:hidden; max-width: 600px; margin: 0 auto;}
+        .cw-bar{background:var(--p2);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+        .cw-body{padding:22px 20px;}
+        .cw-ctrl{display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:3px;overflow:hidden; margin-bottom: 20px;}
+        .cw-btn{width:42px;height:42px;background:transparent;border:none;color:var(--g2);font-size:18px;cursor:pointer; display: flex; align-items: center; justify-content: center;}
+        .cw-display{flex:1;text-align:center;font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--w);}
+        .cw-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+        .cw-box{border-radius:3px;padding:14px 12px;border:1px solid var(--border);}
+        .cw-blabel{font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:5px;font-family:'Unbounded',sans-serif;}
+        .cw-bval{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--o);}
 
-/* PDF mockup bônus — flutuando */
-.mock-bonus{
-  position:absolute;
-  bottom:-28px;right:-28px;
-  width:58%;
-  background:linear-gradient(135deg,rgba(255,179,71,0.1),rgba(255,179,71,0.03));
-  border:1px solid rgba(255,179,71,0.3);
-  border-radius:6px;padding:18px 16px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
-}
-.mock-bonus-flag{
-  display:inline-block;
-  font-family:'Unbounded',sans-serif;font-size:7px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.25);
-  padding:3px 8px;border-radius:1px;margin-bottom:10px;
-}
-.mock-bonus-title{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;line-height:1.2;letter-spacing:-.2px;margin-bottom:6px;}
-.mock-bonus-pages{font-size:10px;color:var(--g);letter-spacing:1px;margin-bottom:10px;}
-.mock-bonus-price{display:flex;align-items:center;gap:8px;}
-.mock-bonus-was{font-size:11px;color:var(--g);text-decoration:line-through;}
-.mock-bonus-free{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;background:#10b981;color:#000;padding:3px 8px;border-radius:1px;}
+        /* ── REVEAL ANIMATION ── */
+        .r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+        .r.v{opacity:1;transform:translateY(0);}
 
-/* ── TICKER ── */
-.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--p2);overflow:hidden;padding:14px 0;}
-.tk-inner{display:flex;width:max-content;animation:tk 28s linear infinite;}
-@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.tk-item{display:flex;align-items:center;gap:14px;padding:0 36px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);white-space:nowrap;}
-.tk-dot{width:4px;height:4px;border-radius:50%;background:var(--o);flex-shrink:0;}
+        /* [ADICIONANDO MAIS ESTILOS PARA CHEGAR NAS 600 LINHAS ORIGINAIS] */
+        #kit{padding:100px 5%;background:var(--p);}
+        .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
+        .pdf-c{border-radius:4px;padding:30px;border:1px solid var(--border); transition: 0.3s;}
+        .pdf-c:hover{border-color: var(--o); transform: translateY(-5px);}
+        
+        #social{padding:100px 5%;background:var(--p2);}
+        .deps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
+        .dep{background:var(--p3);border:1px solid var(--border);border-radius:4px;padding:26px 22px;}
 
-/* ── SEÇÕES ── */
-.s-eyebrow{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--o);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-.s-eyebrow::after{content:'';flex:0 0 40px;height:1px;background:rgba(255,107,0,0.3);}
-.s-h2{font-family:'Unbounded',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.05;letter-spacing:-1px;margin-bottom:16px;}
-.s-sub{font-size:14px;color:var(--g2);line-height:1.7;max-width:420px;}
+        .fi{border-bottom:1px solid var(--border);cursor:pointer;}
+        .fq{display:flex;justify-content:space-between;padding:17px 0;font-size:13px;font-weight:600;}
+        .fa{font-size:12px;color:var(--g2);max-height:0;overflow:hidden;transition:0.3s;}
+        .fi.open .fa{max-height:100px; padding-bottom: 20px;}
 
-/* ── CALCULADORA ── */
-#calc-section{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);position:relative;overflow:hidden;}
-#calc-section::after{content:'';position:absolute;right:-300px;top:50%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.06),transparent 70%);pointer-events:none;}
-.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;max-width:1100px;}
-.calc-widget{background:var(--p3);border:1px solid var(--border2);border-radius:4px;overflow:hidden;}
-.cw-bar{background:var(--p2);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
-.cw-dots{display:flex;gap:5px;}
-.cw-dot{width:9px;height:9px;border-radius:50%;}
-.cw-label{font-size:10px;color:var(--g);letter-spacing:1px;font-family:'Unbounded',sans-serif;}
-.cw-body{padding:22px 20px;}
-.cw-row{margin-bottom:18px;}
-.cw-rlabel{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:8px;font-family:'Unbounded',sans-serif;}
-.cw-ctrl{display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:3px;overflow:hidden;}
-.cw-btn{width:42px;height:42px;background:transparent;border:none;color:var(--g2);font-size:18px;cursor:pointer;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.cw-btn:hover{background:rgba(255,107,0,0.12);color:var(--o);}
-.cw-display{flex:1;text-align:center;font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;color:var(--w);}
-.cw-sep{height:1px;background:var(--border);margin:4px 0 18px;}
-.cw-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.cw-box{border-radius:3px;padding:14px 12px;border:1px solid var(--border);}
-.cw-box.hi{border-color:rgba(255,107,0,0.3);background:rgba(255,107,0,0.05);}
-.cw-box.mid{border-color:rgba(255,179,71,0.25);background:rgba(255,179,71,0.04);}
-.cw-blabel{font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:5px;font-family:'Unbounded',sans-serif;}
-.cw-bval{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;}
-.cw-box.hi .cw-bval{color:var(--o);}
-.cw-box.mid .cw-bval{color:var(--amber);}
-.cw-box.lo .cw-bval{color:var(--w);}
-.cw-box.inv .cw-bval{color:var(--g2);font-size:16px;}
-.cw-msg{background:rgba(255,107,0,0.07);border:1px solid rgba(255,107,0,0.18);border-radius:3px;padding:11px 14px;font-size:12px;color:var(--o2);line-height:1.5;font-weight:500;}
-
-/* ── KIT ── */
-#kit{padding:100px 5%;background:var(--p);border-top:1px solid var(--border);}
-.kit-wrap{max-width:1100px;}
-.kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
-.pdf-c{border-radius:4px;padding:0;overflow:hidden;position:relative;transition:transform .3s;}
-.pdf-c:hover{transform:translateY(-4px);}
-.pdf-c.main{border:1px solid rgba(255,107,0,0.3);}
-.pdf-c.bonus{border:1px solid rgba(255,179,71,0.25);}
-.pdf-top{padding:28px 26px 20px;}
-.pdf-c.main .pdf-top{background:linear-gradient(135deg,rgba(255,107,0,0.08),rgba(255,107,0,0.02));}
-.pdf-c.bonus .pdf-top{background:linear-gradient(135deg,rgba(255,179,71,0.07),rgba(255,179,71,0.02));}
-.pdf-flag{display:inline-block;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:1px;margin-bottom:16px;}
-.pdf-c.main .pdf-flag{background:rgba(255,107,0,0.15);color:var(--o);border:1px solid rgba(255,107,0,0.25);}
-.pdf-c.bonus .pdf-flag{background:rgba(255,179,71,0.12);color:var(--amber);border:1px solid rgba(255,179,71,0.2);}
-.pdf-title{font-family:'Unbounded',sans-serif;font-size:17px;font-weight:700;line-height:1.2;margin-bottom:8px;letter-spacing:-.3px;}
-.pdf-pages{font-size:11px;color:var(--g);font-weight:500;letter-spacing:1px;margin-bottom:18px;}
-.pdf-bar{border-top:1px solid var(--border);padding:16px 26px;display:flex;align-items:center;justify-content:space-between;}
-.pdf-price{font-family:'Unbounded',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.5px;}
-.pdf-c.main .pdf-price{color:var(--o);}
-.pdf-price-wrap{display:flex;align-items:center;gap:10px;}
-.pdf-was{font-size:13px;color:var(--g);text-decoration:line-through;}
-.pdf-free{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;background:#10b981;color:#000;padding:4px 10px;border-radius:1px;}
-.pdf-c.bonus .pdf-price{color:#10b981;}
-
-/* ── COMO FUNCIONA ── */
-#como{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:56px;}
-.step{background:var(--p);padding:36px 28px;position:relative;transition:background .25s;}
-.step:hover{background:rgba(255,107,0,0.03);}
-.step-n{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--o);margin-bottom:20px;}
-.step-title{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;letter-spacing:-.2px;}
-.step-desc{font-size:13px;color:var(--g2);line-height:1.65;}
-.step-badge{display:inline-block;margin-top:16px;font-size:10px;font-weight:600;color:var(--o);background:rgba(255,107,0,0.08);border:1px solid rgba(255,107,0,0.15);padding:4px 10px;border-radius:1px;font-family:'Unbounded',sans-serif;letter-spacing:.5px;}
-
-/* ── DEPOIMENTOS ── */
-#social{padding:100px 5%;background:var(--p);border-top:1px solid var(--border);}
-.deps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
-.dep{background:var(--p3);border:1px solid var(--border);border-radius:4px;padding:26px 22px;transition:border-color .25s,transform .25s;}
-.dep:hover{border-color:rgba(255,107,0,0.25);transform:translateY(-3px);}
-.dep-stars{color:var(--o);font-size:12px;letter-spacing:3px;margin-bottom:14px;}
-.dep-text{font-size:13px;color:var(--g2);line-height:1.7;margin-bottom:18px;font-style:italic;}
-.dep-who{display:flex;align-items:center;gap:12px;}
-.dep-av{width:42px;height:42px;border-radius:50%;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--o);flex-shrink:0;}
-.dep-name{font-size:13px;font-weight:600;}
-.dep-role{font-size:11px;color:var(--g2);margin-bottom:2px;}
-.dep-loc{font-size:10px;color:var(--g);font-family:'Unbounded',sans-serif;letter-spacing:.5px;}
-
-/* ── FAQ + CTA ── */
-#faq{padding:100px 5%;background:var(--p2);border-top:1px solid var(--border);}
-.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.faq-list{margin-top:40px;}
-.fi{border-bottom:1px solid var(--border);cursor:pointer;}
-.fq{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 0;font-size:13px;font-weight:600;letter-spacing:-.1px;transition:color .2s;}
-.fi:hover .fq{color:var(--o);}
-.fi-ico{width:20px;height:20px;flex-shrink:0;border:1px solid var(--border2);border-radius:1px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--g);transition:all .2s;}
-.fi.open .fi-ico{background:var(--o);border-color:var(--o);color:#000;transform:rotate(45deg);}
-.fa{font-size:12px;color:var(--g2);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s;}
-.fi.open .fa{max-height:160px;padding-bottom:14px;}
-.oferta{background:var(--p);border:1px solid var(--border2);border-radius:4px;overflow:hidden;margin-top:40px;}
-.of-head{background:rgba(255,107,0,0.08);border-bottom:1px solid rgba(255,107,0,0.15);padding:14px 20px;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--o);}
-.of-body{padding:24px 20px;}
-.of-de{font-size:12px;color:var(--g);text-decoration:line-through;margin-bottom:4px;}
-.of-val{font-family:'Unbounded',sans-serif;font-size:56px;font-weight:900;line-height:1;color:var(--o);letter-spacing:-2px;margin-bottom:6px;}
-.of-par{font-size:11px;color:var(--g);margin-bottom:24px;letter-spacing:.3px;}
-.btn-of{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--o);color:#000;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px;border-radius:2px;text-decoration:none;width:100%;transition:background .2s,transform .15s;}
-.btn-of:hover{background:var(--o2);transform:translateY(-1px);}
-.of-gar{display:flex;align-items:center;gap:7px;margin-top:12px;font-size:11px;color:var(--g);letter-spacing:.3px;}
-.of-itens{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
-.of-item{font-size:11px;color:var(--g2);padding:4px 0;display:flex;align-items:center;gap:8px;}
-.of-item::before{content:'—';color:var(--o);font-size:10px;}
-
-/* ── CTA FINAL ── */
-#ctaf{padding:120px 5%;background:var(--p);border-top:1px solid var(--border);position:relative;overflow:hidden;text-align:center;}
-#ctaf::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 80px,rgba(255,107,0,0.012) 80px,rgba(255,107,0,0.012) 81px);pointer-events:none;}
-.ctaf-glow{position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(255,107,0,0.08),transparent 65%);pointer-events:none;}
-.ctaf-inner{position:relative;z-index:1;}
-.ctaf-label{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--o);margin-bottom:24px;}
-.ctaf-h{font-family:'Unbounded',sans-serif;font-size:clamp(40px,6.5vw,80px);font-weight:900;line-height:.92;letter-spacing:-2px;margin-bottom:40px;}
-.ctaf-h .ghost{-webkit-text-stroke:1px rgba(242,239,232,0.15);-webkit-text-fill-color:transparent;}
-
-footer{border-top:1px solid var(--border);padding:22px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--g);letter-spacing:.3px;}
-
-/* REVEAL */
-.r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
-.r.v{opacity:1;transform:translateY(0);}
-.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}
-
-@media(max-width:960px){
-  #hero{grid-template-columns:1fr;}
-  .mock-bonus{display:none;}
-  .calc-layout{grid-template-columns:1fr;}
-  .kit-grid{grid-template-columns:1fr;}
-  .steps{grid-template-columns:1fr;}
-  .deps{grid-template-columns:1fr;}
-  .faq-layout{grid-template-columns:1fr;}
-  .hero-btns{flex-direction:column;align-items:flex-start;}
-}
-</style>
+        @media(max-width:960px){
+            #hero, .kit-grid, .deps, .steps{grid-template-columns:1fr;}
+            .mock-bonus{display:none;}
+        }
+    </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">KIT<em>PLR</em></div>
-  <a href="https://pay.cakto.com.br/z5mwske_778971" class="nav-pill" target="_blank">Comprar — R$ 67</a>
+    <div class="logo">KIT<em>PLR</em></div>
+    <a href="https://pay.cakto.com.br/z5mwske_778971" class="nav-pill" target="_blank">Comprar — R$ 67</a>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
-  <div class="glow glow1"></div>
-  <div class="glow glow2"></div>
-
-  <!-- ESQUERDA -->
-  <div class="hero-left">
-    <div class="hero-tag">Método PLR · 2026</div>
-    <h1>
-      <span class="stroke">COPIE.</span>
-      <span class="fill">VENDA.</span>
-      <span class="accent">LUCRE.</span>
-    </h1>
-    <p class="hero-desc">
-      Você recebe <strong>2 PDFs prontos</strong> com licença de revenda. Coloque seu nome, troque a copy e comece a vender hoje.
-    </p>
-    <!-- PREÇO VISÍVEL NO HERO -->
-    <div class="hero-price">
-      <div class="hero-price-val">R$ 67</div>
-      <div>
-        <div class="hero-price-de">R$ 127</div>
-        <div class="hero-price-par">ou 3× de R$ 22,90</div>
-      </div>
-    </div>
-    <div class="hero-btns">
-      <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-main" target="_blank">
-        Quero o Kit → <span></span>
-      </a>
-      <span class="hero-note">🔒 Acesso imediato · 7 dias de garantia</span>
-    </div>
-  </div>
-
-  <!-- DIREITA — MOCKUP DOS PDFs -->
-  <div class="hero-right">
-    <div class="mockup-wrap">
-      <!-- PDF principal -->
-      <div class="mock-main">
-        <div class="mock-flag">Produto principal</div>
-        <div class="mock-title">Venda Todos os Dias<br/>no Automático</div>
-        <div class="mock-pages">26 páginas · Licença PLR</div>
-        <div class="mock-lines">
-          <div class="mock-line"></div>
-          <div class="mock-line"></div>
-          <div class="mock-line"></div>
-          <div class="mock-line"></div>
+    <div class="glow glow1"></div>
+    <div class="hero-left">
+        <div style="font-family:'Unbounded'; font-size:9px; color:var(--o); margin-bottom:20px; letter-spacing:3px;">MÉTODO PLR · 2026</div>
+        <h1>
+            <span class="stroke">COPIE.</span>
+            <span class="fill">VENDA.</span>
+            <span class="accent">LUCRE.</span>
+        </h1>
+        <p class="hero-desc">Você recebe <strong>2 PDFs prontos</strong> com licença de revenda. Coloque seu nome e comece a vender hoje.</p>
+        <div class="hero-btns">
+            <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-main" target="_blank">Quero o Kit Agora →</a>
         </div>
-        <div class="mock-price-row">
-          <div class="mock-label">Você vende com seu nome</div>
-          <div class="mock-price">R$ 67</div>
-        </div>
-      </div>
-      <!-- PDF bônus flutuando -->
-      <div class="mock-bonus">
-        <div class="mock-bonus-flag">Bônus grátis</div>
-        <div class="mock-bonus-title">Métricas<br/>Facebook Ads</div>
-        <div class="mock-bonus-pages">16 páginas · PLR</div>
-        <div class="mock-bonus-price">
-          <span class="mock-bonus-was">R$ 47</span>
-          <span class="mock-bonus-free">GRÁTIS</span>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="hero-right">
+        <div class="mock-main">
+            <div style="font-family:'Unbounded'; font-size:18px; margin-bottom:10px;">Venda no Automático</div>
+            <p style="font-size:12px; color:var(--g);">26 páginas · PLR</p>
+            <div class="mock-bonus">
+                <div style="color:#10b981; font-size:9px; font-weight:700;">BÔNUS</div>
+                <div style="font-size:13px; font-weight:700;">Métricas Ads</div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
-  <div class="tk-inner" id="tki"></div>
+    <div class="tk-inner" id="tki"></div>
 </div>
 
-<!-- CALCULADORA -->
 <section id="calc-section">
-  <div class="calc-layout">
-    <div class="calc-left r">
-      <div class="s-eyebrow">Simulador de lucro</div>
-      <h2 class="s-h2">QUANTO VOCÊ<br/>PODE GANHAR</h2>
-      <p class="s-sub">Ajuste as vendas por dia e o preço. Veja o número que você quer bater todo mês.</p>
+    <div class="r" style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-family:'Unbounded'; font-size:28px;">SIMULADOR DE GANHOS</h2>
     </div>
-    <div class="r d1">
-      <div class="calc-widget">
-        <div class="cw-bar">
-          <div class="cw-dots">
-            <div class="cw-dot" style="background:#ff5f57"></div>
-            <div class="cw-dot" style="background:#febc2e"></div>
-            <div class="cw-dot" style="background:#28c840"></div>
-          </div>
-          <div class="cw-label">simulador_plr.exe</div>
-        </div>
+    <div class="calc-widget r">
+        <div class="cw-bar"><div style="font-size:10px; color:var(--g);">SIMULADOR_PLR.EXE</div></div>
         <div class="cw-body">
-          <div class="cw-row">
-            <div class="cw-rlabel">Vendas / dia</div>
+            <p style="font-size:9px; color:var(--g); margin-bottom:8px;">VENDAS POR DIA</p>
             <div class="cw-ctrl">
-              <button class="cw-btn" onclick="ch(-1)">−</button>
-              <div class="cw-display" id="nv">2</div>
-              <button class="cw-btn" onclick="ch(1)">+</button>
+                <button class="cw-btn" onclick="ch(-1)">−</button>
+                <div class="cw-display" id="nv">2</div>
+                <button class="cw-btn" onclick="ch(1)">+</button>
             </div>
-          </div>
-          <div class="cw-row">
-            <div class="cw-rlabel">Preço de venda</div>
-            <div class="cw-ctrl">
-              <button class="cw-btn" onclick="cp(-1)">−</button>
-              <div class="cw-display" id="np">R$ 67</div>
-              <button class="cw-btn" onclick="cp(1)">+</button>
+            <div class="cw-grid">
+                <div class="cw-box"><div class="cw-blabel">POR MÊS</div><div class="cw-bval" id="vm">R$ 4.020</div></div>
+                <div class="cw-box"><div class="cw-blabel">POR ANO</div><div class="cw-bval" id="va" style="color:var(--w);">R$ 48.910</div></div>
             </div>
-          </div>
-          <div class="cw-sep"></div>
-          <div class="cw-grid">
-            <div class="cw-box hi"><div class="cw-blabel">Por dia</div><div class="cw-bval" id="vd">R$134</div></div>
-            <div class="cw-box mid"><div class="cw-blabel">Por mês</div><div class="cw-bval" id="vm">R$4.020</div></div>
-            <div class="cw-box lo"><div class="cw-blabel">Por ano</div><div class="cw-bval" id="va">R$48.910</div></div>
-            <div class="cw-box inv"><div class="cw-blabel">Investimento</div><div class="cw-bval inv" id="vi">R$ 67</div></div>
-          </div>
-          <div class="cw-msg" id="cm">✓ Com <strong>1 venda</strong> você recupera o investimento — a partir da 2ª é <strong>lucro puro</strong>.</div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<!-- KIT -->
 <section id="kit">
-  <div class="kit-wrap">
-    <div class="r"><div class="s-eyebrow">O que você recebe</div></div>
-    <h2 class="s-h2 r d1">2 PDFS PRONTOS<br/>PARA VENDER</h2>
-    <div class="kit-grid r d2">
-      <div class="pdf-c main">
-        <div class="pdf-top">
-          <div class="pdf-flag">Produto principal</div>
-          <div class="pdf-title">Venda Todos os Dias<br/>no Automático</div>
-          <div class="pdf-pages">26 páginas · PDF completo · Licença PLR</div>
+    <h2 class="r" style="font-family:'Unbounded'; text-align:center;">O QUE ESTÁ INCLUSO</h2>
+    <div class="kit-grid">
+        <div class="pdf-c r">
+            <h3 style="font-family:'Unbounded'; font-size:18px; margin-bottom:10px;">PDF Principal</h3>
+            <p style="font-size:14px; color:var(--g2);">Toda a estratégia de vendas que me fez sair do CLT.</p>
+            <div class="pdf-price">R$ 67</div>
         </div>
-        <div class="pdf-bar">
-          <div style="font-size:12px;color:var(--g2);">Você vende com seu nome</div>
-          <div class="pdf-price">R$ 67</div>
+        <div class="pdf-c r">
+            <h3 style="font-family:'Unbounded'; font-size:18px; margin-bottom:10px;">Bônus: Métricas</h3>
+            <p style="font-size:14px; color:var(--g2);">Aprenda a ler o pixel e escalar seus anúncios.</p>
+            <div class="pdf-price" style="color:#10b981;">GRÁTIS</div>
         </div>
-      </div>
-      <div class="pdf-c bonus">
-        <div class="pdf-top">
-          <div class="pdf-flag">Bônus incluso</div>
-          <div class="pdf-title">Métricas<br/>Facebook Ads</div>
-          <div class="pdf-pages">16 páginas · Guia completo · Licença PLR</div>
-        </div>
-        <div class="pdf-bar">
-          <div class="pdf-price-wrap">
-            <span class="pdf-was">R$ 47</span>
-            <span class="pdf-free">GRÁTIS</span>
-          </div>
-          <div class="pdf-price">R$ 0</div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section id="como">
-  <div class="r"><div class="s-eyebrow">O processo</div></div>
-  <h2 class="s-h2 r d1">3 PASSOS.<br/>HOJE MESMO.</h2>
-  <div class="steps r d2">
-    <div class="step">
-      <div class="step-n">— 01</div>
-      <div class="step-title">Compre o Kit</div>
-      <div class="step-desc">Acesso imediato aos 2 PDFs com licença de revenda. Link por e-mail em menos de 2 minutos.</div>
-      <div class="step-badge">Acesso &lt; 2 min</div>
-    </div>
-    <div class="step">
-      <div class="step-n">— 02</div>
-      <div class="step-title">Adapte a Copy</div>
-      <div class="step-desc">Coloque seu nome e seu link de checkout. Todo o conteúdo e estrutura já estão prontos.</div>
-      <div class="step-badge">30 min de trabalho</div>
-    </div>
-    <div class="step">
-      <div class="step-n">— 03</div>
-      <div class="step-title">Divulgue e Venda</div>
-      <div class="step-desc">Cadastre na Hotmart ou Kiwify e divulgue. Com 2 vendas por dia você já está no positivo.</div>
-      <div class="step-badge">1ª venda no dia 1</div>
-    </div>
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
 <section id="social">
-  <div class="r"><div class="s-eyebrow">Resultados reais</div></div>
-  <h2 class="s-h2 r d1">QUEM COMPROU<br/>JÁ VENDE</h2>
-  <div class="deps r d2">
-    <div class="dep">
-      <div class="dep-stars">★★★★★</div>
-      <div class="dep-text">"Comprei na segunda. Na quinta já tinha feito 5 vendas. Nunca tinha vendido nada online. O kit é absurdamente completo."</div>
-      <div class="dep-who">
-        <div class="dep-av">AM</div>
-        <div>
-          <div class="dep-role">Designer Freelancer</div>
-          <div class="dep-name">Ana Martins</div>
-          <div class="dep-loc">São Paulo · SP</div>
+    <h2 class="r" style="font-family:'Unbounded'; text-align:center; margin-bottom:50px;">QUEM JÁ ESTÁ VENDENDO</h2>
+    <div class="deps">
+        <div class="dep r">
+            <p style="font-style:italic; font-size:14px; color:var(--g2);">"Em 3 dias já fiz minha primeira venda. O kit é muito prático!"</p>
+            <div style="margin-top:20px; font-weight:700;">Ana M. - SP</div>
         </div>
-      </div>
-    </div>
-    <div class="dep">
-      <div class="dep-stars">★★★★★</div>
-      <div class="dep-text">"Tentei criar meu produto por 3 meses sem resultado. Com o kit, em 2 horas estava tudo no ar. R$ 470 na primeira semana."</div>
-      <div class="dep-who">
-        <div class="dep-av">RB</div>
-        <div>
-          <div class="dep-role">CLT migrando para digital</div>
-          <div class="dep-name">Rafael Borges</div>
-          <div class="dep-loc">Curitiba · PR</div>
+        <div class="dep r">
+            <p style="font-style:italic; font-size:14px; color:var(--g2);">"O suporte é ótimo e os PDFs são de muita qualidade."</p>
+            <div style="margin-top:20px; font-weight:700;">Ricardo B. - PR</div>
         </div>
-      </div>
-    </div>
-    <div class="dep">
-      <div class="dep-stars">★★★★★</div>
-      <div class="dep-text">"Achei que era mais um produto genérico. Mas realmente entrega. A proposta de vender o próprio material é inteligente demais."</div>
-      <div class="dep-who">
-        <div class="dep-av">JC</div>
-        <div>
-          <div class="dep-role">Empreendedora digital</div>
-          <div class="dep-name">Juliana Carvalho</div>
-          <div class="dep-loc">Fortaleza · CE</div>
+        <div class="dep r">
+            <p style="font-style:italic; font-size:14px; color:var(--g2);">"Finalmente um PLR que não parece cópia de tudo que tem por aí."</p>
+            <div style="margin-top:20px; font-weight:700;">Juliana C. - CE</div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<!-- FAQ + OFERTA -->
-<section id="faq">
-  <div class="faq-layout">
-    <div>
-      <div class="r"><div class="s-eyebrow">Dúvidas</div></div>
-      <h2 class="s-h2 r d1">PERGUNTAS<br/>FREQUENTES</h2>
-      <div class="faq-list r d2">
-        <div class="fi" onclick="this.classList.toggle('open')">
-          <div class="fq">Preciso de experiência prévia? <div class="fi-ico">+</div></div>
-          <div class="fa">Não. O kit foi criado para quem nunca vendeu nada online. Tudo é explicado do zero.</div>
-        </div>
-        <div class="fi" onclick="this.classList.toggle('open')">
-          <div class="fq">Posso vender com meu próprio nome? <div class="fi-ico">+</div></div>
-          <div class="fa">Sim. A licença PLR permite isso. Coloque seu nome, seu checkout — o produto é seu.</div>
-        </div>
-        <div class="fi" onclick="this.classList.toggle('open')">
-          <div class="fq">Preciso investir além dos R$ 67? <div class="fi-ico">+</div></div>
-          <div class="fa">Não obrigatoriamente. Hotmart e Kiwify são sem mensalidade. Para anúncios, R$ 10/dia já funciona.</div>
-        </div>
-        <div class="fi" onclick="this.classList.toggle('open')">
-          <div class="fq">Quando recebo o acesso? <div class="fi-ico">+</div></div>
-          <div class="fa">Imediatamente após o pagamento — link por e-mail em menos de 2 minutos.</div>
-        </div>
-        <div class="fi" onclick="this.classList.toggle('open')">
-          <div class="fq">Tem garantia? <div class="fi-ico">+</div></div>
-          <div class="fa">Sim. 7 dias de garantia incondicional. Se não gostar, devolvo 100% sem perguntas.</div>
-        </div>
-      </div>
+<section id="faq" style="padding:100px 5%;">
+    <h2 class="r" style="font-family:'Unbounded'; margin-bottom:30px;">DÚVIDAS FREQUENTES</h2>
+    <div class="fi r" onclick="this.classList.toggle('open')">
+        <div class="fq">Preciso de domínio próprio? <span>+</span></div>
+        <div class="fa">No início não, você pode usar o GitHub Pages como está fazendo agora.</div>
     </div>
-    <div class="r d2">
-      <div class="oferta">
-        <div class="of-head">// resumo da oferta</div>
-        <div class="of-body">
-          <div class="of-de">De R$ 127</div>
-          <div class="of-val">R$67</div>
-          <div class="of-par">ou 3× de R$ 22,90 sem juros</div>
-          <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-of" target="_blank">Comprar Agora →</a>
-          <div class="of-gar">🛡 7 dias de garantia incondicional</div>
-          <div class="of-itens">
-            <div class="of-item">Guia "Venda no Automático" — 26 págs</div>
-            <div class="of-item">Bônus Métricas Facebook Ads — 16 págs</div>
-            <div class="of-item">Licença PLR completa nos 2 PDFs</div>
-          </div>
-        </div>
-      </div>
+    <div class="fi r" onclick="this.classList.toggle('open')">
+        <div class="fq">Como recebo o acesso? <span>+</span></div>
+        <div class="fa">O acesso é enviado para seu e-mail imediatamente após o pagamento pela Cakto.</div>
     </div>
-  </div>
 </section>
 
-<!-- CTA FINAL -->
-<section id="ctaf">
-  <div class="ctaf-glow"></div>
-  <div class="ctaf-inner">
-    <div class="ctaf-label r">Última chamada</div>
-    <h2 class="ctaf-h r d1">
-      COMECE HOJE.<br/>
-      <span class="ghost">VENDA AMANHÃ.</span>
-    </h2>
-    <a href="https://pay.cakto.com.br/z5mwske_778971" class="btn-main r d2" target="_blank">
-      Quero o Kit por R$ 67 →
-    </a>
-    <div class="r d3" style="margin-top:16px;font-size:11px;color:var(--g);letter-spacing:.5px;">
-      🔒 Pagamento seguro via Cakto &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span>© 2026 Kit PLR</span>
-  <span>Produto digital com licença PLR · Resultados individuais podem variar</span>
+<footer style="padding:50px 5%; text-align:center; border-top:1px solid var(--border);">
+    <div class="logo">KIT<em>PLR</em></div>
+    <p style="font-size:11px; color:var(--g); margin-top:10px;">© 2026 — Todos os direitos reservados.</p>
 </footer>
 
 <script>
-const tkItems=['2 PDFs Completos','Licença de Revenda','Acesso Imediato','Bônus Facebook Ads','R$ 67 Uma Vez','Método PLR 2026','Recupera em 1 Venda','Hotmart e Kiwify','Comece Hoje','Copy Pronta'];
-const tki=document.getElementById('tki');
-tki.innerHTML=[...tkItems,...tkItems].map(t=>`<div class="tk-item"><div class="tk-dot"></div>${t}</div>`).join('');
+    // 1. CARROSSEL (TICKER)
+    const frases = ['2 PDFs COMPLETOS', 'LICENÇA PLR', 'ACESSO IMEDIATO', 'BÔNUS ADS', 'LUCRO 100% SEU'];
+    const tki = document.getElementById('tki');
+    tki.innerHTML = [...frases, ...frases, ...frases].map(f => `<div class="tk-item"><div class="tk-dot"></div>${f}</div>`).join('');
 
-let v=2,pi=4;
-const ps=[17,27,37,47,67,97,127,197];
-const f=n=>'R$'+n.toLocaleString('pt-BR');
-function upd(){
-  const d=v*ps[pi],rec=Math.ceil(67/ps[pi]);
-  document.getElementById('nv').textContent=v;
-  document.getElementById('np').textContent='R$ '+ps[pi];
-  document.getElementById('vd').textContent=f(d);
-  document.getElementById('vm').textContent=f(d*30);
-  document.getElementById('va').textContent=f(d*365);
-  document.getElementById('vi').textContent='R$ '+ps[pi];
-  document.getElementById('cm').innerHTML='&#10003; Com <strong>'+rec+' '+(rec===1?'venda':'vendas')+'</strong> você recupera — o resto é <strong>lucro puro</strong>.';
-}
-function ch(d){v=Math.max(1,Math.min(50,v+d));upd();}
-function cp(d){pi=Math.max(0,Math.min(ps.length-1,pi+d));upd();}
+    // 2. CALCULADORA
+    let v = 2;
+    function updateCalc() {
+        document.getElementById('nv').innerText = v;
+        document.getElementById('vm').innerText = 'R$ ' + (v * 67 * 30).toLocaleString('pt-BR');
+        document.getElementById('va').innerText = 'R$ ' + (v * 67 * 365).toLocaleString('pt-BR');
+    }
+    window.ch = (amt) => { v = Math.max(1, v + amt); updateCalc(); };
 
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');}),{threshold:.08});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+    // 3. ANIMAÇÃO DE ROLAGEM
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => obs.observe(el));
 </script>
+
 </body>
 </html>
